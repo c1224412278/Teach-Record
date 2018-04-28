@@ -1,0 +1,32 @@
+**********	PDO	*********** http://blog.udn.com/
+
+-------- 新增資料 ---------
+$dbms = 'mysql';
+$host = 'localhost';
+$dbName = 'class_blog';
+$user="root";
+$pass="1234";
+$dsn = "$dbms:host=$host;dbname=$dbName";
+
+try
+{
+    $dbh = new PDO($dsn , $user , $pass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->exec("set character set utf8");
+    echo "Connected Successfully";
+}
+    catch(PDOException $e)
+    {
+        die("Erroe!:" . $e->getMessage() . "<br />");
+    }
+
+    $input = array(':UserID'=>'小明' , ':Password'=>'1234');
+    $sql = "INSERT INTO `datas`(UserID , Password) VALUES (:UserID , :Password)";
+    $sth = $dbh->prepare($sql);
+    $sth->execute($input);
+
+-------- 查詢資料 ---------
+
+$sql = "SELECT * FROM `datas` WHERE Password = :password";
+$sth = $dbh->prepare($sql);
+$sth->execute(array(':password'=>1234));

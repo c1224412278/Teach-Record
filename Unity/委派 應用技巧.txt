@@ -1,0 +1,17 @@
+delegate void DelegsteExample(int a);
+	private void Start()
+	{
+		Foobar (Bar);
+	}
+	void Foobar(DelegsteExample myDelegate)
+	{
+		myDelegate (5);
+	}
+	void Foo(int a)
+	{
+
+	}
+	void Bar(int b)
+	{
+
+	}

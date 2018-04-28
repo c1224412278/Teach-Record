@@ -1,0 +1,26 @@
+委派 event Action 無回傳值 (參數可有可無)
+委託 event Fcun   有回傳值 (參數可有可無)
+
+( 定義上面兩項時，可以不用定義 delegate )
+
+public event EventHandler<TimeEventArgs> MoveCompletion ;
+public class TimeEventArgs : EventArgs
+{
+	private int hour ; 
+	public TimeEventArgs(int hour)
+	{
+		this.hour = hour ;
+	}
+	public int Hour
+	{
+		get{return hour;}
+	}
+	public void Fn_ABC(object sender , EventArgs e)
+	{
+		Debug.Log("ABC") ; 
+	}
+}
+
+當宣告EventHandler , event 只能在宣告這型態的那個類別使用他們
+
+event() ; 

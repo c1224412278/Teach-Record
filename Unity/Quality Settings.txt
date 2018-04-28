@@ -1,0 +1,6 @@
+Pixel Light Count 像素燈數量	(場景發生破圖現象 PointLight擺放太多) 想要避免就調高數值(會吃效能)
+Texture Quality 紋理質量	(Texture的顯示質量)完整分辨率，1/2分辨率，1/4分辨率，1/8分辨率
+Anisotropic Textures 各向異性紋理	
+AntiAliasing 抗鋸齒	2倍，4倍和8倍抗鋸齒
+Soft Particles 軟粒子	粒子接觸障礙物時，不會硬生生穿過去，會柔化
+

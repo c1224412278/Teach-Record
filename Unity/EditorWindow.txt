@@ -1,0 +1,32 @@
+using UnityEditor ; 		<------
+public class AlphaMaskWindow : EditorWindow  <----   這樣才能使用
+
+[MenuItem("Tools/Alpha Mask Maker")]  
+	private static void OpenWindow()  
+	{  
+		EditorWindow.GetWindow<AlphaMaskWindow> ().Show ();  
+	} 
+
+
+
+-----------------------------	我是分隔線	------------------------------
+
+			     (物件)     (型態)		//(假如宣告為Object，跑出存放Object的UI欄位)
+EditorGUILayout.ObjectField (null , typeof(Object) , false);		
+
+GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
+
+EditorGUI.MultiFloatField (
+	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
+	//宣告Vector3欄位   X[] , Y[] , Z[]
+
+
+EditorStyles.miniButtonLef	欄位靠左補正空隙
+EditorStyles.miniButtonMid	欄位靠中補正空隙
+EditorStyles.miniButtonRight	欄位靠右補正空隙
+
+** EditorGUILayout 與 GUILayout 的差距
+以
+EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
+GUILayout.Toggle (false , "EditorGUILayout.Toggle");   作範例 ------------------
+

@@ -1,0 +1,20 @@
+DOTween.To (() => XXX.localPosition , x => XXX.localPosition = x , Vector3.zero , 1); 
+		//目標			//目標的 x 軸		     //移動位置  //幾秒
+
+Tweener tweener01 = XXX01.DoLocalMove(Vector3.zero , 5) ;
+Tweener tweener02 = XXX02.DoLocalMove(Vector3.zero , 5) ;
+
+tweener01.Kill() ; 		//刪除動作
+tweener01.Pause() ; 		//暫停
+tweener01.Play() ; 		//開始
+tweener01.Restart() ; 		//重新開始
+tweener01.Rewind() ; 		//直接回原始位置
+
+Sequence mySequence = DoTween.Sequence() ;		//執行多筆動作
+
+***注意*** Update每偵執行會出錯
+
+.SetLoops (4 , LoopType.Yoyo)		**注意YOYO是最後重複執行
+	(次數) (來回)
+
+sequence.Rewind 回到原位

@@ -1,0 +1,44 @@
+	Collision 2D
+
+Edge Collision 2D => 畫直線 碰撞器(曲線無法)
+Polygon Collision 2D => 2D圖片填圖 碰撞器
+
+
+	Joint 2D
+
+Distance Joint 2D => https://docs.unity3d.com/Manual/class-DistanceJoint2D.html
+( 與關節保持一定距離 )
+
+
+Fixed Joint 2D => https://docs.unity3d.com/Manual/class-FixedJoint2D.html
+( 拖拉物體 )
+
+
+Friction Joint 2D => https://docs.unity3d.com/Manual/class-FrictionJoint2D.html
+( 機關階梯 )
+Youtube : https://www.youtube.com/watch?v=1-h43fzNB7U
+
+
+Hinge Joint 2D => https://docs.unity3d.com/Manual/class-HingeJoint2D.html
+( 來回盪繩結 )
+
+
+ Relative Joint 2D => https://docs.unity3d.com/Manual/class-RelativeJoint2D.html
+( 踩踏階梯時，下墜之後伸高 )
+Youtube : https://www.youtube.com/watch?v=V6eGtas_EaY
+
+
+Slider Joint 2D => https://docs.unity3d.com/Manual/class-SliderJoint2D.html
+( 傳送階梯 )
+
+
+Spring Joint 2D => https://docs.unity3d.com/Manual/class-SpringJoint2D.html
+( 溜溜球 )
+Youtube : https://www.youtube.com/watch?v=zvHB1fsRadQ
+
+
+Target Joint 2D => https://docs.unity3d.com/Manual/class-TargetJoint2D.html
+( 蹺蹺板 )
+
+
+Wheel Joint 2D => https://docs.unity3d.com/Manual/class-WheelJoint2D.html

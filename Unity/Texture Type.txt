@@ -1,0 +1,22 @@
+*******		Texture Type: Texture		****************
+
+Wrap Mode :
+Repeat	The Texture repeats (tiles) itself	(重複顯示紋理貼圖)
+Clamp	The Texture’s edges get stretched	(不重複紋理貼圖)
+
+Filter Mode :
+Point		The Texture becomes blocky up close	(單線性)外圍點狀處理
+Bilinear	The Texture becomes blurry up close	(雙線性)外圍點向量模糊處理
+Trilinear	Like Bilinear, but the Texture also blurs between the different mip levels
+
+Aniso Level 陡峭角度看紋理，會提高紋理質量。 適合地板和地面紋理
+
+*******		Texture Type: Normal Map		****************
+
+Create from Greyscale 使用此功能此會顯示緩衝和過濾的選項
+
+
+**************************	Advanced	***************************
+
+Read/Write Enabled	(如沒有需要用到Mesh、網格處理)	則可以關閉
+Generate Mip Maps	3D 模型做 LOD 用的，不需要關閉

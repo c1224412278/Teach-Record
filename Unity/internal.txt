@@ -1,0 +1,7 @@
+public class BaseClass   
+{  
+   internal static int intM = 0;  
+} 
+這樣宣告完後，只能在這個類別裡使用 intM
+
+如果在其他類別使用 intM 會讀不到，或者使用錯誤

@@ -1,0 +1,46 @@
+ * 注意 : 不能老是使用同一個網格，需要 new 出來
+
+private int VERTICES_COUNT = 6;
+
+MeshFilter meshFilter = this.GetComponent<MeshFilter> (); 
+meshFilter.mesh = new Mesh() ; 
+
+		
+Vector3[] vertices = new Vector3[VERTICES_COUNT];
+meshFilter.mesh.Clear (); 
+		
+int triangles_count = VERTICES_COUNT - 2;
+int[] triangles   = new int[triangles_count *3];
+
+		
+vertices[0] = new Vector3(0,0,0);
+vertices[1] = new Vector3(0,1,0);
+vertices[2] = new Vector3(1,0,0);
+vertices[3] = new Vector3(1,1,0);
+vertices[4] = new Vector3(2,0,0);
+vertices[5] = new Vector3(2,1,0);
+
+		
+meshFilter.mesh.vertices = vertices;
+
+		
+int start = 0;
+
+int end = 3;
+for(int i = start; i <end; i++)
+{
+	for(int j = 0; j < 3; j++)
+	{
+		if( i%2 ==0)
+		{
+			triangles[3*i + j] = i +j;
+		}else
+		{
+
+			triangles[3*i + j] = i + 2-j;
+		}
+
+	}
+}
+
+meshFilter.mesh.triangles = triangles;

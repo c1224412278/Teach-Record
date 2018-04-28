@@ -1,0 +1,13 @@
+const 宣告一定要先給值
+public const int x = 10 ; 	//如果不給則會出錯
+
+readonly 有建構方法，就不一定要先賦予值
+public readonly int x ; 
+
+public class test
+{
+      public test()
+      {
+             x = 100 ;  		
+      }
+}

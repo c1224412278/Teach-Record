@@ -1,0 +1,233 @@
+Shader 型態
+	*Int
+	*Float
+	*Range
+	*Color
+	*Vector
+	*2D
+
+Tags {}
+
+{ "RenderType"="Opaque" }	//渲染物件是否透明 
+透明 Opaque ， 非透明 Transparent
+( * 另外補充 : "IgnoreProjector"="True" 不被Projectors影響 )
+("ForceNoShadowCasting"="True"(不產生陰影))
+
+
+ -----------  渲染順序 ------------->  ( 越大越後渲染，疊越高)
+
+("Queue"="xxx" (指定渲染順序，越後渲染疊越上層))
+* Background - 最早渲染天空盒或背景
+* Geometry - 渲染非透明物 (預設)
+* AlphaTest - 渲染 Alpha Test的像素
+* Transparent - 從後往前的方式渲染透明物体
+* Overlay - 用來渲染疊加的效果，是渲染的最後階段(比如鏡頭光暈等特效)
+
+---------------------------------------
+-------------常用Shader設定-------------
+
+* RenderType	//用一個Shader取代目前攝影機照射到的Shader
+* ColorMask RGB	//可以忽略某種顏色  ColorMask R  ,  ColorMask RG , ColorMask RGB
+
+* Cull Back—— 不繪製背面
+* Cull Front—— 不繪製前面
+* Cull Off —— 顯示所有面
+
+* ZWrite On | Off  如果需要繪製純色物體 -> ZWrite On。
+		 如果要繪製半透明效果 -> ZWrite Off 。
+* Zwrite 預設 on  , 是否要進行深度渲染  -> 依照攝影機Z軸渲染距離越遠先渲染
+
+* ZTest  深度測試 ， 預設 LEqual
+正常的物件排序效果 : LEqual、Less
+被遮擋才會渲染效果 : GEqual、Greater
+永遠不會被遮擋 : Always、NotEqual
+雷人用的 : Equal
+
+
+* Blend SrcAlpha OneMinusSrcAlpha   //輸出顏色與畫面顏色做碰撞 -> 弄出半透明體
+
+
+* LOD (設置數值取決可以使用下面哪項功能) 
+VertexLit及其系列 = 100
+Decal, Reflective VertexLit = 150
+Diffuse = 200
+Diffuse Detail, Reflective Bumped Unlit, Reflective Bumped VertexLit = 250
+Bumped, Specular = 300
+Bumped Specular = 400
+Parallax = 500
+Parallax Specular = 600
+
+EndTags
+------------------------------------------
+--------------- 片段渲染  ----------------
+
+"LightMode"="xxxx"
+Always : 不管使用哪種渲染路徑，不會計算任何光照
+ForwardBase : 向前渲染，Pass會計算環境光、平行光、逐頂點/SH光源和Lightmaps
+ForwardAdd : 向前渲染，Pass計算額外像素光源，每個Pass對一個光源
+Deferred : 延遲渲染，該Pass渲染 G-buffer 緩沖
+ShadowCaster : 物體深度渲染到 陰影紋理 或 深度紋理
+PrepassBase : 遺留的延遲渲染，Pass 渲染法線 和 高光反射的指數部分
+PrepassFinal : 遺留的延遲渲染，Pass通過合併紋理、光照、自發光來取得最後的顏色
+
+
+* 抓取 (螢幕位置) 渲染
+GrabPass{ "GrabPassTexture" }
+
+------------------------------------------------
+
+
+	----- => sp 螢幕解析度 ps:(400x300)
+	=======> _ScreenParams (螢幕左下方開始計算 (0,0))
+
+	fixed4 frag (fixed facing : VFACE) : SV_Target
+	//VFACE 判斷渲染面是否面向攝影機，搭配 Cull Front 和 Cull Back
+
+	fixed4 frag (float4 sp : VPOS) : SV_Target
+	{
+		return fixed4(sp.xy / _ScreenParams.xy , 0 , 1);
+	}
+	當frag參數 不是固定的，則要加上 UNITY_VPOS_TYPE
+	fixed4 frag (v2f i , UNITY_VPOS_TYPE screenPos : VPOS) : SV_Target		//做 棋盤式 渲染
+
+
+
+
+* 空間計算轉換
+
+	_LightColor0				//Unity 當前燈光顏色
+	UNITY_LIGHTMODEL_AMBIENT		//Unity 片段渲染 - 環境光
+
+	*常用函數 - http://blog.csdn.net/biezhihua/article/details/78587898
+	struct v2f
+	{
+		float3 worldvertpos : TEXCOORD0;
+	}
+	v2f vert(appdata_base v)
+	{
+		UnityObjectToWorldNormal(normal);	物體法線座標，返回float3 (*和底下是一模一樣的意思)
+		float3 worldNormal = normalize(mul(v.normal , (float3x3)unity_WorldToObject)); 世界座標法線向量
+		mul(unity_ObjectToWorld, v.vertex).xyz; 物體座標位置，返回float3		
+
+		*有時候會碰到需要算出x、y、z、w的uv貼圖，因此要這麼寫
+		(float4是返回型態) ComputeGrabScreenPos(o.pos);	抓取物件法線座標，要計算xyzw紋理貼圖時，取用
+	}
+	
+	*其他常用
+		_WorldSpaceCameraPos	//相機的世界座標空間位置
+		_WorldSpaceLightPos0	//Unity世界光
+		ObjSpaceLightDir(float3)	//模型空間的燈光位置方向
+		UnityWorldSpaceLightDir(float4)	//輸入一個頂點位置，判斷頂點位置到光源的方向(沒有規一化)
+		UnityWorldSpaceViewDir(float4)	//輸入一個頂點位置，返回頂點位置到攝影機照射的方向(沒有規一化)
+
+
+* #pragma 和 #include 內建函式
+
+	#pragma multi_compile_fwdbase 指定確保可以在shader中使用光源衰弱，和陰影使用
+	#include "Lighting.cginc" 當使用 _Lighting0 時，必須套用
+	#include "AutoLight.cginc"	使用陰影投影，必須套用
+
+
+* 陰影計算 (使用範例)
+
+	struct v2f
+	{
+		SHADOW_COORDS(int) <-- (int)選擇一個尚未使用的Texcoord通道 -> 渲染時必須站一個通道位置
+	}
+	v2f vert()
+	{
+		v2f o;	
+		TRANSFER_SHADOW(o);
+	}
+	fixed4 frag()
+	{
+		float attenuation = SHADOW_ATTENUATION(i);
+		return lerp(_MainColor*_ShadowColor,_MainColor,attenuation);
+	}
+
+
+
+*v2f vert(這裡)  可以更改為以下，優點是不需再宣告appdata(可以取代)
+
+	v2f vert(appdata_base / appdata_tan / appdata_full) 頂點數據 提供給 頂點程序
+	appdata_base : 頂點由位置、法向、一個紋理座標 構成
+	appdata_tan : 頂點由位置、切線、法向、一個紋理座標 構成
+	appdata_full : 頂點由位置、切線、法向、兩個紋理座標 和 顏色 構成
+
+----------------------------------------------
+--------------- 物體漫射光固定公式 -----------
+
+漫射光 - 公式 : (c * m)max(0 , n * i)
+
+fixed3 albedo = tex2D(_MainTex, i.uvMainTex).rgb * _Color;
+fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
+return fixed4(ambient + diffuse, 1);
+
+* saturate 和 max 是差不多功能一樣的東西，因此隨便使用一個都可以
+------------------------------------------------
+--------------- 物體高光固定公式 --------------
+c = (c*m) * max(0 , v,r)
+
+fixed3 worldLight=normalize(_WorldSpaceLightPos0.xyz);	//獲取光源方向
+fixed3 reflectDir = normalize(reflect(-worldLight, worldNormal));
+_LightColor0.rgb * (自訂意 Color) * pow(saturate(dot(reflectDir, viewDir)), (自訂意平方數));
+
+-------------------------------------------------
+---------------- 切線空間 ---------------------
+
+* 進行切線空間計算時，需先轉換成世界座標後，才能轉換成為切線座標
+* TANGENT_SPACE_ROTATION
+
+切線空間 : 主要應用在光源上，針對模型不同面做出亮度調整
+o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
+-----------------------------------------------
+---------------- 表面渲染 surf -----------------
+struct Input
+{
+	float3 viewDir;			//抓取攝影機視線方向
+}
+
+
+ #pragma surface surf Lambert 光照貼圖  (*注意:不能有Pass)
+void surf(Input IN , inout SurfaceOutput o){}
+
+#SurfaceOutput : https://docs.unity3d.com/560/Documentation/Manual/SL-SurfaceShaders.html
+
+
+
+(* 注意 : (要改變Alpha時，則變成 - #pragma surface surf Lambert alpha : fade - ))
+UnpackNormal()將顏色空間的法線[0,1],轉換到真正的3D空間裡的法線範圍[-1,1]
+TRANSFORM_TEX(紋理 , sampler2D);
+
+
+
+
+*surf 包含兩個結構體 + 四個函數
+
+1. void vert(inout appdata_full v)    
+
+2. #pragma surface surf CustomDiffuse (CustomDiffuse 是name)
+shader對名字有嚴格規定，因此Lighting<Your Chosen Name> => LightingCustomDiffuse
+inline float4 LightingCustomDiffuse (SurfaceOutput s, fixed3 lightDir, fixed atten){}
+				    (點做光線處理   、	光線方向     、光衰減系數)
+Ex :
+inline float4 LightingCustomDiffuse (SurfaceOutput s, fixed3 lightDir, fixed atten) {
+		    float difLight = max(0, dot (s.Normal, lightDir));
+		    difLight = (difLight + 0.5) * 0.5;
+		    float4 col;
+		    col.rgb = s.Albedo * _LightColor0.rgb * (difLight * atten * 2);
+		    col.a = s.Alpha;
+		    return col;
+		}
+
+
+3. finalcolor:final 
+ex : #pragma surface surf Lambert finalcolor:final 
+=> void final(Input IN, SurfaceOutput o, inout fixed4 color){}
+-----------------------------------------------
+------------- Shader 函式使用解析 -------------   (重要)
+
+*Shader 全計算函式解析 -> http://blog.csdn.net/laverfever/article/details/23962411
+
+---------------------------------------------------

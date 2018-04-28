@@ -1,0 +1,22 @@
+ngui 
+
+UI Plane :
+
+Normals 	UI需要受燈光引響時，勾選
+Cull		減少三角形的數目，可節省效能
+Static		勾選判定忽略所有position / rotation / scale改變，可提高效能
+		( *運行時 position / rotation / scale 會無效，請注意 )
+
+
+UI Camera : 
+
+Mouse 決定是否響應滑鼠事件
+Touch 決定是否touch接觸事件
+Keyboard 決定是否接收鍵盤事件
+Controller 決定是否接受搖桿事件
+
+Event Mask  決定哪個層級可以接受到事件
+Tooltip Delay  需要等待多久，才會送出 OnTooltip 事件到滑鼠
+
+Threshold
+Mouse Click Threshold 控制滑鼠在 OnPress(true)事件後能到達多遠，在OnClick()失效前。

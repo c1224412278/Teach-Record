@@ -1,0 +1,18 @@
+Left Tangent -  Free：自由曲線，與Broken效果基本一樣。
+		Linear:線性曲線
+		Constant:之前一直是上個點的值，然後瞬間變為這個點的值。
+
+public AnimationCurve m_AnimationCurve; 
+
+m_AnimationCurve.Evaluate(Time.time) => float 	** 只會取值並不會跟著曲線移動
+
+
+
+Keyframe[] ks = new Keyframe[3];		//設定鍵值
+ks[0] = new Keyframe(0, 0);	//鍵值位置
+ks[0].inTangent = 0;		//角度旋轉
+ks[1] = new Keyframe(4, 0);	//鍵值位置
+ks[1].inTangent = 45;		//角度旋轉
+ks[2] = new Keyframe(8, 0);	//鍵值位置
+ks[2].inTangent = 90;		//角度旋轉
+m_AnimationCurve = new AnimationCurve(ks); 

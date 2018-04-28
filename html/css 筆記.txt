@@ -1,0 +1,90 @@
+Html  常用標籤 http://web.thu.edu.tw/hzed/www/tag.htm *****
+section 標題 + 內容
+
+
+-----------------------------------------------------------------------------------------
+
+
+position:static  不會被特別定位，瀏覽器預設
+position:relative  表現的和 static 一樣，除非你增加了一些額外的屬性。
+position:relative  固定定位
+position:absolute  固定定位
+
+
+overflow : 	判斷文字 、 圖片是否要顯示(超過範圍之類的)
+white-space: nowrap	規定文字不斷行
+
+text-transform : capitalize	字母開頭大寫 
+justify-content 搭配 display:flew (水平對齊) (塞在父物件，子物件移動)
+align-items (垂直對齊) (同上)  
+align-self  (在使用過 align-items 的情況下，align-items位置已經固定，由此函式去改寫物件位置)
+
+*注意 : align-items 執行為物件目前的中心位置  align-content 為群體的中心位置
+
+flex-wrap	當物件以display:flow 就是以單行得方式排列，如果要強迫換行使用 flex-wrap 來換行
+
+vertical-align 圖片在文字指定地方(文字上方 或者 文字下方) 顯示
+
+flex-direction 物件排序 row：預設值，由左到右，從上到下  row-reverse：與 row 相反
+			column：從上到下，再由左到右	column-reverse：與 column 相反
+( flex-wrap:wrap 自動換行 ， flex-direction 不會幫忙自動換忙)
+
+flex-grow: 0 (代表分成幾份);	( 預設為 0 ) 放置子物件身上，給予父物件剩餘空間
+				(父物件 width 500，子物件 100 100 100 則剩餘 200 空間)
+
+background-attachment	(固定背景) 背景不會隨著滑鼠滾輪移動
+
+
+z-index 圖片深度
+
+cursor 改變游標
+
+opacity 透明度
+
+content 顯示 url
+
+word-spacing	字與字之間的距離
+letter-spacing  字與字之間增加空白
+
+
+width: calc(可以進行不同單位的數學運算)
+
+1.ul -> li 清單
+list-style: none;	** 刪除開頭˙
+
+
+filter: 濾鏡效果 
+blur(高斯模糊) 單位 : px
+grayscale(黑白) 單位 : % 
+
+
+css animation 全解析 : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+
+*********************************************************************
+
+:active		//滑鼠點擊
+:hover		//滑鼠移過
+:LINK		//尚未連接
+:VISITED	//已連接
+
+:first-child	//父元素的第一個子物件
+:last-child	//父元素的最後一個子物件
+
+
+**********************************************************************
+
+
+網頁可見區域寬：document.body.clientWidth
+網頁可見區域高：document.body.clientHeight
+
+網頁可見區域寬：document.body.offsetWidth(包括邊線和捲軸的寬)
+網頁可見區域高：document.body.offsetHeight(包括邊線的寬)
+
+
+@media screen and  (orientation: portrait)	視窗為直立的話
+
+
+
+@supports <條件規則>
+@supports <條件規則> and <條件規則>
+@supports not <條件規則>	//當瀏覽器不支持此 css 時

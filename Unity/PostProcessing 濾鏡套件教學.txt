@@ -1,0 +1,15 @@
+Antialiasing -> (Method)
+		Jitter 物件稍微飄移
+		Stationary 攝影機晃動
+		Sharpen 加強輪廓
+
+Ambient Occlusion 物件Alpha加深描寫
+Screen Space Reflection **********************************
+Depth Of Field 陰影處理 -> 越靠近攝影機陰影越重
+Motion Blur  ***********************************
+Bloom 淡化 + 光暈
+Color Grading 背景顏色 精細改變
+User Lut 場景背景顏色漸變 -> (使用一定要內建 SpectralLut_XXXXXX小圖片)
+Chromatic Aberration 高斯模糊
+Grain	雜訊效果
+Vignette   黑暗效果

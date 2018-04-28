@@ -1,0 +1,19 @@
+Bumped Diffuse 凹凸效果貼圖
+Bumped Specular 凹凸及高光貼圖
+Decal 表面細節貼圖
+Diffuse 表面貼圖
+Diffuse Detail 表面深度貼圖
+Parallax Diffuse 凹凸深度貼圖
+parallax Specular 深度高光貼圖
+Specular 反射高光
+VertexLit 頂點運算
+FX 特效
+GUI 介面材質
+Mobile 行動裝置選用材質
+Nature 植物質感
+Particals 分子特效
+Reflective 反射特效
+RenderFX 成像效果 ( 天空，反射方塊 )
+Self Illumin 自體發光
+Transparent 透明
+Unlit 不受光
