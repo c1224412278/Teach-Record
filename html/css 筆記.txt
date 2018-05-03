@@ -3,8 +3,7 @@ section 標題 + 內容
 
 
 -----------------------------------------------------------------------------------------
-
- ****** CSS  選擇器用法  http://www.w3school.com.cn/cssref/css_selectors.asp
+***** CSS  選擇器用法  http://www.w3school.com.cn/cssref/css_selectors.asp
 
 
 position:static  不會被特別定位，瀏覽器預設
