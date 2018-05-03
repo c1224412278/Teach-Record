@@ -4,6 +4,8 @@ section 標題 + 內容
 
 -----------------------------------------------------------------------------------------
 
+ ***** CSS  選擇器用法  http://www.w3school.com.cn/cssref/css_selectors.asp
+
 
 position:static  不會被特別定位，瀏覽器預設
 position:relative  表現的和 static 一樣，除非你增加了一些額外的屬性。
