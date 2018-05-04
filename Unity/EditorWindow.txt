@@ -25,6 +25,12 @@ EditorStyles.miniButtonLef	欄位靠左補正空隙
 EditorStyles.miniButtonMid	欄位靠中補正空隙
 EditorStyles.miniButtonRight	欄位靠右補正空隙
 
+
+SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
+SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱");
+
+
+
 ** EditorGUILayout 與 GUILayout 的差距
 以
 EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
@@ -35,7 +41,23 @@ Event guiEvent = Event.current;			//當前事件
 Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
 
 
+ * 子物件 繪製
+EditorGUILayout.LabelField ("Parent");
+EditorGUI.indentLevel++;
+EditorGUILayout.LabelField ("Child");
+EditorGUI.indentLevel--;
+EditorGUILayout.LabelField ("Parent");
 
+
+ ***** 判斷 BeginChangeCheck ~ EndChangeCheck 之間，是否有變數的變動
+
+	EditorGUI.BeginChangeCheck();
+        Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Colour);
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            
+        }
 
 
 EditorGUI.PropertyField 繪製欄位
