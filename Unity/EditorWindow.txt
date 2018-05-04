@@ -30,3 +30,38 @@ EditorStyles.miniButtonRight	欄位靠右補正空隙
 EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
 GUILayout.Toggle (false , "EditorGUILayout.Toggle");   作範例 ------------------
 
+
+Event guiEvent = Event.current;			//當前事件
+Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
+
+
+
+
+
+EditorGUI.PropertyField 繪製欄位
+
+ 	* 簡易 PropertyDrawer 用法 --
+	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    	{
+        	Range2Attribute range2 = (Range2Attribute)attribute;
+
+        	if (property.propertyType == SerializedPropertyType.Integer)		//當變數為 int 時候
+        	{
+	    		EditorGUI.IntSlider(position , property , range2.min , range2.max , label);		// 繪製滾輪
+        	}
+        	else
+        	{
+            		EditorGUI.PropertyField(position , property , label);		//繪製普通欄位
+        	}
+    	}
+
+
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)		//設定 UI高度
+
+	
+	CustomGradient gradient = (CustomGradient)fieldInfo.GetValue(property.serializedObject.targetObject);	//獲取對象腳本
+	GUI.skin.label.CalcSize(label).x		//單字寬度
+
+
+
+
