@@ -30,6 +30,8 @@ SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
 SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱");
 
 
+*** HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
+
 
 ** EditorGUILayout 與 GUILayout 的差距
 以
