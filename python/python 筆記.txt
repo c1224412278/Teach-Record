@@ -1,0 +1,15 @@
+------ 網址 -----
+
+from urllib.parse import urlparse		//網址擷取套件
+
+------ 網址原始碼 -----
+
+import requests		//擷取網頁原始碼
+用 requests.get(url) 獲得 html text
+
+
+ * Beautifulsoup 網頁解析套件
+
+sp = BeautifulSoup(html.text, 'html.parser')
+sp.find('img')
+sp.find_all(["img" , "a"]):
