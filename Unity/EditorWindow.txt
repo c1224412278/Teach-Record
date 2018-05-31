@@ -64,7 +64,12 @@ EditorGUILayout.LabelField ("Parent");
 
 EditorGUI.PropertyField 繪製欄位
 
+
+
  	* 簡易 PropertyDrawer 用法 --
+
+	** https://blog.csdn.net/qq_33337811/article/details/66475651
+
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     	{
         	Range2Attribute range2 = (Range2Attribute)attribute;
