@@ -1,0 +1,57 @@
+* 像素光源 (Pixel Light Count)
+使用正向渲染 (Forward Rendering) 光源的最大數目。
+
+* 紋理質量 (Texture Quality)
+全分辨率 (Full Res)、半分辨率 (Half Res)、 
+四分之一分辨率 (Quarter Res) 和八分之一分辨率 (Eighth Res)
+
+* 異性紋理 (Anisotropic Textures)
+
+
+* (Anti Aliasing)  抗拒齒倍率，越高效能越兇
+
+* 軟粒子 (Soft Particles) 是否使用軟粒子特效混合
+
+* (Realtime Reflection)  遊戲中，是否更新反射探針
+
+* (Shadows) 使用哪種陰影種類
+
+* (Shadow resolution) 陰影分辨率  
+低 (Low) 、中 (Medium) 、高 (High) 和很高 (Very High)
+
+
+* (Shadow Projection) 陰影投射
+(緊密配合 Close Fit)渲染分辨率更高的陰影，但是如果攝影機移動，陰影有時就有些許搖晃
+(緊密配合 Stable Fit)渲染分辨率更低的陰影，但是如果攝影機移動，陰影不會搖晃
+
+* (Shadow Distance)  陰影最大可渲染的距離。(超出不渲染)
+
+
+* (Shadow Near Plane Offest)   彌補陰影，彌補影像泛光造成的大三角形扭曲
+
+
+* (Shadow Cascades) 陰影重疊
+陰影數值可設置為 零、二、四層數，層數越高質量越好
+
+
+* Blend Weights
+動畫期間可影響給定頂點的骨骼數量。 可用的選項是一個，兩個或四個骨頭。
+
+
+* VSync Count
+動態同步 (Don't sync) 可提升效能，有機率破圖
+
+
+* LOD Bias (不需動作)
+
+
+* Maximum LOD Level  遊戲將使用的最高LOD
+
+
+* Particle Raycast Budget  粒子系統碰撞的光線投射的最大數量
+
+
+* Async Upload Time Slice   花費將緩衝紋理上傳到GPU的CPU時間
+
+
+* Async Upload Buffer Size  異步上傳緩衝區的大小（MB）

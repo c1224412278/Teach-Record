@@ -1,0 +1,4 @@
+Gravity 重力
+Default Material 默認材質(碰撞體沒有物理材質，會設置默認材質。)
+Bounce Threshold 反彈(2個碰撞體速度低於該值，值不產生反彈)
+Sleep Velocity 休眠速度(物體低於該速度，則靜止)
