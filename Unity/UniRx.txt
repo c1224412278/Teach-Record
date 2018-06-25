@@ -3,7 +3,7 @@ https://www.jianshu.com/p/94b857be40ec		//實戰筆記
 
 
 * 重點 : Subscribe() 輸出後，並不會停止訂閱。
-	var disposable = new SingleAssignmentDisposable();
+	var disposable = new CompositeDisposable();	
 	disposable.Disposable = Observable.EveryUpdate()
     		.Subscribe(_ =>
     		{
