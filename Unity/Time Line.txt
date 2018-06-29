@@ -1,17 +1,87 @@
+Mute 靜音，TimeLine禁止
+Lock 鎖定，防止不小心做更改
+
+
+.playable 檔案資料 :
+	Wrap Mode : Loop 、 None 、 Hode(保持)
+	Frame Rate : 每秒播放多少偵數
+	Duration Mode : Based On Clips => 播放到結束
+			Fixed Length => 可以設定播放結束的時間
+
+
+------------		重點 			--------------------
 
 //將對象扔到 TimeLine 進行處理
-* ExposedReference.Resolve(graph.GetResolver()).GetComponent<T>();
+* ExposedReference.Resolve(graph.GetResolver()).GetComponent<T>();-> 不塞 GameObject ，要抓物件 => Transform
 
+Ex : public class PlayableBehaviourSample : PlayableAsset
+     {
+    	public ExposedReference<GameObject> _target;
+    	private Transform targetObject;
+    	
+	public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+    	{
+        	var scriptPlayable = ScriptPlayable< PlayableBehaviour腳本 >.Create(graph);
+        	targetObject = _target.Resolve(graph.GetResolver()).GetComponent<Transform>();
+        	scriptPlayable.GetBehaviour().target = targetObject;
+        	return scriptPlayable;
+    	}
+     }
+
+
+
+( PlayableAsset 、 PlayableBehaviour) vs (BasePlayableBehaviour) 是一樣的東西
+
+------------------------------------------------------------------
 
 * TimelineAsset 和 PlayableBehaviour 引用方法
 https://blog.csdn.net/beihuanlihe130/article/details/79233320
 
 
-CineMachine 攝影機控制套件
+* Cinemachine 攝影機控制套件 - Unity Asset Store內建提供
+	CineMachine -> 	Virtual Camera 普通攝影機
+			FreeLook Camera 
+			State-driven Camera
+			ClearShot Camera
+			Dolly Camera with Track 軌道攝影機
+			Create Target Group Camera 與目標進行移動
+	
+	* 當套用 Cinemachine 套件時，MainCamera 會自動出現 Cinemachine Brain 組件
+		Show Debug Text 左上角出現Debug訊息
+		Show Camera Frustum 裁切掉不再顯示範圍的邊線
+		Ignore Time Scale 忽略遊戲時間
+		Update Method 更新方法(Update、LateUpdate、FixedUpdate)
+		Default Blend 相機默認的切換模式
+		Custom Blends 自定義相機切換模式
+		Events -> Camera Cut Event
+			  Camera Activated Event 
 
 
-CineMachine -> Create Target Group Camera 與目標進行移動
+	* Cinemachine Virtual 
+	Status 相機當前的狀態 (Live 正在使用，Standby 準備使用。按Solo按鈕 會切換到這台相機)
+	Priority 相機優先度
+	Follow 相機跟隨目標
+	Look At 相機看的目標
+	
 
+	Body : Hard constraint(保持距離，第一人稱)
+		Orbital Transposer (似乎是第三人稱)
+		Tracked Dolly (相機只能在軌道運行，即使設置了 Follow 對象)
+		
+	* FreeLook Camera ( 普通第三人稱攝影機 )	
+	* Cinemachine Blend List Camera
+		(* 一定要放子物件，子物件攝影機輪流線性切換播放)
+		
+	
+	* Cinemachine Mixing Camera 
+		( 相機螢幕分享 )
+
+	* State Driven Camera ( 可以針對角色的Animator做出攝影機切換 *非常強大 )
+		( *一定要放子物件 )
+
+	* ClearShot Camera (障礙物判斷切換)
+		( * 一定要放子物件，當子物件攝影機被遮擋會自動切換到最好的攝影機)
 
 打架特寫鏡頭 :  https://zhuanlan.zhihu.com/p/29585350
 BasicPlayableBehaviour 教學篇 : https://blog.csdn.net/ILYPL/article/details/78062591
+

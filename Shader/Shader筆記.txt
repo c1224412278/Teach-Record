@@ -98,22 +98,33 @@ GrabPass{ "GrabPassTexture" }
 
 ------------------------------------------------
 
-o.scrPos = ComputeScreenPos(o.pos);	//將齊次座標返回屏幕座標
-COMPUTE_EYEDEPTH(o.scrPos.z);		//計算頂點到攝影機的深度
+* 抓取場景物件深度
 
+v2f vert()
+{
+	o.scrPos = ComputeScreenPos(o.pos);	//將齊次座標返回屏幕座標
+	COMPUTE_EYEDEPTH(o.scrPos.z);		//計算頂點到攝影機的深度
+}
+fixed4 frag (v2f i)
+{
+	float depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r;
+	depth = LinearEyeDepth(depth);
+}
 
-	----- => sp 螢幕解析度 ps:(400x300)
-	=======> _ScreenParams (螢幕左下方開始計算 (0,0))
+-----------------------------------------------------------
 
-	fixed4 frag (fixed facing : VFACE) : SV_Target
-	//VFACE 判斷渲染面是否面向攝影機，搭配 Cull Front 和 Cull Back
+----- => sp 螢幕解析度 ps:(400x300)
+=======> _ScreenParams (螢幕左下方開始計算 (0,0))
 
-	fixed4 frag (float4 sp : VPOS) : SV_Target
-	{
-		return fixed4(sp.xy / _ScreenParams.xy , 0 , 1);
-	}
-	當frag參數 不是固定的，則要加上 UNITY_VPOS_TYPE
-	fixed4 frag (v2f i , UNITY_VPOS_TYPE screenPos : VPOS) : SV_Target		//做 棋盤式 渲染
+fixed4 frag (fixed facing : VFACE) : SV_Target
+//VFACE 判斷渲染面是否面向攝影機，搭配 Cull Front 和 Cull Back
+
+fixed4 frag (float4 sp : VPOS) : SV_Target
+{
+	return fixed4(sp.xy / _ScreenParams.xy , 0 , 1);
+}
+當frag參數 不是固定的，則要加上 UNITY_VPOS_TYPE
+fixed4 frag (v2f i , UNITY_VPOS_TYPE screenPos : VPOS) : SV_Target		//做 棋盤式 渲染
 
 
 
@@ -189,7 +200,7 @@ COMPUTE_EYEDEPTH(o.scrPos.z);		//計算頂點到攝影機的深度
 漫射光 - 公式 : (c * m)max(0 , n * i)
 
 fixed3 albedo = tex2D(_MainTex, i.uvMainTex).rgb * _Color;
-fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
 fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
 return fixed4(ambient + diffuse, 1);
 
