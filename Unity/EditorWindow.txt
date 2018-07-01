@@ -1,4 +1,12 @@
-using UnityEditor ; 		<------
+
+ !!! ( 實用 繪製GUI 平台教學 )
+https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_23.html
+
+
+
+------------	EditorWindow	------------------------------------
+
+using UnityEditor;
 public class AlphaMaskWindow : EditorWindow  <----   這樣才能使用
 
 [MenuItem("Tools/Alpha Mask Maker")]  
@@ -8,17 +16,73 @@ public class AlphaMaskWindow : EditorWindow  <----   這樣才能使用
 	} 
 
 
+----------------------------------------------------------------------
 
------------------------------	我是分隔線	------------------------------
+* DrawDefaultInspector(); 	// 會將原本的資料畫出來 (超重要)
+
+
+* HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
+
+	獲取滑鼠位置 : Event guiEvent = Event.current;
+	獲取滑鼠射線世界座標 : HandleUtility.GUIPointToWorldRay (guiEvent.mousePosition);
+
+	if(guiEvent.type == EventType.layout)
+	{
+		HandleUtility.AddDefaultControl (GUIUtility.GetControlID(FocusType.Passive));	
+	}
+
+* 判斷需按下哪個鍵盤按鍵進行動作 : guiEvent.modifiers == 
+
+
+Event guiEvent = Event.current;			//當前事件
+Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
+
+------------	EditorGUI	--------------------------------------
+
+繪製欄位	EditorGUI.PropertyField
+
+** EditorGUILayout 與 GUILayout 的差距
+
+	EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
+	GUILayout.Toggle (false , "EditorGUILayout.Toggle");   作範例 ------------------
+
+
+* 新增區域 	GUILayout.BeginArea (Rect);
+		GUILayout.EndArea ();
+
+
+* 判斷之間的數值是否有變動 
+
+	@ 判斷 BeginChangeCheck ~ EndChangeCheck 之間，是否有變數的變動
+
+	EditorGUI.BeginChangeCheck();
+        Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Colour);
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            
+        }
+
+EditorGUI.MultiFloatField (
+	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
+	//宣告Vector3欄位   X[] , Y[] , Z[]
+
+
+
+* 子物件 繪製
+	EditorGUILayout.LabelField ("Parent");
+	EditorGUI.indentLevel++;
+	EditorGUILayout.LabelField ("Child");
+	EditorGUI.indentLevel--;
+	EditorGUILayout.LabelField ("Parent");
+
+------------	EditorGUILayout		--------------------------------------
+
 
 			     (物件)     (型態)		//(假如宣告為Object，跑出存放Object的UI欄位)
 EditorGUILayout.ObjectField (null , typeof(Object) , false);		
 
 GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
-
-EditorGUI.MultiFloatField (
-	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
-	//宣告Vector3欄位   X[] , Y[] , Z[]
 
 
 EditorStyles.miniButtonLef	欄位靠左補正空隙
@@ -30,43 +94,12 @@ SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
 SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱");
 
 
-*** HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
 
 
-** EditorGUILayout 與 GUILayout 的差距
-以
-EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
-GUILayout.Toggle (false , "EditorGUILayout.Toggle");   作範例 ------------------
+------------	簡易 PropertyDrawer 用法	--------------------------------------
 
+* 因為 EditorGUI 需要指定 Rect，所以大部分會和 PropertyDrawer 一起實作
 
-Event guiEvent = Event.current;			//當前事件
-Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
-
-
- * 子物件 繪製
-EditorGUILayout.LabelField ("Parent");
-EditorGUI.indentLevel++;
-EditorGUILayout.LabelField ("Child");
-EditorGUI.indentLevel--;
-EditorGUILayout.LabelField ("Parent");
-
-
- ***** 判斷 BeginChangeCheck ~ EndChangeCheck 之間，是否有變數的變動
-
-	EditorGUI.BeginChangeCheck();
-        Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Colour);
-
-        if (EditorGUI.EndChangeCheck())
-        {
-            
-        }
-
-
-EditorGUI.PropertyField 繪製欄位
-
-
-
- 	* 簡易 PropertyDrawer 用法 --
 
 	** https://blog.csdn.net/qq_33337811/article/details/66475651
 
