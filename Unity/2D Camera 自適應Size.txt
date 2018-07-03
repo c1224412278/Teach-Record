@@ -1,0 +1,14 @@
+
+ * pixels to units 換算到 Unity 座標算法
+假設 Heigh : 640 ，pixels to units 為 100 的情況下
+orthographic size 為 640/2/100 = 3.2 
+
+
+float cameraHeight = Camera.main.orthographicSize * 2;
+float cameraWidth = cameraHeight * Camera.main.aspect;
+Debug.Log("camera size in unit=" + cameraWidth + "," + cameraHeight);
+
+
+http://noteofart.blogspot.com/2016/02/unity-android.html
+https://blog.csdn.net/n5/article/details/50083205
+https://www.youtube.com/watch?v=TYNF5PifSmA

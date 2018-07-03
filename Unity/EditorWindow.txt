@@ -2,6 +2,16 @@
  !!! ( 實用 繪製GUI 平台教學 )
 https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_23.html
 
+* OnPosrRender (可在Game視窗，執行等同於 OnSceneGUI 功能)
+
+using UnityEditorInternal;	//自訂排序工具
+( https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_25.html )
+
+
+------------	serializedObject	---------------------------
+
+serializedObject.Update () 可以重新進行資料更新。
+serializedObject.ApplyModifiedProperties () 可以對資料更動進行寫入。
 
 
 ------------	EditorWindow	------------------------------------
@@ -19,7 +29,9 @@ public class AlphaMaskWindow : EditorWindow  <----   這樣才能使用
 ----------------------------------------------------------------------
 
 * DrawDefaultInspector(); 	// 會將原本的資料畫出來 (超重要)
-
+* EditorApplication.Beep();	//系統會發出聲音 (提醒)
+* EditorUtility.SetDirty(;	//儲存資料
+* EditorUtility.DisplayDialog	//出現 ( 確定要執行 *是 *否 ) 視窗
 
 * HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
 
@@ -46,10 +58,20 @@ Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
 	EditorGUILayout.Toggle ("EditorGUILayout.Toggle" , false); 
 	GUILayout.Toggle (false , "EditorGUILayout.Toggle");   作範例 ------------------
 
-
+	* GUILayout 只可繪製 TextField 欄位 (其他欄位不支援 V3 V4 Color .... )
+	
+	
 * 新增區域 	GUILayout.BeginArea (Rect);
 		GUILayout.EndArea ();
 
+
+* 設為一個群組
+
+	* GUILayout.BeginHorizontal();
+	{
+
+	}
+	GUILayout.EndHorizontal();
 
 * 判斷之間的數值是否有變動 
 
@@ -78,11 +100,14 @@ EditorGUI.MultiFloatField (
 
 ------------	EditorGUILayout		--------------------------------------
 
-
 			     (物件)     (型態)		//(假如宣告為Object，跑出存放Object的UI欄位)
 EditorGUILayout.ObjectField (null , typeof(Object) , false);		
 
 GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
+
+
+EditorGUILayout.BeginToggleGroup	Toggle群組
+EditorGUILayout.EndToggleGroup();
 
 
 EditorStyles.miniButtonLef	欄位靠左補正空隙
