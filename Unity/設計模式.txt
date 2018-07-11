@@ -1,0 +1,60 @@
+---- 裝飾者 模式 
+
+* 分成兩個部分，分別裝飾者和被裝飾者。
+裝飾者 為 Player 
+被裝飾者 為 Decorator_A 、 Decorator_B
+public class test : MonoBehaviour
+{
+    
+    private void Start()
+    {
+        Player player = new Player();
+
+        Decorator_A a = new Decorator_A();
+        a.Fn_SetPlayer(player);
+
+        Decorator_B b = new Decorator_B();
+        b.Fn_SetPlayer(a);
+        b.Operation();
+    }
+
+}
+abstract class Component
+{
+    public abstract void Operation();
+}
+class Player : Component
+{
+    public override void Operation()
+    {
+        Debug.Log("玩家的裝備 : ");
+    }
+}
+abstract class Decorator : Component
+{
+    public Component m_Component;
+    public void Fn_SetPlayer(Component m_Component)
+    {
+        this.m_Component = m_Component;
+    }
+    public override void Operation()
+    {
+        m_Component.Operation();
+    }
+}
+class Decorator_A : Decorator
+{
+    public override void Operation()
+    {
+        base.Operation();
+        Debug.Log("裝備了 寶劍，攻擊力+10");
+    }
+}
+class Decorator_B : Decorator
+{
+    public override void Operation()
+    {
+        base.Operation();
+        Debug.Log("裝備了 護盾，防禦力+5");
+    }
+}
