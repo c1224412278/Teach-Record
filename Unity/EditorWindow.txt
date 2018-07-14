@@ -8,12 +8,6 @@ using UnityEditorInternal;	//自訂排序工具
 ( https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_25.html )
 
 
-------------	serializedObject	---------------------------
-
-serializedObject.Update () 可以重新進行資料更新。
-serializedObject.ApplyModifiedProperties () 可以對資料更動進行寫入。
-
-
 ------------	EditorWindow	------------------------------------
 
 using UnityEditor;
@@ -61,13 +55,16 @@ Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
 	* GUILayout 只可繪製 TextField 欄位 (其他欄位不支援 V3 V4 Color .... )
 	
 	
+
+@ . GUILayout.BeginArea 自定義位置
 * 新增區域 	GUILayout.BeginArea (Rect);
 		GUILayout.EndArea ();
 
 
+@ . GUILayout.BeginHorizontal 自動布局
 * 設為一個群組
 
-	* GUILayout.BeginHorizontal();
+	* GUILayout.BeginHorizontal();	or	GUILayout.BeginHorizontal("box");
 	{
 
 	}
@@ -85,9 +82,22 @@ Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
             
         }
 
+* GUILayout.BeginScrollView 使用滾動群組
+	//http://www.ceeger.com/Script/GUILayout/GUILayout.BeginScrollView.html
+
+	Vector2 scrollPosition = GUILayout.BeginScrollView(this.scrollPosition); 顯示滾動的位置
+	GUILayout.EndScrollView();
+
+
+
 EditorGUI.MultiFloatField (
 	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
 	//宣告Vector3欄位   X[] , Y[] , Z[]
+
+
+
+if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWidth 是否禁止水平擴張
+
 
 
 
@@ -100,10 +110,20 @@ EditorGUI.MultiFloatField (
 
 ------------	EditorGUILayout		--------------------------------------
 
+
 			     (物件)     (型態)		//(假如宣告為Object，跑出存放Object的UI欄位)
 EditorGUILayout.ObjectField (null , typeof(Object) , false);		
 
 GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
+	=> GUILayout.Width - overrides the fixedWidth of the used style
+	GUILayout.Height - overrides the fixedHeight of the used style
+	GUILayout.MaxHeight - adds an additional size-constraint
+	GUILayout.MaxWidth - adds an additional size-constraint
+	GUILayout.MinHeight - adds an additional size-constraint
+	GUILayout.MinWidth - adds an additional size-constraint
+	GUILayout.ExpandWidth - overrides stretchWidth of the used style
+	GUILayout.ExpandHeight - overrides stretchHeight of the used style
+
 
 
 EditorGUILayout.BeginToggleGroup	Toggle群組
@@ -117,8 +137,73 @@ EditorStyles.miniButtonRight	欄位靠右補正空隙
 
 SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
 SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱");
+	*// https://anchan828.github.io/editor-manual/web/serializedobject.html
+	*** 注意 : ("放下一層變數名稱") 這裡的變數必須一定要 [SerializeField] 序列化
+
+serializedObject.Update () 可以重新進行資料更新。(通常寫在第一行)
+serializedObject.ApplyModifiedProperties () 可以對資料更動進行寫入。(通常寫最後一行)
 
 
+Ex :: 
+
+	[MenuItem("Custom/Open Windex")]
+    private static void Init()
+    	{
+        	MyWindow window = (MyWindow)EditorWindow.GetWindow(typeof(MyWindow));
+        	window.Show();
+ 	}
+
+
+    	
+	[SerializeField] private List<string> urls = new List<string>();
+    	private SerializedObject mObj;
+    	private SerializedProperty _urls;
+    
+	private SerializedProperty _url;
+
+	private Vector2 scrollPosition;
+	
+	private void OnEnable()
+    	{
+        	mObj = new SerializedObject(this);
+        	_urls = this.mObj.FindProperty("urls");
+	}
+    	
+	private void OnGUI()
+    	{
+        	GUILayout.BeginVertical("box");
+    
+        	GUILayout.BeginHorizontal("box");
+        	GUILayout.Label("網址數 : " + this._urls.arraySize);
+        	
+		if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))
+        	{
+        		this._urls.arraySize += 1;
+        	}	
+        	GUILayout.EndHorizontal();
+
+        	this.scrollPosition = GUILayout.BeginScrollView(this.scrollPosition);
+
+        	for (int i = 0; i < this._urls.arraySize; i ++)
+        	{
+            		this._url = this._urls.GetArrayElementAtIndex(i);
+
+            		GUILayout.BeginHorizontal("box");
+            		GUILayout.Label("網址 " + (i + 1) , GUILayout.ExpandWidth(false));
+            		GUILayout.Space(15);
+            		this._url.stringValue = EditorGUILayout.TextField(this._url.stringValue);
+
+            		if (GUILayout.Button("-", GUILayout.ExpandWidth(false)))
+                		this._urls.DeleteArrayElementAtIndex(i);
+
+            		GUILayout.EndHorizontal();
+        	}
+
+        	GUILayout.EndScrollView();
+
+        	GUILayout.EndVertical();
+        	this.mObj.ApplyModifiedProperties();
+    	}
 
 
 ------------	簡易 PropertyDrawer 用法	--------------------------------------
