@@ -1,8 +1,9 @@
----- 裝飾者 模式 
+------------------------------------------------- 裝飾者 模式 -------------------------------------
 
 * 分成兩個部分，分別裝飾者和被裝飾者。
 裝飾者 為 Player 
 被裝飾者 為 Decorator_A 、 Decorator_B
+
 public class test : MonoBehaviour
 {
     
@@ -56,5 +57,91 @@ class Decorator_B : Decorator
     {
         base.Operation();
         Debug.Log("裝備了 護盾，防禦力+5");
+    }
+}
+
+
+
+
+------------------------------------------------- 命令 模式 ----------------------------------------
+
+
+public class test : MonoBehaviour
+{
+  
+    private void Start()
+    {
+        Invoker invoker = new Invoker();
+
+        ReceiverRobot robot = new ReceiverRobot(); // 執行命令物件
+
+        GoAheadCommand cmd_go_ahead = new GoAheadCommand(robot); // 向前走指令
+        TurnLeftCommand cmd_turn_left = new TurnLeftCommand(robot); // 左轉指令
+
+        invoker.Fn_SetCommand(cmd_go_ahead);
+        invoker.Fn_SetCommand(cmd_go_ahead);
+        invoker.Fn_SetCommand(cmd_turn_left);
+
+        invoker.Run();
+    }
+
+}
+
+public class Invoker
+{
+    public List<Command> m_Cmds = new List<Command>();
+    public void Fn_SetCommand(Command cmd)
+    {
+        m_Cmds.Add(cmd);
+    }
+    public void Run()
+    {
+        foreach (Command command in m_Cmds)
+        {
+            command.Execute();
+        }
+    }
+}
+public abstract class Command
+{
+    protected ReceiverRobot Robot;
+    public Command(ReceiverRobot Robot)
+    {
+        this.Robot = Robot;
+    }
+    public abstract void Execute();
+}
+
+public class ReceiverRobot
+{
+    public void GoAhead()
+    {
+        Debug.Log("向前走一步");
+    }
+    public void TurnLeft()
+    {
+        Debug.Log("向左轉");
+    }
+    public void TurnRight()
+    {
+        Debug.Log("向右轉");
+    }
+}
+public class GoAheadCommand : Command
+{
+    public GoAheadCommand(ReceiverRobot Robot) : base(Robot){}
+
+    public override void Execute()
+    {
+        Robot.GoAhead();
+    }
+}
+public class TurnLeftCommand : Command
+{
+    public TurnLeftCommand(ReceiverRobot robot) : base(robot){}
+
+    public override void Execute()
+    {
+        Robot.TurnLeft();
     }
 }
