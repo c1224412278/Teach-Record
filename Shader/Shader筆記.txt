@@ -15,10 +15,14 @@ Unity座標系轉換
 12: UNITY_MATRIX_IT_MV(基本變換矩陣 x 攝像機矩陣) 的逆轉置矩陣;
 13: UNITY_MATRIX_TEXTURE0 紋理變化矩陣;
 
-
+------------------------------------------------------------------------
 
 * 燈光 詳解 https://blog.csdn.net/candycat1992/article/details/42460959 
 
+_LightColor0				//Unity 當前燈光顏色
+UNITY_LIGHTMODEL_AMBIENT		//Unity 片段渲染 - 環境光
+
+-------------------------------------------------------------------------
 
 Shader 型態
 	*Int
@@ -113,28 +117,8 @@ fixed4 frag (v2f i)
 
 -----------------------------------------------------------
 
------ => sp 螢幕解析度 ps:(400x300)
-=======> _ScreenParams (螢幕左下方開始計算 (0,0))
-
-fixed4 frag (fixed facing : VFACE) : SV_Target
-//VFACE 判斷渲染面是否面向攝影機，搭配 Cull Front 和 Cull Back
-
-fixed4 frag (float4 sp : VPOS) : SV_Target
-{
-	return fixed4(sp.xy / _ScreenParams.xy , 0 , 1);
-}
-當frag參數 不是固定的，則要加上 UNITY_VPOS_TYPE
-fixed4 frag (v2f i , UNITY_VPOS_TYPE screenPos : VPOS) : SV_Target		//做 棋盤式 渲染
-
-
-
-
 * 空間計算轉換
 
-	_LightColor0				//Unity 當前燈光顏色
-	UNITY_LIGHTMODEL_AMBIENT		//Unity 片段渲染 - 環境光
-
-	*常用函數 - http://blog.csdn.net/biezhihua/article/details/78587898
 	struct v2f
 	{
 		float3 vertex : SV_POSITION;
@@ -261,5 +245,6 @@ ex : #pragma surface surf Lambert finalcolor:final
 ------------- Shader 函式使用解析 -------------   (重要)
 
 *Shader 全計算函式解析 -> http://blog.csdn.net/laverfever/article/details/23962411
+*常用空間計算函數 -> http://blog.csdn.net/biezhihua/article/details/78587898
 
 ---------------------------------------------------
