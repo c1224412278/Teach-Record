@@ -195,6 +195,24 @@ return fixed4(ambient + diffuse, 1);
 * 進行切線空間計算時，需先轉換成世界座標後，才能轉換成為切線座標
 * TANGENT_SPACE_ROTATION
 
+fixed4 packedNormal = tex2D(_BumpTex, i.uv.zw);
+fixed3 tangentNormal = UnpackNormal(packedNormal);	//將 Texture Type -> Normal Map，取得正確的法向量
+
+------- world space to tangent space 的 旋轉矩陣 ---------------
+
+* TANGENT_SPACE_ROTATION 的函式，在執行以下的動作：
+ float3 binormal = cross( v.normal, v.tangent.xyz ) * v.tangent.w;
+ float3x3 rotation = float3x3( v.tangent.xyz, binormal, v.normal );
+
+
+* UnpackNormal(fixed4) 是在做下面的事情，所以可以直接用函式做取代
+ fixed4 normal = tex2D(_Bump, i.uv);
+ fixed3 norm;
+ norm.xy = normal.wy * 2 - 1;
+ norm.z = sqrt(1 - saturate(dot(norm.xy, norm.xy)));
+
+
+
 切線空間 : 主要應用在光源上，針對模型不同面做出亮度調整
 o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
 -----------------------------------------------

@@ -1,0 +1,101 @@
+	* ----	Focus	----
+
+--- WaveVR_Utils ---
+
+ * 文檔教學 - 非常重要網址 : https://hub.vive.com/storage/app/doc/zh-tw/UnitySdk.html
+
+function : void OnEvent(params object[] args)
+{
+	var _event = (WVR_EventType)args [0];
+	switch (_event)
+        
+	{
+        
+		case WVR_EventType.WVR_EventType_TouchpadSwipe_LeftToRight:  //當觸控面板從左滑到右
+            
+			transform.Rotate (0, 180 * (10 * Time.deltaTime), 0);
+            
+			break;
+        
+		case WVR_EventType.WVR_EventType_TouchpadSwipe_RightToLeft:
+            
+			transform.Rotate (0, -180 * (10 * Time.deltaTime), 0);
+            
+			break;
+        
+		case WVR_EventType.WVR_EventType_TouchpadSwipe_DownToUp:
+            
+			transform.Rotate (0, 0, 180 * (10 * Time.deltaTime));
+            
+			break;
+        
+		case WVR_EventType.WVR_EventType_TouchpadSwipe_UpToDown:
+            
+			transform.Rotate (0, 0, -180 * (10 * Time.deltaTime));
+            
+			break;
+	}
+}
+
+void Start()
+{
+	WaveVR_Utils.Event.Listen ("SWIPE_EVENT", OnEvent);		//監聽 OnEvent 事件
+}
+
+
+
+
+
+MenuButtonClicked += new ClickedEventHandler (MenuButtonClickedHandler);
+PadTouched +=  ""同上""""
+private void MenuButtonClickedHandler (object sender, ClickedEventArgs e)
+
+{
+		
+  Log.d(TAG, "MenuButtonClickedHandler");
+        
+  controlled_object.SetActive(false);
+	
+}
+
+
+
+
+------------------- WVR_Arena -----------------------------------------
+
+
+arena = Interop.WVR_GetArena ();                //取得目前活動的屬性
+
+_overrange = Interop.WVR_IsOverArenaRange ();   //檢查使用者是否超出活動範圍
+
+_visible = Interop.WVR_GetArenaVisible ();      //取得目前可見的形式
+bool _touchpad_pressed = WaveVR_Controller.Input (WVR_DeviceType.WVR_DeviceType_Controller_Left).GetPressDown (WVR_InputId.WVR_InputId_Alias1_Touchpad) 
+				|| WaveVR_Controller.Input (WVR_DeviceType.WVR_DeviceType_Controller_Right).GetPressDown (WVR_InputId.WVR_InputId_Alias1_Touchpad);
+           
+if (_touchpad_pressed)
+            
+{
+                       
+	Interop.WVR_SetArenaVisible (WVR_ArenaVisible.WVR_ArenaVisible_ForceOn);    //當按下按鈕時，總是顯示虛擬牆
+            }
+				     WVR_ArenaVisible.WVR_ArenaVisible_ForceOff	    //當按下按鈕時，關閉虛擬牆
+				     WVR_ArenaVisible.WVR_ArenaVisible_Auto	    //目標距離虛擬牆30公分內，開啟虛擬牆
+
+
+
+------------------ 對準幾秒，執行事件 -----------------------------------
+
+1. 不使用 InputModuleManager 物件 -> WaveVR / Prefabs / ReticlePointer 物件到 head 底下做子物件
+				-> 設定物件 添加 Gaze Input Module 腳本，並將 Input Event 做更改，以及 Head => head
+		或者
+
+   使用 InputModuleManager 物件 -> Enable Gaze => true , Enable Controller => false , Gaze Head => head
+ 
+2. head 攝影機中的 Wave VR_Render 腳本的的 Camera Gaze 變數要勾選
+
+----------------- 產生 Ray -----------------------------------------------
+
+Wave VR / Prefabs / Beam 物件添加，並在 Beam 物件添加 (Wave VR_Raycast) 就可以再 Game視窗看到 Ray
+
+
+
