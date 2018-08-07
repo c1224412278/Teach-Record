@@ -42,3 +42,22 @@ public class Controller : MonoBehaviour
 // 遠距離拖曳 http://www.cnblogs.com/GJM6/p/6594293.html
 
 VRTK的30個範例解說 : https://hk.saowen.com/a/5db4dfac554879d577c89eb1242058078b8b9db5704b6475ed7f3a851bde3969
+VRTK 腳本使用解釋 : https://vrtoolkit.readme.io/docs/vrtk_swapcontrollergrabaction
+
+ * VRTK Interactable Object 物件抓取
+Allowed Touch Controllers:判斷哪個設備抓取
+Ignored Colliders : 可以忽略碰撞
+Hold Button To Grab : 是否要一直按著
+Stay Grabbed On Teleport : 防止掉落
+Grab Attach Mechanic Script : 判斷控制器抓住時，哪個物件要在控制器身上。 VRTK_Child Of Controller Grab Attach -> xxxx Snap Handle 設定物件
+
+
+ * VRTK_InteractControllerAppearance 抓取隱藏手把
+
+ * VRTK_SwapControllerGrabAction 允許控制互相抓取相互的物
+
+ * VRTK_InteractTouch 為手把添加碰撞器
+
+ * Interact Grab 判斷手把需要的按鈕，並控制物件
+
+ * VRTK_SDKTransformModify 可以在運行時，改變方向
