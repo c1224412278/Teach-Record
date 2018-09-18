@@ -136,7 +136,12 @@ EditorStyles.miniButtonRight	欄位靠右補正空隙
 
 
 SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
-SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱");
+// serializedObject.FindProperty("抓取的變數名稱" , [true / false])  => true 是否序列化
+// 當 (ser == Array)
+	ser.arraySize => 陣列長度
+
+
+SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱" 或 "Array.size"[可抓陣列長度] );
 	*// https://anchan828.github.io/editor-manual/web/serializedobject.html
 	*** 注意 : ("放下一層變數名稱") 這裡的變數必須一定要 [SerializeField] 序列化
 
