@@ -1,15 +1,32 @@
-Antialiasing -> (Method)
-		Jitter 物件稍微飄移
-		Stationary 攝影機晃動
-		Sharpen 加強輪廓
+* 濾鏡效果 
 
-Ambient Occlusion 物件Alpha加深描寫
-Screen Space Reflection **********************************
-Depth Of Field 陰影處理 -> 越靠近攝影機陰影越重
-Motion Blur  ***********************************
-Bloom 淡化 + 光暈
-Color Grading 背景顏色 精細改變
+   (Unity 5.6 以上的版本 Import -> Effect -> Image Effects 被取代為 (Asset Store商店) Legacy Image Effects)
+-> Legacy Image Effects .vs. Post Processing
+(可動態修改)		    (不可動態修改)
+
+
+Antialiasing 抗鋸齒 -> (FXAA花費便宜) 
+			Jitter -> Spread 抖動傳播
+			Blending -> Stationary 靜止數值
+			Sharpen 削尖細節描寫
+
+Ambient Occlusion 周圍環境光遮蔽
+
+Screen Space Reflection 屏幕反射(花費昂貴)
+
+Depth Of Field 焦點模糊
+
+Motion Blur  動態模糊(Camera 移動時)
+
+Bloom  光暈
+
+Color Grading 畫面顏色 精細改變
+
 User Lut 場景背景顏色漸變 -> (使用一定要內建 SpectralLut_XXXXXX小圖片)
-Chromatic Aberration 高斯模糊
+
+Chromatic Aberration  色差效果
+(https://docs.unity3d.com/Manual/PostProcessing-ChromaticAberration.html)
+
 Grain	雜訊效果
-Vignette   黑暗效果
+
+Vignette   周圍漸暗效果

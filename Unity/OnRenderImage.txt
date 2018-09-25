@@ -29,7 +29,7 @@
     // Use this for initialization
     void Start () {
         m_CurShader = Shader.Find(m_ShaderName);
-        if (!SystemInfo.supportsImageEffects)
+        if (!SystemInfo.supportsImageEffects)		//判斷是否支持畫面特效
         {
             enabled = false;
             return;
@@ -61,3 +61,16 @@
         }
 
     }
+
+
+
+解釋：調用 OnRenderImage 函數來實現。函數負責從 Unity渲染器抓當前的render texture
+	，使用Graphics.Blit()函數再傳遞 Shader（通過 sourceTexture 參數），
+	再返回一個處理後的圖像再次傳遞回 Unity渲染器（通過destTexture參數）。
+
+這兩行參數互相搭配是處理畫面特效的很常見的方法。
+OnRenderImage：攝影機上的任何腳本都可以收到這個回調
+（必須放置一個 Camera 上）。允許你修改最後的Render Texture。
+
+
+Graphics.Blit：sourceTexture 會成為 material 的 _MainTex。

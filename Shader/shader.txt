@@ -4,6 +4,14 @@ https://blog.csdn.net/mobilebbki399/article/details/50493117
 https://www.patreon.com/posts/quick-game-art-15265060
 https://www.patreon.com/posts/quick-game-art-15121329
 
+
+
+o.vertex = UnityObjectToClipPos(v.pos);
+o.uv =   TRANSFORM_TEX(v.texcoord,_MainTex);    =>  o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+o.normal = UnityObjectToWorldNormal(normal);	
+(法線詳解 : https://blog.csdn.net/candycat1992/article/details/41605257)
+
+
 Unity座標系轉換
 
 模型座標 -> 世界座標 -> 相機座標  -(投影變換)>  剪裁座標 -> NDC[螢幕空間，假如 1280x720 => x:1280 y:720] -> 屏幕座標
@@ -40,8 +48,7 @@ Shader 型態
 	*Vector
 	*2D
 
-o.uv =   TRANSFORM_TEX(v.texcoord,_MainTex);    =>  o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-o.vertex = UnityObjectToClipPos(v.pos);
+_Time.x 、 _Time.y 、 _Time.z 、 _Time.w  => (t/20, t, t*2, t*3)
 
 
 Tags {}
@@ -108,13 +115,33 @@ ShadowCaster : 物體深度渲染到 陰影紋理 或 深度紋理
 PrepassBase : 遺留的延遲渲染，Pass 渲染法線 和 高光反射的指數部分
 PrepassFinal : 遺留的延遲渲染，Pass通過合併紋理、光照、自發光來取得最後的顏色
 
+---------------------------------------------------------------------------
 
 * 抓取 (螢幕位置) 渲染
-GrabPass{ "GrabPassTexture" }
 
-------------------------------------------------
+GrabPass{ "GrabPassTexture" }
+sampler2D GrabPassTexture;
+
+v2f vert(appdata_base v)
+{
+	o.grabPos = ComputeGrabScreenPos(o.pos);   //MVP空間轉到螢幕空間
+}
+half4 frag(v2f i) : SV_Target		//用tex2Dproj、UNITY_PROJ_COORD等，可以處理跨平台等問題。
+{
+	fixed4 color = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.grabPos));
+}
+
+
+fixed4 frag (v2f v) : SV_Target
+{
+	float2 wcoord = (v.scrpos.xy / v.scrpos.w);
+	return fixed4(wcoord , 0 , 0);
+}
+
 
 * 抓取場景物件深度
+
+sampler2D _CameraDepthTexture;
 
 v2f vert()
 {
@@ -125,36 +152,63 @@ fixed4 frag (v2f i)
 {
 	float depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r;
 	depth = LinearEyeDepth(depth);
-}
 
------------------------------------------------------------
+
+	---------------------------------------------------------------------------
+
+	float depth = UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv));
+
+	float linear01Depth = Linear01Depth(depth);	//將深度圖以 Linear 方式顯示，轉換成[0,1]內的線性變化深度值				
+	return linear01Depth;				
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 
 * 空間計算轉換
 
 	struct v2f
 	{
 		float3 vertex : SV_POSITION;
-		float3 worldvertpos : TEXCOORD0;
 	}
 	v2f vert(appdata_base v)
 	{	
-		o.vertex = UnityObjectToClipPos(v.vertex);
+		1. o.vertex = UnityObjectToClipPos(v.vertex); 
+			<= or => 
+				mul(unity_ObjectToWorld, v.vertex).xyz; 物體座標位置，返回float3
+		
+
+
+		* 世界座標求算 ---------------------------------------
+
 		float3 worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-		(不用歸一化)UnityObjectToWorldNormal(normal);	物體法線座標，返回float3 (*和底下是一模一樣的意思)
-		float3 worldNormal = normalize(mul(v.normal , (float3x3)unity_WorldToObject)); 世界座標法線向量
-		mul(unity_ObjectToWorld, v.vertex).xyz; 物體座標位置，返回float3		
+		* 物體法向量求算 -------------------------------------
 
-		*有時候會碰到需要算出x、y、z、w的uv貼圖，因此要這麼寫
-		(float4是返回型態) ComputeGrabScreenPos(o.pos);	抓取物件法線座標，要計算xyzw紋理貼圖時，取用
+		float3 worldNormal = normalize(mul(v.normal , (float3x3)unity_WorldToObject)); 世界座標法線向量
+		
+		--------------------------------------------------------
+		
+		* Camera 世界座標位置
+
+		_WorldSpaceCameraPos	//相機的世界座標空間位置
+		
+		---------------------------------------------------------
+
+		* 攝影機照射方向
+
+		UnityWorldSpaceViewDir(o.worldPos)	//輸入一個頂點位置，返回頂點位置到攝影機照射的方向(沒有規一化)
+		UnityWorldSpaceViewDir == _WorldSpaceCameraPos.xyz - mul(unity_ObjectToWorld, v.vertex.xyz);
+
+		---------------------------------------------------------
+
+		* 模型空間的燈光位置方向
+		
+		ObjSpaceLightDir(float3)
+		normalize(_WorldSpaceLightPos0.xyz) == normalize(UnityWorldSpaceLightDir(float4)) //輸入一個頂點位置，判斷頂點位置到光源的方向(沒有規一化)
+	
+		---------------------------------------------------------
 	}
 	
-	*其他常用
-		_WorldSpaceCameraPos	//相機的世界座標空間位置
-		ObjSpaceLightDir(float3)	//模型空間的燈光位置方向
-		normalize(_WorldSpaceLightPos0.xyz) == normalize(UnityWorldSpaceLightDir(float4))	//輸入一個頂點位置，判斷頂點位置到光源的方向(沒有規一化)
-		UnityWorldSpaceViewDir(float4)	//輸入一個頂點位置，返回頂點位置到攝影機照射的方向(沒有規一化)
-
 
 * #pragma 和 #include 內建函式
 
@@ -203,8 +257,35 @@ return fixed4(ambient + diffuse, 1);
 ------------------------------------------------
 ---------------- 切線空間 ---------------------
 
+# tengent space rotation matrix 是 float3x3( v.tangent.xyz, binormal, v.normal)
+
+struct appdata 
+{
+	float4 tangent : TANGENT;
+};
+
+# 解析 tengent 要用float4 而不是 float3 :
+   Maya 計算vertex 的 tangent 是靠 UV，而UV的順序有正向和反向，
+  例如我們在作一個玩全對稱的模型時，UV通常為了節省空間，我們會先unwrap
+   一半 mesh 後 把另外一半反過來重疊UV。這時候就有UV是正向和反向。為了
+  計算出正確的tangent space 我們需要第四個float 去記錄UV的方向
+
+binormal = cross( normalize(v.normal), normalize(v.tangent.xyz)) *  v.tangent.w  公式
+
+# TANGENT_SPACE_ROTATION : 將 object space 轉換到 tangent space中。
+  就是完成以上的步驟，使用後會自動定義了 rotation 這個變數
+
+# TRANSFER_VERTEX_TO_FRAGMENT : 將光照信息傳遞給像素著色器。
+  在 AutoLight.cginc 定義，會根據 pass 處理的光源類型來計算光源座標的具體值
+  ，來進行和 shadow 相關的計算等。
+
+
+v2f vert(appdata_tan v)
+{
+	o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
+}
+
 * 進行切線空間計算時，需先轉換成世界座標後，才能轉換成為切線座標
-* TANGENT_SPACE_ROTATION
 
 fixed4 packedNormal = tex2D(_BumpTex, i.uv.zw);
 fixed3 tangentNormal = UnpackNormal(packedNormal);	//將 Texture Type -> Normal Map，取得正確的法向量
@@ -269,6 +350,37 @@ inline float4 LightingCustomDiffuse (SurfaceOutput s, fixed3 lightDir, fixed att
 3. finalcolor:final 
 ex : #pragma surface surf Lambert finalcolor:final 
 => void final(Input IN, SurfaceOutput o, inout fixed4 color){}
+
+
+4.
+float3 normal = UnpackNormal(tex2D(_NormalTex, IN.uv_NormalTex));
+	=> 為甚麼要用 UnpackNormal?  通常要把貼圖"Texture Type"設置為 "Normal Map"才會顯示正確。
+		UnpackNormal 直接幫我們處理了這件事
+
+-------------- UnpackNormal 函式介紹 ----------------------
+inline fixed3 UnpackNormalDXT5nm (fixed4 packednormal)
+{
+	fixed3 normal;
+	normal.xy = packednormal.wy * 2 - 1;
+#if defined(SHADER_API_FLASH)
+	// Flash does not have efficient saturate(), and dot() seems to require an extra register.
+	normal.z = sqrt(1 - normal.x*normal.x - normal.y * normal.y);
+#else
+	normal.z = sqrt(1 - saturate(dot(normal.xy, normal.xy)));
+#endif
+	return normal;
+}
+ 
+inline fixed3 UnpackNormal(fixed4 packednormal)
+{
+#if (defined(SHADER_API_GLES) || defined(SHADER_API_GLES3)) && defined(SHADER_API_MOBILE)
+	return packednormal.xyz * 2 - 1;
+#else
+	return UnpackNormalDXT5nm(packednormal);
+#endif
+}
+------------------------------------------------------------------	
+
 -----------------------------------------------
 ------------- Shader 函式使用解析 -------------   (重要)
 
