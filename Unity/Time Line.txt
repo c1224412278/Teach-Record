@@ -3,11 +3,20 @@ Lock 鎖定，防止不小心做更改
 
 
 .playable 檔案資料 :
-	Wrap Mode : Loop 、 None 、 Hode(保持)
+	Update Method : GameTime (受遊戲時間影響) 、 Unscaled Game Time(不受遊戲時間影響)
+ 	Wrap Mode : Loop 、 None 、 Hode(保持)
 	Frame Rate : 每秒播放多少偵數
 	Duration Mode : Based On Clips => 播放到結束
 			Fixed Length => 可以設定播放結束的時間
 
+
+Active		(播放結束後，將物體顯示)
+
+Inactive	(播放結束後，將物體隱藏)
+
+Revert		(播放結束後，返回第一偵)
+
+Leave As Is	(播放結束後，保持在最後一偵)
 
 ------------		重點 			--------------------
 
@@ -16,14 +25,13 @@ Lock 鎖定，防止不小心做更改
 
 Ex : public class PlayableBehaviourSample : PlayableAsset
      {
-    	public ExposedReference<GameObject> _target;
-    	private Transform targetObject;
-    	
-	public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+	public Transform aaa;			// 只能放 Project 視窗中的物件
+	public ExposedReference<Transform> targetObject;	// 可放置 Hierarchy 視窗中的物件
+    	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
     	{
-        	var scriptPlayable = ScriptPlayable< PlayableBehaviour腳本 >.Create(graph);
-        	targetObject = _target.Resolve(graph.GetResolver()).GetComponent<Transform>();
-        	scriptPlayable.GetBehaviour().target = targetObject;
+        	(繼承PlayableBehaviour腳本) testScript = new (繼承PlayableBehaviour腳本)();
+        	var scriptPlayable = ScriptPlayable<(繼承PlayableBehaviour腳本)>.Create(graph);
+        	scriptPlayable.GetBehaviour().targetObject = targetObject.Resolve(graph.GetResolver()).GetComponent<Transform>();
         	return scriptPlayable;
     	}
      }
@@ -36,6 +44,7 @@ Ex : public class PlayableBehaviourSample : PlayableAsset
 
 * TimelineAsset 和 PlayableBehaviour 引用方法
 https://blog.csdn.net/beihuanlihe130/article/details/79233320
+BasicPlayableBehaviour 教學篇 : https://blog.csdn.net/ILYPL/article/details/78062591
 
 
 * Cinemachine 攝影機控制套件 - Unity Asset Store內建提供
@@ -74,7 +83,7 @@ https://blog.csdn.net/beihuanlihe130/article/details/79233320
 		
 	
 	* Cinemachine Mixing Camera 
-		( 相機螢幕分享 )
+		( 相機螢幕共享 )
 
 	* State Driven Camera ( 可以針對角色的Animator做出攝影機切換 *非常強大 )
 		( *一定要放子物件 )
@@ -83,5 +92,4 @@ https://blog.csdn.net/beihuanlihe130/article/details/79233320
 		( * 一定要放子物件，當子物件攝影機被遮擋會自動切換到最好的攝影機)
 
 打架特寫鏡頭 :  https://zhuanlan.zhihu.com/p/29585350
-BasicPlayableBehaviour 教學篇 : https://blog.csdn.net/ILYPL/article/details/78062591
-
+Cinemachine 套件教學 : http://m.gad.qq.com/article/detail/38458

@@ -150,9 +150,14 @@ v2f vert()
 }
 fixed4 frag (v2f i)
 {
-	float depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r;
-	depth = LinearEyeDepth(depth);
 
+	SAMPLE_DEPTH_TEXTURE	//處理平台所造成的差異
+	float d = SAMPLE_DEPTH_TEXTURE(_cameraDepthTexture,i.uv)	//對深度紋理進行採樣
+
+""" 要求物體的 Depth 值就用這個
+
+	SAMPLE_DEPTH_TEXTURE_PROJ  //使用 tex2Dproj 對深度紋理進行投影
+        float sceneZ = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos)));
 
 	---------------------------------------------------------------------------
 
