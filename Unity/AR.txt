@@ -1,0 +1,78 @@
+Camera Device Mode Setting（相機模式）：
+	MODE_DEFAULT：速度和效率之間
+	MODE_OPTIMIZE_SPEED：速度優先
+	MODE_OPTIMIZE_QUALITY：質量優先
+
+Max Simultaneous Image Targets（同時檢測到的ImageTarget）：
+	如果在攝像機裡面同時出現多個 image target 那麼 Max Simultaneous Image Targets決定能否都識別。
+
+
+CameraDirection（調用的設備攝像機）：
+	CAMERA_DEFAULT：默認攝影機
+	CAMERA_BACK：後置攝影機
+	CAMERA_FRONT：前置攝影機
+
+
+World Center Mode（世界中心座標設定，定義誰為世界座標的中心點 ）：
+	SPECIFIC_TARGET：自定義一個可跟蹤的物體作為世界中心。 
+	FIRST_TARGET：第一個進入你的視線的可跟蹤的物體 
+	CAMERA：相機在固定的位置
+
+
+* ImageTarget > DefaultTrackableEventHandler.cs 
+	protected virtual void OnTrackingFound()	//辨識到圖片時
+	protected virtual void OnTrackingLost()		//離開辨識時
+
+
+			or 
+
+
+	public TrackableBehaviour trackableBehaviour;
+    
+	private void Start()
+    	{
+        	trackableBehaviour.RegisterTrackableEventHandler(this);
+    	}
+   
+	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
+    	{
+        	if (newStatus == TrackableBehaviour.Status.TRACKED)
+        	{
+            		Debug.Log("辨識到物件");
+        	}
+        	else
+        	{
+            		Debug.Log("離開辨識");
+        	}
+    	}
+
+
+
+* Device Tracker ( 新版追蹤設定 )
+
+	1. AR 內建陀螺儀 (Android可直接省略陀螺儀 Code)
+		勾選 Enable device pose tracking ， 並將 Tracking mode => ROTATION
+
+	2. 離開辨識，物件不刪除
+		"取消"勾選 Enable device pose tracking 
+
+		[SerializeField]private TrackableBehaviour _trackableBehaviour;
+		
+
+		//////////////要呼叫以下方法，開啟呼叫 EnableExtendeTracking ， 關閉呼叫 DisableExtendeTracking
+    		public void EnableExtendeTracking()
+    		{
+        		ObjectTracker tracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
+        		tracker.Stop();		//關閉 Vuforia 辨識功能
+        		((ImageTarget)_trackableBehaviour.Trackable).StartExtendedTracking();
+        		tracker.Start();	//開啟 Vuforia 辨識功能
+    		}
+
+    		public void DisableExtendeTracking()
+    		{
+        		ObjectTracker tracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
+        		tracker.Stop();
+        		((ImageTarget)_trackableBehaviour.Trackable).StopExtendedTracking();
+        		tracker.Start();
+    		}
+
