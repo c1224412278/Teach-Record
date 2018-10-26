@@ -1,0 +1,28 @@
+參考網址 : 
+ http://www.arkaistudio.com/blog/2016/06/19/unity-ugui-%E5%8E%9F%E7%90%86%E7%AF%87%E4%BA%94%EF%BC%9Aauto-layout-%E8%87%AA%E5%8B%95%E4%BD%88%E5%B1%80/
+
+* Canvas Group - 可使 Canvas 進行 alpha 的切換動作
+
+
+(掛父物件) Horizontal Layout Group - (使子物件)自動水平對齊
+
+	* Padding (間隔)
+	* Spacing (子物件彼此的空白處)
+	* Child Aignment (靠向哪裡對齊)
+	* Child Control Size (當變成手動對齊時，子物件有使用(Layout Element)必須勾選此項目才會有反應)
+	* Child Force Expand (判斷是否使 Horizontal Layout Group 不自動對齊，改成手動對齊)
+
+(掛父物件) Content Size Fitter - 設定父物件配合子物件進行縮放
+* 子物件必須掛有 Layout Element 元件才行
+	* Horizontal Fit - 配合子物件的 Layout Element 寬度
+	* Vertical Fit - 配合子物件的 Layout Element 長度
+
+
+
+(掛子物件) Layout Element (配合父物件自動改變自身 Size)
+	* Min Width (最小寬度)
+	* Min Height (最小高度)
+	* Preferred Width (最大寬度)
+	* Preferred Height (最大高度)
+	* Fiexible width (額外寬度) - 當還有額外空間時，則會分配給他
+	
