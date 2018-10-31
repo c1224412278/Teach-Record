@@ -1,0 +1,42 @@
+* 一般委派
+
+public delegate void CallFunc();
+public delegate void CallFuncO(GameObject sender);
+public delegate void CallFuncOP(GameObject sender, EventArgs args);
+
+* 一般事件用法
+
+public event CallFunc _CallFunc;
+# 事件僅供 += 、 -= 來(新增)(刪除)方法
+
+
+----------------------------------------------------------------------------
+
+一般委派無法進行 class 的傳遞，因此有碰出一個新方案
+
+------------- 無參數傳遞 -----------------------
+
+#puclic event EventHandler CallFuncOP();
+
+public void Fn_function(object sender , EventArgs s)
+{
+	
+}
+
+CallFuncOP += Fn_function;
+
+-------------- 類別參數傳遞 ---------------------
+
+puclic event EventHandler<Data> CallFuncOP();
+
+public class Data : EventArgs
+{
+
+}
+
+public void Fn_function(object sender , Data data)
+{
+
+}
+
+CallFuncOP += Fn_function;
