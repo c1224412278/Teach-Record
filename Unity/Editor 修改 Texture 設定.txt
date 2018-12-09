@@ -1,0 +1,19 @@
+public class TextureEditor
+{
+    [MenuItem("TextureEdit/Edit")]
+    private static void Fn_EditTexture()
+    {
+        Object targetObj = Selection.activeObject;
+        if (targetObj && targetObj is Texture)
+        {
+            string path = AssetDatabase.GetAssetPath(targetObj);
+            TextureImporter texture = AssetImporter.GetAtPath(path) as TextureImporter;
+            texture.textureType = TextureImporterType.Sprite;
+            texture.spritePixelsPerUnit = 1;
+            texture.filterMode = FilterMode.Trilinear;
+            texture.mipmapEnabled = false;
+            texture.textureFormat = TextureImporterFormat.AutomaticTruecolor;
+            AssetDatabase.ImportAsset(path);
+        }
+    }
+}
