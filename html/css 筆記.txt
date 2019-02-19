@@ -1,21 +1,73 @@
+bootstrap 官方前端教學 : https://bootstrap.hexschool.com/docs/4.0/components/forms/
+
 Html  常用標籤 http://web.thu.edu.tw/hzed/www/tag.htm *****
 section 標題 + 內容
+
+-----------------------------------------------------------------------------------------
+
+* meta Attributes
+
+name = descript 以及 name=keywords，每個 meta 使用 name 的時候，都會搭配 content 來呈現資訊內容，
+簡單來說，name 代表資訊項目，content 代表資訊值
+
+<META HTTP-EQUIV="refresh" CONTENT="15; url=http://www.pcnet.idv.tw/">
+		說明：
+			refresh==>更新或重整
+			15==>15秒後執行下一動作
+			; => CONTENT內要作的每件事" "，分別以分號區隔
+			url=http://www.pcnet.idv.tw/ =>指定轉換到此網頁
+
+<meta name="Creation-Date" content="01-jan-2003 20:40:01">	網頁何時完成
+		說明：
+			Creation-Date==>創作日期
+			01-jan-2003 20:40:01==>詳細日期時間
+
+<link rev="made" href="mailto:pcnettw@yahoo.com.tw">
+		說明：網頁作者信箱或網址陳述
+			rev==>正向關聯
+			made=>網頁製造者
+			href==>您的信箱或網址
+
+<meta name="description" content="網頁簡短描述">	用來寫網頁的簡短描述。
+<meta name="keywords" content="網頁關鍵字">	用來放置網頁關鍵字。
+<meta name="author" content="作者姓名">		記錄網頁的作者名稱
+<meta name="generator" content="編輯器名稱">	用來記錄網頁編輯器名稱
+<meta name="copyright" content="網頁版權">	用來標示網頁的版權或著作權聲明
+<meta name="distribution" content="網頁發佈地區">	用來記錄網頁的發佈地區
+
+
+<meta http-equiv="Content-Type" content="text/html"; charset="uft-8">	網頁內容的種類以及編碼
+<meta http-equiv="Content-Language" content="zh-TW">			網頁所使用的語言種類
+<meta http-equiv="Refresh" content="time">				自動更新網頁的時間
+<meta http-equiv="Pragma" content="no-cache">				禁止瀏覽器用快取開啟網頁
+<meta http-equiv="windows-Target" content="_top">			強制在單一視窗中顯示網頁
+
 
 
 -----------------------------------------------------------------------------------------
 ****** CSS  選擇器用法  http://www.w3school.com.cn/cssref/css_selectors.asp
 
+-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;		//參考網址 : http://zh-tw.learnlayout.com/box-sizing.html
+// 使用 padding or border or other css 會造成內距和邊框增加，使用它，內距和邊框將不會增加元素本身的寬度
+
+
+column-count 以欄方式，顯示文字
+column-gap 設定欄與欄的間距
+
 
 position:static  不會被特別定位，瀏覽器預設
 position:relative  表現的和 static 一樣，除非你增加了一些額外的屬性。
-position:relative  固定定位
 position:absolute  固定定位
 
 
 overflow : 	判斷文字 、 圖片是否要顯示(超過範圍之類的)
 white-space: nowrap	規定文字不斷行
 
+text-align: justify; + text-justify: inter-word;	文字垂直對齊
 text-transform : capitalize	字母開頭大寫 
+text-decoration : none		文字修飾 - 取消底線等等
 justify-content 搭配 display:flew (水平對齊) (塞在父物件，子物件移動)
 align-items (垂直對齊) (同上)  
 align-self  (在使用過 align-items 的情況下，align-items位置已經固定，由此函式去改寫物件位置)
@@ -48,7 +100,7 @@ word-spacing	字與字之間的距離
 letter-spacing  字與字之間增加空白
 
 
-width: calc(可以進行不同單位的數學運算)
+width: calc(可以進行不同單位的數學運算 : % - px)
 
 1.ul -> li 清單
 list-style: none;	** 刪除開頭˙
