@@ -3,6 +3,20 @@ bootstrap 官方前端教學 : https://bootstrap.hexschool.com/docs/4.0/components/for
 Html  常用標籤 http://web.thu.edu.tw/hzed/www/tag.htm *****
 section 標題 + 內容
 
+* 選項選擇 - 
+
+<input type="checkbox" value="option1" disabled> => (disabled) 讓按鈕失去功能
+
+-- 單選 --
+
+<input type="radio" name="Options" value="option1">
+<input type="radio" name="Options" value="option2">
+
+-- 可多選 ---
+
+<input type="radio" value="option1">
+<input type="radio" value="option2">
+
 -----------------------------------------------------------------------------------------
 
 * meta Attributes

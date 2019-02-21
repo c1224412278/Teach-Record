@@ -1,3 +1,0 @@
-Unity -------------
-
-上傳 Assets / Packages / ProjectSettings 就好

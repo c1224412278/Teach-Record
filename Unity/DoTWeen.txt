@@ -1,3 +1,23 @@
+* https://blog.csdn.net/LIQIANGEASTSUN/article/details/45892907  (實用) 用法詳細介紹
+
+-------------------------------	Sequence ----------------------------------------
+
+Sequence s = DOTween.Sequence();	//執行多筆動作
+
+s.Rewind() 				//回到原位
+s.SetLoops(-1, LoopType.Yoyo);		//循環播放 (-1 為 無限次，)
+s.SetUpdate(true);	//允許不受 timeScale 的影響
+s.SetAutoKill(false);   //動畫播放完成是否自動銷毀 Tweener
+
+------------------------------- tweener -----------------------------------------
+
+* https://blog.csdn.net/u013762848/article/details/82256276 緩動函數
+-> tweener.SetEase(Ease.InQuad); 
+
+this.transform.DOPlayForward();         //使 tweener 是否繼續往前播放
+this.transform.DOPlayBackwards();       //使 tweener 是否回播
+
+
 DOTween.To (() => XXX.localPosition , x => XXX.localPosition = x , Vector3.zero , 1); 
 		//目標			//目標的 x 軸		     //移動位置  //幾秒
 
@@ -10,11 +30,3 @@ tweener01.Play() ; 		//開始
 tweener01.Restart() ; 		//重新開始
 tweener01.Rewind() ; 		//直接回原始位置
 
-Sequence mySequence = DoTween.Sequence() ;		//執行多筆動作
-
-***注意*** Update每偵執行會出錯
-
-.SetLoops (4 , LoopType.Yoyo)		**注意YOYO是最後重複執行
-	(次數) (來回)
-
-sequence.Rewind 回到原位

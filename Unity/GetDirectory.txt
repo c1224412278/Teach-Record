@@ -1,2 +1,10 @@
 Path.GetDirectoryName	
 AssetDatabase.GetAssetPath
+
+
+-- 找尋 type = Sprite 的資源
+
+string[] folders = new string[] { "Assets/Resources" };
+string[] findasset = AssetDatabase.FindAssets("t:Sprite" , folders);
+
+* AssetDatabase.FindAssets 尋找到為 GUID，需透過 AssetDatabase.GUIDToAssetPath 進行轉換來取得 ( 資源路徑 )

@@ -1,3 +1,5 @@
+* http://www.cnblogs.com/neverdie/p/Unity3D_event_delegate_1.html 冈秆 - 把σ呼
+
 〆 event Action 礚肚 (把计Τ礚)
 〆癠 event Fcun   Τ肚 (把计Τ礚)
 

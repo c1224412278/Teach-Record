@@ -19,4 +19,4 @@ Create from Greyscale 使用此功能此會顯示緩衝和過濾的選項
 **************************	Advanced	***************************
 
 Read/Write Enabled	(如沒有需要用到Mesh、網格處理)	則可以關閉
-Generate Mip Maps	3D 模型做 LOD 用的，不需要關閉
+Generate Mip Maps	( 3D模型 ) 類似 LOD 技術，根據攝影機的距離來切換不同精度的貼圖
