@@ -1,22 +1,31 @@
-	Collision 2D
-
-Edge Collision 2D => 畫直線 碰撞器(曲線無法)
-Polygon Collision 2D => 2D圖片填圖 碰撞器
 
 
-	Joint 2D
+*** Joint 詳細使用及介紹 :    https://blog.csdn.net/RICKShaozhiheng/article/details/78509632
+
 
 Distance Joint 2D => https://docs.unity3d.com/Manual/class-DistanceJoint2D.html
+			youtube : https://www.youtube.com/watch?v=wpd2W3bIwx4&t=0s
 ( 與關節保持一定距離 )
+	* Rigidbody2D -> Gravity 一定要開啟
 
+			-----------------------------------
+	* Enable Collision (如果 Connected Rigidbody 有綁定物件時，判斷兩個物件是否可以碰撞)
+	* Connected Rigidbody (綁定連結物件)
+	* Auto Configure Connect (雷人用)
+	* Anchor (設定自身錨點)
+	* Connected Anchor (設定要連結的錨點 ps : 自身的錨點會在連結的錨點附近重複擺動)
+	* Auto Configure Distance (雷人用)
+	* Distance (物件最大相差的距離)
 
 Fixed Joint 2D => https://docs.unity3d.com/Manual/class-FixedJoint2D.html
-( 拖拉物體 )
+( 翹翹板 )
 
+	* Rigidbody2D -> Gravity 一定要開啟
+			
+			-------------------------------------
 
-Friction Joint 2D => https://docs.unity3d.com/Manual/class-FrictionJoint2D.html
-( 機關階梯 )
-Youtube : https://www.youtube.com/watch?v=1-h43fzNB7U
+	* Damping Ratio (抑制彈簧振盪的程度，0~1值越大動越少)
+	* Frequency (值越高，彈簧越僵硬 。 如果設為 0 ，則完全僵硬)
 
 
 Hinge Joint 2D => https://docs.unity3d.com/Manual/class-HingeJoint2D.html
