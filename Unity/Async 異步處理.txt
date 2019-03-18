@@ -1,0 +1,9 @@
+
+http://www.stevevermeulen.com/index.php/2017/09/using-async-await-in-unity3d-2017/   		//詳細使用說明
+
+
+* 只要方法有使用 async 就可以再內部呼叫 await
+async void Fn_Foo()
+{
+	await ..............;
+}

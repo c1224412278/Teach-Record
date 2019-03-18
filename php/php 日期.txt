@@ -1,0 +1,9 @@
+
+
+date_default_timezone_set("America/New_York");		//設定區域的時間
+echo "The time is " . date("h:i:sa"); 
+
+H  -  24小時格式的一小時（00到23）
+h  - 帶有前導零的一小時12小時格式（01到12）
+i  - 帶前導零的分鐘（00到59）
+s  - 帶前導零的秒數（00到59）

@@ -30,3 +30,10 @@ try
 $sql = "SELECT * FROM `datas` WHERE Password = :password";
 $sth = $dbh->prepare($sql);
 $sth->execute(array(':password'=>1234));
+
+
+
+
+define('name' , 100)		//宣告變數。優點:保險
+
+
