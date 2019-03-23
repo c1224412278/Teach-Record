@@ -16,6 +16,13 @@ after() - 在被選元素之插入內容
 before() - 在被選元素之前插入內容
 
 
+
+
+<input type="text" name="name" id="first_name">		// 需要使用者輸入的字串的時候，可以預設字串
+$("#first_name").attr('placeholder' , 'Johnny');	// (placeholder 為佔位符號 , "Johnny" 為預設字串的內容) 
+
+
+
 *****************************
 
 阻止事件冒泡 http://www.cnblogs.com/zhongweiv/archive/2011/11/04/EventBubbling.html

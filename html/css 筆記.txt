@@ -138,6 +138,15 @@ css animation 全解析 : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Anim
 :last-child	//父元素的最後一個子物件
 
 
+<h2 id="text">
+(#text) :: after or ::before		// after 在目前後方出現 。 before 在目標前方出現 。
+{
+	content:  attr(id);		// content 顯示要添加的內容 。
+					// attr (若不想使內容固定，則使用 attr(id) 便可顯示 "text" )。
+}
+
+
+
 **********************************************************************
 
 
