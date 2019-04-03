@@ -1,32 +1,32 @@
-* ÂoÃè®ÄªG 
+ï»¿* æ¿¾é¡æ•ˆæœ 
 
-   (Unity 5.6 ¥H¤Wªºª©¥» Import -> Effect -> Image Effects ³Q¨ú¥N¬° (Asset Store°Ó©±) Legacy Image Effects)
+   (Unity 5.6 ä»¥ä¸Šçš„ç‰ˆæœ¬ Import -> Effect -> Image Effects è¢«å–ä»£ç‚º (Asset Storeå•†åº—) Legacy Image Effects)
 -> Legacy Image Effects .vs. Post Processing
-(¥i°ÊºA­×§ï)		    (¤£¥i°ÊºA­×§ï)
+(å¯å‹•æ…‹ä¿®æ”¹)		    (ä¸å¯å‹•æ…‹ä¿®æ”¹)
 
 
-Antialiasing §Ü¿÷¾¦ -> (FXAAªá¶O«K©y) 
-			Jitter -> Spread §İ°Ê¶Ç¼½
-			Blending -> Stationary ÀR¤î¼Æ­È
-			Sharpen «d¦y²Ó¸`´y¼g
+Antialiasing æŠ—é‹¸é½’ -> (FXAAèŠ±è²»ä¾¿å®œ) 
+			Jitter -> Spread æŠ–å‹•å‚³æ’­
+			Blending -> Stationary éœæ­¢æ•¸å€¼
+			Sharpen å‰Šå°–ç´°ç¯€æå¯«
 
-Ambient Occlusion ©P³òÀô¹Ò¥ú¾B½ª
+Ambient Occlusion å‘¨åœç’°å¢ƒå…‰é®è”½
 
-Screen Space Reflection «Ì¹õ¤Ï®g(ªá¶O©ù¶Q)
+Screen Space Reflection å±å¹•åå°„(èŠ±è²»æ˜‚è²´)
 
-Depth Of Field µJÂI¼Ò½k
+Depth Of Field ç„¦é»æ¨¡ç³Š
 
-Motion Blur  °ÊºA¼Ò½k(Camera ²¾°Ê®É)
+Motion Blur  å‹•æ…‹æ¨¡ç³Š(Camera ç§»å‹•æ™‚)
 
-Bloom  ¥ú·w
+Bloom  å…‰æšˆ
 
-Color Grading µe­±ÃC¦â ºë²Ó§ïÅÜ
+Color Grading ç•«é¢é¡è‰² ç²¾ç´°æ”¹è®Š
 
-User Lut ³õ´º­I´ºÃC¦âº¥ÅÜ -> (¨Ï¥Î¤@©w­n¤º«Ø SpectralLut_XXXXXX¤p¹Ï¤ù)
+User Lut å ´æ™¯èƒŒæ™¯é¡è‰²æ¼¸è®Š -> (ä½¿ç”¨ä¸€å®šè¦å…§å»º SpectralLut_XXXXXXå°åœ–ç‰‡)
 
-Chromatic Aberration  ¦â®t®ÄªG
+Chromatic Aberration  è‰²å·®æ•ˆæœ
 (https://docs.unity3d.com/Manual/PostProcessing-ChromaticAberration.html)
 
-Grain	Âø°T®ÄªG
+Grain	é›œè¨Šæ•ˆæœ
 
-Vignette   ©P³òº¥·t®ÄªG
+Vignette   å‘¨åœæ¼¸æš—æ•ˆæœ

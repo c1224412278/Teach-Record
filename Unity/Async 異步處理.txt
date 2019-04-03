@@ -1,14 +1,14 @@
-
-http://www.stevevermeulen.com/index.php/2017/09/using-async-await-in-unity3d-2017/   		//¸Ô²Ó¨Ï¥Î»¡©ú
+ï»¿
+http://www.stevevermeulen.com/index.php/2017/09/using-async-await-in-unity3d-2017/   		//è©³ç´°ä½¿ç”¨èªªæ˜
 
 ------------- using -------------------
 
-using System.Threading.Tasks;		=> ¨Ï¥Î Task
+using System.Threading.Tasks;		=> ä½¿ç”¨ Task
 
 
-------------- ¥Îªk ---------------------
+------------- ç”¨æ³• ---------------------
 
-* ¥u­n¤èªk¦³¨Ï¥Î async ´N¥i¥H¦A¤º³¡©I¥s await
+* åªè¦æ–¹æ³•æœ‰ä½¿ç”¨ async å°±å¯ä»¥å†å…§éƒ¨å‘¼å« await
 async void Fn_Foo()
 {
 	await ..............;

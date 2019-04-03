@@ -1,9 +1,9 @@
-* http://www.cnblogs.com/neverdie/p/Unity3D_event_delegate_1.html ¸Ô¸Ñ - °Ñ¦Òºô§}
+ï»¿* http://www.cnblogs.com/neverdie/p/Unity3D_event_delegate_1.html è©³è§£ - åƒè€ƒç¶²å€
 
-©e¬£ event Action µL¦^¶Ç­È (°Ñ¼Æ¥i¦³¥iµL)
-©e°U event Fcun   ¦³¦^¶Ç­È (°Ñ¼Æ¥i¦³¥iµL)
+å§”æ´¾ event Action ç„¡å›å‚³å€¼ (åƒæ•¸å¯æœ‰å¯ç„¡)
+å§”è¨— event Fcun   æœ‰å›å‚³å€¼ (åƒæ•¸å¯æœ‰å¯ç„¡)
 
-( ©w¸q¤W­±¨â¶µ®É¡A¥i¥H¤£¥Î©w¸q delegate )
+( å®šç¾©ä¸Šé¢å…©é …æ™‚ï¼Œå¯ä»¥ä¸ç”¨å®šç¾© delegate )
 
 public event EventHandler<TimeEventArgs> MoveCompletion ;
 public class TimeEventArgs : EventArgs
@@ -23,6 +23,6 @@ public class TimeEventArgs : EventArgs
 	}
 }
 
-·í«Å§iEventHandler , event ¥u¯à¦b«Å§i³o«¬ºAªº¨º­ÓÃş§O¨Ï¥Î¥L­Ì
+ç•¶å®£å‘ŠEventHandler , event åªèƒ½åœ¨å®£å‘Šé€™å‹æ…‹çš„é‚£å€‹é¡åˆ¥ä½¿ç”¨ä»–å€‘
 
 event() ; 

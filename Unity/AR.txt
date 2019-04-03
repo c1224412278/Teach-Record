@@ -1,27 +1,27 @@
-Camera Device Mode Setting¡]¬Û¾÷¼Ò¦¡¡^¡G
-	MODE_DEFAULT¡G³t«×©M®Ä²v¤§¶¡
-	MODE_OPTIMIZE_SPEED¡G³t«×Àu¥ı
-	MODE_OPTIMIZE_QUALITY¡G½è¶qÀu¥ı
+ï»¿Camera Device Mode Settingï¼ˆç›¸æ©Ÿæ¨¡å¼ï¼‰ï¼š
+	MODE_DEFAULTï¼šé€Ÿåº¦å’Œæ•ˆç‡ä¹‹é–“
+	MODE_OPTIMIZE_SPEEDï¼šé€Ÿåº¦å„ªå…ˆ
+	MODE_OPTIMIZE_QUALITYï¼šè³ªé‡å„ªå…ˆ
 
-Max Simultaneous Image Targets¡]¦P®ÉÀË´ú¨ìªºImageTarget¡^¡G
-	¦pªG¦bÄá¹³¾÷¸Ì­±¦P®É¥X²{¦h­Ó image target ¨º»ò Max Simultaneous Image Targets¨M©w¯à§_³£ÃÑ§O¡C
-
-
-CameraDirection¡]½Õ¥Îªº³]³ÆÄá¹³¾÷¡^¡G
-	CAMERA_DEFAULT¡GÀq»{Äá¼v¾÷
-	CAMERA_BACK¡G«á¸mÄá¼v¾÷
-	CAMERA_FRONT¡G«e¸mÄá¼v¾÷
+Max Simultaneous Image Targetsï¼ˆåŒæ™‚æª¢æ¸¬åˆ°çš„ImageTargetï¼‰ï¼š
+	å¦‚æœåœ¨æ”åƒæ©Ÿè£¡é¢åŒæ™‚å‡ºç¾å¤šå€‹ image target é‚£éº¼ Max Simultaneous Image Targetsæ±ºå®šèƒ½å¦éƒ½è­˜åˆ¥ã€‚
 
 
-World Center Mode¡]¥@¬É¤¤¤ß®y¼Ğ³]©w¡A©w¸q½Ö¬°¥@¬É®y¼Ğªº¤¤¤ßÂI ¡^¡G
-	SPECIFIC_TARGET¡G¦Û©w¸q¤@­Ó¥i¸òÂÜªºª«Åé§@¬°¥@¬É¤¤¤ß¡C 
-	FIRST_TARGET¡G²Ä¤@­Ó¶i¤J§Aªºµø½uªº¥i¸òÂÜªºª«Åé 
-	CAMERA¡G¬Û¾÷¦b©T©wªº¦ì¸m
+CameraDirectionï¼ˆèª¿ç”¨çš„è¨­å‚™æ”åƒæ©Ÿï¼‰ï¼š
+	CAMERA_DEFAULTï¼šé»˜èªæ”å½±æ©Ÿ
+	CAMERA_BACKï¼šå¾Œç½®æ”å½±æ©Ÿ
+	CAMERA_FRONTï¼šå‰ç½®æ”å½±æ©Ÿ
+
+
+World Center Modeï¼ˆä¸–ç•Œä¸­å¿ƒåº§æ¨™è¨­å®šï¼Œå®šç¾©èª°ç‚ºä¸–ç•Œåº§æ¨™çš„ä¸­å¿ƒé» ï¼‰ï¼š
+	SPECIFIC_TARGETï¼šè‡ªå®šç¾©ä¸€å€‹å¯è·Ÿè¹¤çš„ç‰©é«”ä½œç‚ºä¸–ç•Œä¸­å¿ƒã€‚ 
+	FIRST_TARGETï¼šç¬¬ä¸€å€‹é€²å…¥ä½ çš„è¦–ç·šçš„å¯è·Ÿè¹¤çš„ç‰©é«” 
+	CAMERAï¼šç›¸æ©Ÿåœ¨å›ºå®šçš„ä½ç½®
 
 
 * ImageTarget > DefaultTrackableEventHandler.cs 
-	protected virtual void OnTrackingFound()	//¿ëÃÑ¨ì¹Ï¤ù®É
-	protected virtual void OnTrackingLost()		//Â÷¶}¿ëÃÑ®É
+	protected virtual void OnTrackingFound()	//è¾¨è­˜åˆ°åœ–ç‰‡æ™‚
+	protected virtual void OnTrackingLost()		//é›¢é–‹è¾¨è­˜æ™‚
 
 
 			or 
@@ -38,34 +38,34 @@ World Center Mode¡]¥@¬É¤¤¤ß®y¼Ğ³]©w¡A©w¸q½Ö¬°¥@¬É®y¼Ğªº¤¤¤ßÂI ¡^¡G
     	{
         	if (newStatus == TrackableBehaviour.Status.TRACKED)
         	{
-            		Debug.Log("¿ëÃÑ¨ìª«¥ó");
+            		Debug.Log("è¾¨è­˜åˆ°ç‰©ä»¶");
         	}
         	else
         	{
-            		Debug.Log("Â÷¶}¿ëÃÑ");
+            		Debug.Log("é›¢é–‹è¾¨è­˜");
         	}
     	}
 
 
 
-* Device Tracker ( ·sª©°lÂÜ³]©w )
+* Device Tracker ( æ–°ç‰ˆè¿½è¹¤è¨­å®š )
 
-	1. AR ¤º«ØªûÁ³»ö (Android¥iª½±µ¬Ù²¤ªûÁ³»ö Code)
-		¤Ä¿ï Enable device pose tracking ¡A ¨Ã±N Tracking mode => ROTATION
+	1. AR å…§å»ºé™€èºå„€ (Androidå¯ç›´æ¥çœç•¥é™€èºå„€ Code)
+		å‹¾é¸ Enable device pose tracking ï¼Œ ä¸¦å°‡ Tracking mode => ROTATION
 
-	2. Â÷¶}¿ëÃÑ¡Aª«¥ó¤£§R°£
-		"¨ú®ø"¤Ä¿ï Enable device pose tracking 
+	2. é›¢é–‹è¾¨è­˜ï¼Œç‰©ä»¶ä¸åˆªé™¤
+		"å–æ¶ˆ"å‹¾é¸ Enable device pose tracking 
 
 		[SerializeField]private TrackableBehaviour _trackableBehaviour;
 		
 
-		//////////////­n©I¥s¥H¤U¤èªk¡A¶}±Ò©I¥s EnableExtendeTracking ¡A Ãö³¬©I¥s DisableExtendeTracking
+		//////////////è¦å‘¼å«ä»¥ä¸‹æ–¹æ³•ï¼Œé–‹å•Ÿå‘¼å« EnableExtendeTracking ï¼Œ é—œé–‰å‘¼å« DisableExtendeTracking
     		public void EnableExtendeTracking()
     		{
         		ObjectTracker tracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        		tracker.Stop();		//Ãö³¬ Vuforia ¿ëÃÑ¥\¯à
+        		tracker.Stop();		//é—œé–‰ Vuforia è¾¨è­˜åŠŸèƒ½
         		((ImageTarget)_trackableBehaviour.Trackable).StartExtendedTracking();
-        		tracker.Start();	//¶}±Ò Vuforia ¿ëÃÑ¥\¯à
+        		tracker.Start();	//é–‹å•Ÿ Vuforia è¾¨è­˜åŠŸèƒ½
     		}
 
     		public void DisableExtendeTracking()

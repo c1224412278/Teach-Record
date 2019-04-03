@@ -1,18 +1,18 @@
-Left Tangent -  Free¡G¦Û¥Ñ¦±½u¡A»PBroken®ÄªG°ò¥»¤@¼Ë¡C
-		Linear:½u©Ê¦±½u
-		Constant:¤§«e¤@ª½¬O¤W­ÓÂIªº­È¡AµM«áÀş¶¡ÅÜ¬°³o­ÓÂIªº­È¡C
+ï»¿Left Tangent -  Freeï¼šè‡ªç”±æ›²ç·šï¼Œèˆ‡Brokenæ•ˆæœåŸºæœ¬ä¸€æ¨£ã€‚
+		Linear:ç·šæ€§æ›²ç·š
+		Constant:ä¹‹å‰ä¸€ç›´æ˜¯ä¸Šå€‹é»çš„å€¼ï¼Œç„¶å¾Œç¬é–“è®Šç‚ºé€™å€‹é»çš„å€¼ã€‚
 
 public AnimationCurve m_AnimationCurve; 
 
-m_AnimationCurve.Evaluate(Time.time) => float 	** ¥u·|¨ú­È¨Ã¤£·|¸òµÛ¦±½u²¾°Ê
+m_AnimationCurve.Evaluate(Time.time) => float 	** åªæœƒå–å€¼ä¸¦ä¸æœƒè·Ÿè‘—æ›²ç·šç§»å‹•
 
 
 
-Keyframe[] ks = new Keyframe[3];		//³]©wÁä­È
-ks[0] = new Keyframe(0, 0);	//Áä­È¦ì¸m
-ks[0].inTangent = 0;		//¨¤«×±ÛÂà
-ks[1] = new Keyframe(4, 0);	//Áä­È¦ì¸m
-ks[1].inTangent = 45;		//¨¤«×±ÛÂà
-ks[2] = new Keyframe(8, 0);	//Áä­È¦ì¸m
-ks[2].inTangent = 90;		//¨¤«×±ÛÂà
+Keyframe[] ks = new Keyframe[3];		//è¨­å®šéµå€¼
+ks[0] = new Keyframe(0, 0);	//éµå€¼ä½ç½®
+ks[0].inTangent = 0;		//è§’åº¦æ—‹è½‰
+ks[1] = new Keyframe(4, 0);	//éµå€¼ä½ç½®
+ks[1].inTangent = 45;		//è§’åº¦æ—‹è½‰
+ks[2] = new Keyframe(8, 0);	//éµå€¼ä½ç½®
+ks[2].inTangent = 90;		//è§’åº¦æ—‹è½‰
 m_AnimationCurve = new AnimationCurve(ks); 

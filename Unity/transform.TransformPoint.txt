@@ -1,10 +1,10 @@
-¨Ï¥Î¤èªk
+ï»¿ä½¿ç”¨æ–¹æ³•
 
 
-V3 = ¥Ø¼Ğ¹ï¶H.transform.TransformPoint( ²¾°Ê¥Ø¼Ğ V3 ) ;
+V3 = ç›®æ¨™å°è±¡.transform.TransformPoint( ç§»å‹•ç›®æ¨™ V3 ) ;
 
 
-transform.TransformPoint ¥H¥Ø¼Ğ¹ï¶H¬°°ò·ÇÂI ¥[¤W ²¾°Ê¥Ø¼ĞªºV3¡A©Ò¨D¥XªºV3
+transform.TransformPoint ä»¥ç›®æ¨™å°è±¡ç‚ºåŸºæº–é» åŠ ä¸Š ç§»å‹•ç›®æ¨™çš„V3ï¼Œæ‰€æ±‚å‡ºçš„V3
 
 
-¥Ø¼Ğ¹ï¶H.transform.InverseTransformPoint( ²¾°Ê V3 ) ¦Û¤vªº¦ì¸mµLµø¡A²¾°Ê¨ì ( -¥Ø¼Ğ¦ì¸m ) ¦A¥[¤W (²¾°Ê V3)
+ç›®æ¨™å°è±¡.transform.InverseTransformPoint( ç§»å‹• V3 ) è‡ªå·±çš„ä½ç½®ç„¡è¦–ï¼Œç§»å‹•åˆ° ( -ç›®æ¨™ä½ç½® ) å†åŠ ä¸Š (ç§»å‹• V3)

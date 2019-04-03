@@ -1,4 +1,4 @@
-public static void UseParams(params int[] list)
+ï»¿public static void UseParams(params int[] list)
         {
             for (int i = 0; i < list.Length; i++)
             {
@@ -7,6 +7,6 @@ public static void UseParams(params int[] list)
             Console.WriteLine();
         }
 
-¦b°Ñ¼Æ«e­±¥[¤J params ¤U­±¥i¥Hª½±µ¿é¤J¼Æ­È¨ì°}¦C¸Ì­±¥h
+åœ¨åƒæ•¸å‰é¢åŠ å…¥ params ä¸‹é¢å¯ä»¥ç›´æŽ¥è¼¸å…¥æ•¸å€¼åˆ°é™£åˆ—è£¡é¢åŽ»
 
-*** ¤@­Ó¤èªk¥u¯à¦³¤@­Ó params
+*** ä¸€å€‹æ–¹æ³•åªèƒ½æœ‰ä¸€å€‹ params

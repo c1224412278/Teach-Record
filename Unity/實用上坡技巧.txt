@@ -1,4 +1,4 @@
-private Vector3 Vector3_MovePosition; 
+﻿private Vector3 Vector3_MovePosition; 
 private void Update()
 {
 	this.transform.forward = (Vector3_MovePosition - this.transform.position).normalized ; 

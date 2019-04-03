@@ -1,14 +1,14 @@
------- ºô§} -----
+ï»¿------ ç¶²å€ -----
 
-from urllib.parse import urlparse		//ºô§}Â^¨ú®M¥ó
+from urllib.parse import urlparse		//ç¶²å€æ“·å–å¥—ä»¶
 
------- ºô§}­ì©l½X -----
+------ ç¶²å€åŸå§‹ç¢¼ -----
 
-import requests		//Â^¨úºô­¶­ì©l½X
-¥Î requests.get(url) Àò±o html text
+import requests		//æ“·å–ç¶²é åŸå§‹ç¢¼
+ç”¨ requests.get(url) ç²å¾— html text
 
 
- * Beautifulsoup ºô­¶¸ÑªR®M¥ó
+ * Beautifulsoup ç¶²é è§£æå¥—ä»¶
 
 sp = BeautifulSoup(html.text, 'html.parser')
 sp.find('img')

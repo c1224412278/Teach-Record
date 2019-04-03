@@ -1,5 +1,5 @@
-
-* º©®g¥ú  --------------------------
+ï»¿
+* æ¼«å°„å…‰  --------------------------
 
 Shader "Custom/DiffuseVertexLevel" 
 {
@@ -56,7 +56,7 @@ Shader "Custom/DiffuseVertexLevel"
 }
 
 
-* Äõ§B¯S ¥ú·Ó ---------------------------
+* è˜­ä¼¯ç‰¹ å…‰ç…§ ---------------------------
 
 Shader "Custom/DiffusePixelLevel" {
 

@@ -1,19 +1,19 @@
-Bumped Diffuse ¥W¥Y®ÄªG¶K¹Ï
-Bumped Specular ¥W¥Y¤Î°ª¥ú¶K¹Ï
-Decal ªí­±²Ó¸`¶K¹Ï
-Diffuse ªí­±¶K¹Ï
-Diffuse Detail ªí­±²`«×¶K¹Ï
-Parallax Diffuse ¥W¥Y²`«×¶K¹Ï
-parallax Specular ²`«×°ª¥ú¶K¹Ï
-Specular ¤Ï®g°ª¥ú
-VertexLit ³»ÂI¹Bºâ
-FX ¯S®Ä
-GUI ¤¶­±§÷½è
-Mobile ¦æ°Ê¸Ë¸m¿ï¥Î§÷½è
-Nature ´Óª«½è·P
-Particals ¤À¤l¯S®Ä
-Reflective ¤Ï®g¯S®Ä
-RenderFX ¦¨¹³®ÄªG ( ¤ÑªÅ¡A¤Ï®g¤è¶ô )
-Self Illumin ¦ÛÅéµo¥ú
-Transparent ³z©ú
-Unlit ¤£¨ü¥ú
+ï»¿Bumped Diffuse å‡¹å‡¸æ•ˆæœè²¼åœ–
+Bumped Specular å‡¹å‡¸åŠé«˜å…‰è²¼åœ–
+Decal è¡¨é¢ç´°ç¯€è²¼åœ–
+Diffuse è¡¨é¢è²¼åœ–
+Diffuse Detail è¡¨é¢æ·±åº¦è²¼åœ–
+Parallax Diffuse å‡¹å‡¸æ·±åº¦è²¼åœ–
+parallax Specular æ·±åº¦é«˜å…‰è²¼åœ–
+Specular åå°„é«˜å…‰
+VertexLit é ‚é»é‹ç®—
+FX ç‰¹æ•ˆ
+GUI ä»‹é¢æè³ª
+Mobile è¡Œå‹•è£ç½®é¸ç”¨æè³ª
+Nature æ¤ç‰©è³ªæ„Ÿ
+Particals åˆ†å­ç‰¹æ•ˆ
+Reflective åå°„ç‰¹æ•ˆ
+RenderFX æˆåƒæ•ˆæœ ( å¤©ç©ºï¼Œåå°„æ–¹å¡Š )
+Self Illumin è‡ªé«”ç™¼å…‰
+Transparent é€æ˜
+Unlit ä¸å—å…‰

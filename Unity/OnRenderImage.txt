@@ -1,4 +1,4 @@
-    private Shader m_CurShader;
+ï»¿    private Shader m_CurShader;
     private Material m_CurMaterial;
     private string m_ShaderName = "Hidden/LerpGrayScaleImageEffectShader";
     [SerializeField]
@@ -29,7 +29,7 @@
     // Use this for initialization
     void Start () {
         m_CurShader = Shader.Find(m_ShaderName);
-        if (!SystemInfo.supportsImageEffects)		//§PÂ_¬O§_¤ä«ùµe­±¯S®Ä
+        if (!SystemInfo.supportsImageEffects)		//åˆ¤æ–·æ˜¯å¦æ”¯æŒç•«é¢ç‰¹æ•ˆ
         {
             enabled = false;
             return;
@@ -64,13 +64,13 @@
 
 
 
-¸ÑÄÀ¡G½Õ¥Î OnRenderImage ¨ç¼Æ¨Ó¹ê²{¡C¨ç¼Æ­t³d±q Unity´è¬V¾¹§ì·í«eªºrender texture
-	¡A¨Ï¥ÎGraphics.Blit()¨ç¼Æ¦A¶Ç»¼ Shader¡]³q¹L sourceTexture °Ñ¼Æ¡^¡A
-	¦Aªğ¦^¤@­Ó³B²z«áªº¹Ï¹³¦A¦¸¶Ç»¼¦^ Unity´è¬V¾¹¡]³q¹LdestTexture°Ñ¼Æ¡^¡C
+è§£é‡‹ï¼šèª¿ç”¨ OnRenderImage å‡½æ•¸ä¾†å¯¦ç¾ã€‚å‡½æ•¸è² è²¬å¾ Unityæ¸²æŸ“å™¨æŠ“ç•¶å‰çš„render texture
+	ï¼Œä½¿ç”¨Graphics.Blit()å‡½æ•¸å†å‚³é Shaderï¼ˆé€šé sourceTexture åƒæ•¸ï¼‰ï¼Œ
+	å†è¿”å›ä¸€å€‹è™•ç†å¾Œçš„åœ–åƒå†æ¬¡å‚³éå› Unityæ¸²æŸ“å™¨ï¼ˆé€šédestTextureåƒæ•¸ï¼‰ã€‚
 
-³o¨â¦æ°Ñ¼Æ¤¬¬Û·f°t¬O³B²zµe­±¯S®Äªº«Ü±`¨£ªº¤èªk¡C
-OnRenderImage¡GÄá¼v¾÷¤Wªº¥ô¦ó¸}¥»³£¥i¥H¦¬¨ì³o­Ó¦^½Õ
-¡]¥²¶·©ñ¸m¤@­Ó Camera ¤W¡^¡C¤¹³\§A­×§ï³Ì«áªºRender Texture¡C
+é€™å…©è¡Œåƒæ•¸äº’ç›¸æ­é…æ˜¯è™•ç†ç•«é¢ç‰¹æ•ˆçš„å¾ˆå¸¸è¦‹çš„æ–¹æ³•ã€‚
+OnRenderImageï¼šæ”å½±æ©Ÿä¸Šçš„ä»»ä½•è…³æœ¬éƒ½å¯ä»¥æ”¶åˆ°é€™å€‹å›èª¿
+ï¼ˆå¿…é ˆæ”¾ç½®ä¸€å€‹ Camera ä¸Šï¼‰ã€‚å…è¨±ä½ ä¿®æ”¹æœ€å¾Œçš„Render Textureã€‚
 
 
-Graphics.Blit¡GsourceTexture ·|¦¨¬° material ªº _MainTex¡C
+Graphics.Blitï¼šsourceTexture æœƒæˆç‚º material çš„ _MainTexã€‚

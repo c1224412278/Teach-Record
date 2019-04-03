@@ -1,24 +1,24 @@
---	EditorGUILayout »P GUILayout ªº®t¶Z --
+ï»¿--	EditorGUILayout èˆ‡ GUILayout çš„å·®è· --
 
-GUILayout (¤¹³\¨Ï¥ÎªÌ¦Û¦æ³]©wªø¼eµ¥³]©w)
-EditorGUILayout (¨t²Î¹w³]¦nªø¼eµ¥)
+GUILayout (å…è¨±ä½¿ç”¨è€…è‡ªè¡Œè¨­å®šé•·å¯¬ç­‰è¨­å®š)
+EditorGUILayout (ç³»çµ±é è¨­å¥½é•·å¯¬ç­‰)
 
 ----------------------------------------------------------
 
 
- !!! ( ¹ê¥Î Ã¸»sGUI ¥­¥x±Ğ¾Ç )
+ !!! ( å¯¦ç”¨ ç¹ªè£½GUI å¹³å°æ•™å­¸ )
 https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_23.html
 
-* OnPosrRender (¥i¦bGameµøµ¡¡A°õ¦æµ¥¦P©ó OnSceneGUI ¥\¯à)
+* OnPosrRender (å¯åœ¨Gameè¦–çª—ï¼ŒåŸ·è¡Œç­‰åŒæ–¼ OnSceneGUI åŠŸèƒ½)
 
-using UnityEditorInternal;	//¦Û­q±Æ§Ç¤u¨ã
+using UnityEditorInternal;	//è‡ªè¨‚æ’åºå·¥å…·
 ( https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_25.html )
 
 
 ------------	EditorWindow	------------------------------------
 
 using UnityEditor;
-public class AlphaMaskWindow : EditorWindow  <----   ³o¼Ë¤~¯à¨Ï¥Î
+public class AlphaMaskWindow : EditorWindow  <----   é€™æ¨£æ‰èƒ½ä½¿ç”¨
 
 [MenuItem("Tools/Alpha Mask Maker")]  
 	private static void OpenWindow()  
@@ -29,38 +29,38 @@ public class AlphaMaskWindow : EditorWindow  <----   ³o¼Ë¤~¯à¨Ï¥Î
 
 ----------------------------------------------------------------------
 
-* DrawDefaultInspector(); 	//·|±N­ì¥»ªº¸ê®Æµe¥X¨Ó (¶W­«­n)
-* EditorApplication.Beep();	//¨t²Î·|µo¥XÁn­µ (´£¿ô)
-* EditorUtility.SetDirty(;	//Àx¦s¸ê®Æ
-* EditorUtility.DisplayDialog	//¥X²{ ( ½T©w­n°õ¦æ *¬O *§_ ) µøµ¡
+* DrawDefaultInspector(); 	//æœƒå°‡åŸæœ¬çš„è³‡æ–™ç•«å‡ºä¾† (è¶…é‡è¦)
+* EditorApplication.Beep();	//ç³»çµ±æœƒç™¼å‡ºè²éŸ³ (æé†’)
+* EditorUtility.SetDirty(;	//å„²å­˜è³‡æ–™
+* EditorUtility.DisplayDialog	//å‡ºç¾ ( ç¢ºå®šè¦åŸ·è¡Œ *æ˜¯ *å¦ ) è¦–çª—
 
-* HandleUtility (¥Î³~ : 3D ³õ´º»P 2D - GUI ¤§¶¡ªºÂà´«¹Lµ{¡C)
+* HandleUtility (ç”¨é€” : 3D å ´æ™¯èˆ‡ 2D - GUI ä¹‹é–“çš„è½‰æ›éç¨‹ã€‚)
 
-	Àò¨ú·Æ¹«¦ì¸m : Event guiEvent = Event.current;
-	Àò¨ú·Æ¹«®g½u¥@¬É®y¼Ğ : HandleUtility.GUIPointToWorldRay (guiEvent.mousePosition);
+	ç²å–æ»‘é¼ ä½ç½® : Event guiEvent = Event.current;
+	ç²å–æ»‘é¼ å°„ç·šä¸–ç•Œåº§æ¨™ : HandleUtility.GUIPointToWorldRay (guiEvent.mousePosition);
 
 	if(guiEvent.type == EventType.layout)
 	{
 		HandleUtility.AddDefaultControl (GUIUtility.GetControlID(FocusType.Passive));	
 	}
 
-* §PÂ_»İ«ö¤U­ş­ÓÁä½L«öÁä¶i¦æ°Ê§@ : guiEvent.modifiers == 
+* åˆ¤æ–·éœ€æŒ‰ä¸‹å“ªå€‹éµç›¤æŒ‰éµé€²è¡Œå‹•ä½œ : guiEvent.modifiers == 
 
 
-Event guiEvent = Event.current;			//·í«e¨Æ¥ó
-Rect.Contains(guiEvent.mousePosition)		//¥i§PÂ_ ¹«¼Ğ ¬O§_¦b¥Ø¼Ğ¨­¤W
+Event guiEvent = Event.current;			//ç•¶å‰äº‹ä»¶
+Rect.Contains(guiEvent.mousePosition)		//å¯åˆ¤æ–· é¼ æ¨™ æ˜¯å¦åœ¨ç›®æ¨™èº«ä¸Š
 
 ------------	EditorGUI	--------------------------------------
 
-Ã¸»sÄæ¦ì	EditorGUI.PropertyField
+ç¹ªè£½æ¬„ä½	EditorGUI.PropertyField
 
-@ . GUILayout.BeginArea ¦Û©w¸q¦ì¸m
-* ·s¼W°Ï°ì 	GUILayout.BeginArea (Rect);
+@ . GUILayout.BeginArea è‡ªå®šç¾©ä½ç½®
+* æ–°å¢å€åŸŸ 	GUILayout.BeginArea (Rect);
 		GUILayout.EndArea ();
 
 
-@ . GUILayout.BeginHorizontal ¦Û°Ê¥¬§½
-* ³]¬°¤@­Ó¸s²Õ
+@ . GUILayout.BeginHorizontal è‡ªå‹•å¸ƒå±€
+* è¨­ç‚ºä¸€å€‹ç¾¤çµ„
 
 	* GUILayout.BeginHorizontal();	or	GUILayout.BeginHorizontal("box");
 	{
@@ -68,9 +68,9 @@ Rect.Contains(guiEvent.mousePosition)		//¥i§PÂ_ ¹«¼Ğ ¬O§_¦b¥Ø¼Ğ¨­¤W
 	}
 	GUILayout.EndHorizontal();
 
-* §PÂ_¤§¶¡ªº¼Æ­È¬O§_¦³ÅÜ°Ê 
+* åˆ¤æ–·ä¹‹é–“çš„æ•¸å€¼æ˜¯å¦æœ‰è®Šå‹• 
 
-	@ §PÂ_ BeginChangeCheck ~ EndChangeCheck ¤§¶¡¡A¬O§_¦³ÅÜ¼ÆªºÅÜ°Ê
+	@ åˆ¤æ–· BeginChangeCheck ~ EndChangeCheck ä¹‹é–“ï¼Œæ˜¯å¦æœ‰è®Šæ•¸çš„è®Šå‹•
 
 	EditorGUI.BeginChangeCheck();
         Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Colour);
@@ -80,26 +80,26 @@ Rect.Contains(guiEvent.mousePosition)		//¥i§PÂ_ ¹«¼Ğ ¬O§_¦b¥Ø¼Ğ¨­¤W
             
         }
 
-* GUILayout.BeginScrollView ¨Ï¥Îºu°Ê¸s²Õ
+* GUILayout.BeginScrollView ä½¿ç”¨æ»¾å‹•ç¾¤çµ„
 	//http://www.ceeger.com/Script/GUILayout/GUILayout.BeginScrollView.html
 
-	Vector2 scrollPosition = GUILayout.BeginScrollView(this.scrollPosition); Åã¥Üºu°Êªº¦ì¸m
+	Vector2 scrollPosition = GUILayout.BeginScrollView(this.scrollPosition); é¡¯ç¤ºæ»¾å‹•çš„ä½ç½®
 	GUILayout.EndScrollView();
 
 
 
 EditorGUI.MultiFloatField (
 	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
-	//«Å§iVector3Äæ¦ì   X[] , Y[] , Z[]
+	//å®£å‘ŠVector3æ¬„ä½   X[] , Y[] , Z[]
 
 
 
-if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWidth ¬O§_¸T¤î¤ô¥­ÂX±i
+if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWidth æ˜¯å¦ç¦æ­¢æ°´å¹³æ“´å¼µ
 
 
 
 
-* ¤lª«¥ó Ã¸»s
+* å­ç‰©ä»¶ ç¹ªè£½
 	EditorGUILayout.LabelField ("Parent");
 	EditorGUI.indentLevel++;
 	EditorGUILayout.LabelField ("Child");
@@ -109,10 +109,10 @@ if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWid
 ------------	EditorGUILayout		--------------------------------------
 
 
-			     (ª«¥ó)     («¬ºA)		//(°²¦p«Å§i¬°Object¡A¶]¥X¦s©ñObjectªºUIÄæ¦ì)
+			     (ç‰©ä»¶)     (å‹æ…‹)		//(å‡å¦‚å®£å‘Šç‚ºObjectï¼Œè·‘å‡ºå­˜æ”¾Objectçš„UIæ¬„ä½)
 EditorGUILayout.ObjectField (null , typeof(Object) , false);		
 
-GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//§ïÅÜÄæ¦ì¼e¡B°ª
+GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//æ”¹è®Šæ¬„ä½å¯¬ã€é«˜
 	=> GUILayout.Width - overrides the fixedWidth of the used style
 	GUILayout.Height - overrides the fixedHeight of the used style
 	GUILayout.MaxHeight - adds an additional size-constraint
@@ -124,30 +124,30 @@ GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)}
 
 
 
-EditorGUILayout.BeginToggleGroup	Toggle¸s²Õ
+EditorGUILayout.BeginToggleGroup	Toggleç¾¤çµ„
 EditorGUILayout.EndToggleGroup();
 
 
-EditorStyles.miniButtonLef	Äæ¦ì¾a¥ª¸É¥¿ªÅ»Ø
-EditorStyles.miniButtonMid	Äæ¦ì¾a¤¤¸É¥¿ªÅ»Ø
-EditorStyles.miniButtonRight	Äæ¦ì¾a¥k¸É¥¿ªÅ»Ø
+EditorStyles.miniButtonLef	æ¬„ä½é å·¦è£œæ­£ç©ºéš™
+EditorStyles.miniButtonMid	æ¬„ä½é ä¸­è£œæ­£ç©ºéš™
+EditorStyles.miniButtonRight	æ¬„ä½é å³è£œæ­£ç©ºéš™
 
 
-SerializedProperty ser = serializedObject.FindProperty("§ì¨úªºÅÜ¼Æ¦WºÙ");
-// serializedObject.FindProperty("§ì¨úªºÅÜ¼Æ¦WºÙ" , [true / false])  => true ¬O§_§Ç¦C¤Æ
-// ·í (ser == Array)
-	ser.arraySize => °}¦Cªø«×
+SerializedProperty ser = serializedObject.FindProperty("æŠ“å–çš„è®Šæ•¸åç¨±");
+// serializedObject.FindProperty("æŠ“å–çš„è®Šæ•¸åç¨±" , [true / false])  => true æ˜¯å¦åºåˆ—åŒ–
+// ç•¶ (ser == Array)
+	ser.arraySize => é™£åˆ—é•·åº¦
 
 
-SerializedProperty nameID = npc.FindPropertyRelative("©ñ¤U¤@¼hÅÜ¼Æ¦WºÙ" ©Î "Array.size"[¥i§ì°}¦Cªø«×] );
+SerializedProperty nameID = npc.FindPropertyRelative("æ”¾ä¸‹ä¸€å±¤è®Šæ•¸åç¨±" æˆ– "Array.size"[å¯æŠ“é™£åˆ—é•·åº¦] );
 	*// https://anchan828.github.io/editor-manual/web/serializedobject.html
-	*** ª`·N : ("©ñ¤U¤@¼hÅÜ¼Æ¦WºÙ") ³o¸ÌªºÅÜ¼Æ¥²¶·¤@©w­n [SerializeField] §Ç¦C¤Æ
+	*** æ³¨æ„ : ("æ”¾ä¸‹ä¸€å±¤è®Šæ•¸åç¨±") é€™è£¡çš„è®Šæ•¸å¿…é ˆä¸€å®šè¦ [SerializeField] åºåˆ—åŒ–
 
-serializedObject.Update () ¥i¥H­«·s¶i¦æ¸ê®Æ§ó·s¡C(³q±`¼g¦b²Ä¤@¦æ)
-serializedObject.ApplyModifiedProperties () ¥i¥H¹ï¸ê®Æ§ó°Ê¶i¦æ¼g¤J¡C(³q±`¼g³Ì«á¤@¦æ)
+serializedObject.Update () å¯ä»¥é‡æ–°é€²è¡Œè³‡æ–™æ›´æ–°ã€‚(é€šå¸¸å¯«åœ¨ç¬¬ä¸€è¡Œ)
+serializedObject.ApplyModifiedProperties () å¯ä»¥å°è³‡æ–™æ›´å‹•é€²è¡Œå¯«å…¥ã€‚(é€šå¸¸å¯«æœ€å¾Œä¸€è¡Œ)
 
 
-----------------------------------     ¸g¨å½d¨Ò      -------------------------------------------------- 
+----------------------------------     ç¶“å…¸ç¯„ä¾‹      -------------------------------------------------- 
 
 Ex :
 
@@ -179,7 +179,7 @@ Ex :
         	GUILayout.BeginVertical("box");
     
         	GUILayout.BeginHorizontal("box");
-        	GUILayout.Label("ºô§}¼Æ : " + this._urls.arraySize);
+        	GUILayout.Label("ç¶²å€æ•¸ : " + this._urls.arraySize);
         	
 		if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))
         	{
@@ -194,7 +194,7 @@ Ex :
             		this._url = this._urls.GetArrayElementAtIndex(i);
 
             		GUILayout.BeginHorizontal("box");
-            		GUILayout.Label("ºô§} " + (i + 1) , GUILayout.ExpandWidth(false));
+            		GUILayout.Label("ç¶²å€ " + (i + 1) , GUILayout.ExpandWidth(false));
             		GUILayout.Space(15);
             		this._url.stringValue = EditorGUILayout.TextField(this._url.stringValue);
 
@@ -212,9 +212,9 @@ Ex :
 
 
 ---------------------------------------------------------------------------------------
-------------	Â²©ö PropertyDrawer ¥Îªk	--------------------------------------
+------------	ç°¡æ˜“ PropertyDrawer ç”¨æ³•	--------------------------------------
 
-* ¦]¬° EditorGUI »İ­n«ü©w Rect¡A©Ò¥H¤j³¡¤À·|©M PropertyDrawer ¤@°_¹ê§@
+* å› ç‚º EditorGUI éœ€è¦æŒ‡å®š Rectï¼Œæ‰€ä»¥å¤§éƒ¨åˆ†æœƒå’Œ PropertyDrawer ä¸€èµ·å¯¦ä½œ
 
 
 	** https://blog.csdn.net/qq_33337811/article/details/66475651
@@ -223,22 +223,22 @@ Ex :
     	{
         	Range2Attribute range2 = (Range2Attribute)attribute;
 
-        	if (property.propertyType == SerializedPropertyType.Integer)		//·íÅÜ¼Æ¬° int ®É­Ô
+        	if (property.propertyType == SerializedPropertyType.Integer)		//ç•¶è®Šæ•¸ç‚º int æ™‚å€™
         	{
-	    		EditorGUI.IntSlider(position , property , range2.min , range2.max , label);		// Ã¸»sºu½ü
+	    		EditorGUI.IntSlider(position , property , range2.min , range2.max , label);		// ç¹ªè£½æ»¾è¼ª
         	}
         	else
         	{
-            		EditorGUI.PropertyField(position , property , label);		//Ã¸»s´¶³qÄæ¦ì
+            		EditorGUI.PropertyField(position , property , label);		//ç¹ªè£½æ™®é€šæ¬„ä½
         	}
     	}
 
 
-	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)		//³]©w UI°ª«×
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)		//è¨­å®š UIé«˜åº¦
 
 	
-	CustomGradient gradient = (CustomGradient)fieldInfo.GetValue(property.serializedObject.targetObject);	//Àò¨ú¹ï¶H¸}¥»
-	GUI.skin.label.CalcSize(label).x		//³æ¦r¼e«×
+	CustomGradient gradient = (CustomGradient)fieldInfo.GetValue(property.serializedObject.targetObject);	//ç²å–å°è±¡è…³æœ¬
+	GUI.skin.label.CalcSize(label).x		//å–®å­—å¯¬åº¦
 
 
 

@@ -1,8 +1,8 @@
-	* ----	Focus	----
+ï»¿	* ----	Focus	----
 
 --- WaveVR_Utils ---
 
- * ¤åÀÉ±Ğ¾Ç - «D±`­«­nºô§} : https://hub.vive.com/storage/app/doc/zh-tw/UnitySdk.html
+ * æ–‡æª”æ•™å­¸ - éå¸¸é‡è¦ç¶²å€ : https://hub.vive.com/storage/app/doc/zh-tw/UnitySdk.html
 
 function : void OnEvent(params object[] args)
 {
@@ -11,7 +11,7 @@ function : void OnEvent(params object[] args)
         
 	{
         
-		case WVR_EventType.WVR_EventType_TouchpadSwipe_LeftToRight:  //·íÄ²±±­±ªO±q¥ª·Æ¨ì¥k
+		case WVR_EventType.WVR_EventType_TouchpadSwipe_LeftToRight:  //ç•¶è§¸æ§é¢æ¿å¾å·¦æ»‘åˆ°å³
             
 			transform.Rotate (0, 180 * (10 * Time.deltaTime), 0);
             
@@ -39,7 +39,7 @@ function : void OnEvent(params object[] args)
 
 void Start()
 {
-	WaveVR_Utils.Event.Listen ("SWIPE_EVENT", OnEvent);		//ºÊÅ¥ OnEvent ¨Æ¥ó
+	WaveVR_Utils.Event.Listen ("SWIPE_EVENT", OnEvent);		//ç›£è½ OnEvent äº‹ä»¶
 }
 
 
@@ -47,7 +47,7 @@ void Start()
 
 
 MenuButtonClicked += new ClickedEventHandler (MenuButtonClickedHandler);
-PadTouched +=  ""¦P¤W""""
+PadTouched +=  ""åŒä¸Š""""
 private void MenuButtonClickedHandler (object sender, ClickedEventArgs e)
 
 {
@@ -64,11 +64,11 @@ private void MenuButtonClickedHandler (object sender, ClickedEventArgs e)
 ------------------- WVR_Arena -----------------------------------------
 
 
-arena = Interop.WVR_GetArena ();                //¨ú±o¥Ø«e¬¡°ÊªºÄİ©Ê
+arena = Interop.WVR_GetArena ();                //å–å¾—ç›®å‰æ´»å‹•çš„å±¬æ€§
 
-_overrange = Interop.WVR_IsOverArenaRange ();   //ÀË¬d¨Ï¥ÎªÌ¬O§_¶W¥X¬¡°Ê½d³ò
+_overrange = Interop.WVR_IsOverArenaRange ();   //æª¢æŸ¥ä½¿ç”¨è€…æ˜¯å¦è¶…å‡ºæ´»å‹•ç¯„åœ
 
-_visible = Interop.WVR_GetArenaVisible ();      //¨ú±o¥Ø«e¥i¨£ªº§Î¦¡
+_visible = Interop.WVR_GetArenaVisible ();      //å–å¾—ç›®å‰å¯è¦‹çš„å½¢å¼
 bool _touchpad_pressed = WaveVR_Controller.Input (WVR_DeviceType.WVR_DeviceType_Controller_Left).GetPressDown (WVR_InputId.WVR_InputId_Alias1_Touchpad) 
 				|| WaveVR_Controller.Input (WVR_DeviceType.WVR_DeviceType_Controller_Right).GetPressDown (WVR_InputId.WVR_InputId_Alias1_Touchpad);
            
@@ -76,26 +76,26 @@ if (_touchpad_pressed)
             
 {
                        
-	Interop.WVR_SetArenaVisible (WVR_ArenaVisible.WVR_ArenaVisible_ForceOn);    //·í«ö¤U«ö¶s®É¡AÁ`¬OÅã¥ÜµêÀÀÀğ
+	Interop.WVR_SetArenaVisible (WVR_ArenaVisible.WVR_ArenaVisible_ForceOn);    //ç•¶æŒ‰ä¸‹æŒ‰éˆ•æ™‚ï¼Œç¸½æ˜¯é¡¯ç¤ºè™›æ“¬ç‰†
             }
-				     WVR_ArenaVisible.WVR_ArenaVisible_ForceOff	    //·í«ö¤U«ö¶s®É¡AÃö³¬µêÀÀÀğ
-				     WVR_ArenaVisible.WVR_ArenaVisible_Auto	    //¥Ø¼Ğ¶ZÂ÷µêÀÀÀğ30¤½¤À¤º¡A¶}±ÒµêÀÀÀğ
+				     WVR_ArenaVisible.WVR_ArenaVisible_ForceOff	    //ç•¶æŒ‰ä¸‹æŒ‰éˆ•æ™‚ï¼Œé—œé–‰è™›æ“¬ç‰†
+				     WVR_ArenaVisible.WVR_ArenaVisible_Auto	    //ç›®æ¨™è·é›¢è™›æ“¬ç‰†30å…¬åˆ†å…§ï¼Œé–‹å•Ÿè™›æ“¬ç‰†
 
 
 
------------------- ¹ï·Ç´X¬í¡A°õ¦æ¨Æ¥ó -----------------------------------
+------------------ å°æº–å¹¾ç§’ï¼ŒåŸ·è¡Œäº‹ä»¶ -----------------------------------
 
-1. ¤£¨Ï¥Î InputModuleManager ª«¥ó -> WaveVR / Prefabs / ReticlePointer ª«¥ó¨ì head ©³¤U°µ¤lª«¥ó
-				-> ³]©wª«¥ó ²K¥[ Gaze Input Module ¸}¥»¡A¨Ã±N Input Event °µ§ó§ï¡A¥H¤Î Head => head
-		©ÎªÌ
+1. ä¸ä½¿ç”¨ InputModuleManager ç‰©ä»¶ -> WaveVR / Prefabs / ReticlePointer ç‰©ä»¶åˆ° head åº•ä¸‹åšå­ç‰©ä»¶
+				-> è¨­å®šç‰©ä»¶ æ·»åŠ  Gaze Input Module è…³æœ¬ï¼Œä¸¦å°‡ Input Event åšæ›´æ”¹ï¼Œä»¥åŠ Head => head
+		æˆ–è€…
 
-   ¨Ï¥Î InputModuleManager ª«¥ó -> Enable Gaze => true , Enable Controller => false , Gaze Head => head
+   ä½¿ç”¨ InputModuleManager ç‰©ä»¶ -> Enable Gaze => true , Enable Controller => false , Gaze Head => head
  
-2. head Äá¼v¾÷¤¤ªº Wave VR_Render ¸}¥»ªºªº Camera Gaze ÅÜ¼Æ­n¤Ä¿ï
+2. head æ”å½±æ©Ÿä¸­çš„ Wave VR_Render è…³æœ¬çš„çš„ Camera Gaze è®Šæ•¸è¦å‹¾é¸
 
------------------ ²£¥Í Ray -----------------------------------------------
+----------------- ç”¢ç”Ÿ Ray -----------------------------------------------
 
-Wave VR / Prefabs / Beam ª«¥ó²K¥[¡A¨Ã¦b Beam ª«¥ó²K¥[ (Wave VR_Raycast) ´N¥i¥H¦A Gameµøµ¡¬İ¨ì Ray
+Wave VR / Prefabs / Beam ç‰©ä»¶æ·»åŠ ï¼Œä¸¦åœ¨ Beam ç‰©ä»¶æ·»åŠ  (Wave VR_Raycast) å°±å¯ä»¥å† Gameè¦–çª—çœ‹åˆ° Ray
 
 
 

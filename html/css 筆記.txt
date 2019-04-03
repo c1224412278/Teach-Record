@@ -1,18 +1,18 @@
-bootstrap ©x¤è«eºİ±Ğ¾Ç : https://bootstrap.hexschool.com/docs/4.0/components/forms/
+ï»¿bootstrap å®˜æ–¹å‰ç«¯æ•™å­¸ : https://bootstrap.hexschool.com/docs/4.0/components/forms/
 
-Html  ±`¥Î¼ĞÅÒ http://web.thu.edu.tw/hzed/www/tag.htm *****
-section ¼ĞÃD + ¤º®e
+Html  å¸¸ç”¨æ¨™ç±¤ http://web.thu.edu.tw/hzed/www/tag.htm *****
+section æ¨™é¡Œ + å…§å®¹
 
-* ¿ï¶µ¿ï¾Ü - 
+* é¸é …é¸æ“‡ - 
 
-<input type="checkbox" value="option1" disabled> => (disabled) Åı«ö¶s¥¢¥h¥\¯à
+<input type="checkbox" value="option1" disabled> => (disabled) è®“æŒ‰éˆ•å¤±å»åŠŸèƒ½
 
--- ³æ¿ï --
+-- å–®é¸ --
 
 <input type="radio" name="Options" value="option1">
 <input type="radio" name="Options" value="option2">
 
--- ¥i¦h¿ï ---
+-- å¯å¤šé¸ ---
 
 <input type="radio" value="option1">
 <input type="radio" value="option2">
@@ -21,128 +21,128 @@ section ¼ĞÃD + ¤º®e
 
 * meta Attributes
 
-name = descript ¥H¤Î name=keywords¡A¨C­Ó meta ¨Ï¥Î name ªº®É­Ô¡A³£·|·f°t content ¨Ó§e²{¸ê°T¤º®e¡A
-Â²³æ¨Ó»¡¡Aname ¥Nªí¸ê°T¶µ¥Ø¡Acontent ¥Nªí¸ê°T­È
+name = descript ä»¥åŠ name=keywordsï¼Œæ¯å€‹ meta ä½¿ç”¨ name çš„æ™‚å€™ï¼Œéƒ½æœƒæ­é… content ä¾†å‘ˆç¾è³‡è¨Šå…§å®¹ï¼Œ
+ç°¡å–®ä¾†èªªï¼Œname ä»£è¡¨è³‡è¨Šé …ç›®ï¼Œcontent ä»£è¡¨è³‡è¨Šå€¼
 
 <META HTTP-EQUIV="refresh" CONTENT="15; url=http://www.pcnet.idv.tw/">
-		»¡©ú¡G
-			refresh==>§ó·s©Î­«¾ã
-			15==>15¬í«á°õ¦æ¤U¤@°Ê§@
-			; => CONTENT¤º­n§@ªº¨C¥ó¨Æ" "¡A¤À§O¥H¤À¸¹°Ï¹j
-			url=http://www.pcnet.idv.tw/ =>«ü©wÂà´«¨ì¦¹ºô­¶
+		èªªæ˜ï¼š
+			refresh==>æ›´æ–°æˆ–é‡æ•´
+			15==>15ç§’å¾ŒåŸ·è¡Œä¸‹ä¸€å‹•ä½œ
+			; => CONTENTå…§è¦ä½œçš„æ¯ä»¶äº‹" "ï¼Œåˆ†åˆ¥ä»¥åˆ†è™Ÿå€éš”
+			url=http://www.pcnet.idv.tw/ =>æŒ‡å®šè½‰æ›åˆ°æ­¤ç¶²é 
 
-<meta name="Creation-Date" content="01-jan-2003 20:40:01">	ºô­¶¦ó®É§¹¦¨
-		»¡©ú¡G
-			Creation-Date==>³Ğ§@¤é´Á
-			01-jan-2003 20:40:01==>¸Ô²Ó¤é´Á®É¶¡
+<meta name="Creation-Date" content="01-jan-2003 20:40:01">	ç¶²é ä½•æ™‚å®Œæˆ
+		èªªæ˜ï¼š
+			Creation-Date==>å‰µä½œæ—¥æœŸ
+			01-jan-2003 20:40:01==>è©³ç´°æ—¥æœŸæ™‚é–“
 
 <link rev="made" href="mailto:pcnettw@yahoo.com.tw">
-		»¡©ú¡Gºô­¶§@ªÌ«H½c©Îºô§}³¯­z
-			rev==>¥¿¦VÃöÁp
-			made=>ºô­¶»s³yªÌ
-			href==>±zªº«H½c©Îºô§}
+		èªªæ˜ï¼šç¶²é ä½œè€…ä¿¡ç®±æˆ–ç¶²å€é™³è¿°
+			rev==>æ­£å‘é—œè¯
+			made=>ç¶²é è£½é€ è€…
+			href==>æ‚¨çš„ä¿¡ç®±æˆ–ç¶²å€
 
-<meta name="description" content="ºô­¶Â²µu´y­z">	¥Î¨Ó¼gºô­¶ªºÂ²µu´y­z¡C
-<meta name="keywords" content="ºô­¶ÃöÁä¦r">	¥Î¨Ó©ñ¸mºô­¶ÃöÁä¦r¡C
-<meta name="author" content="§@ªÌ©m¦W">		°O¿ıºô­¶ªº§@ªÌ¦WºÙ
-<meta name="generator" content="½s¿è¾¹¦WºÙ">	¥Î¨Ó°O¿ıºô­¶½s¿è¾¹¦WºÙ
-<meta name="copyright" content="ºô­¶ª©Åv">	¥Î¨Ó¼Ğ¥Üºô­¶ªºª©Åv©ÎµÛ§@ÅvÁn©ú
-<meta name="distribution" content="ºô­¶µo§G¦a°Ï">	¥Î¨Ó°O¿ıºô­¶ªºµo§G¦a°Ï
+<meta name="description" content="ç¶²é ç°¡çŸ­æè¿°">	ç”¨ä¾†å¯«ç¶²é çš„ç°¡çŸ­æè¿°ã€‚
+<meta name="keywords" content="ç¶²é é—œéµå­—">	ç”¨ä¾†æ”¾ç½®ç¶²é é—œéµå­—ã€‚
+<meta name="author" content="ä½œè€…å§“å">		è¨˜éŒ„ç¶²é çš„ä½œè€…åç¨±
+<meta name="generator" content="ç·¨è¼¯å™¨åç¨±">	ç”¨ä¾†è¨˜éŒ„ç¶²é ç·¨è¼¯å™¨åç¨±
+<meta name="copyright" content="ç¶²é ç‰ˆæ¬Š">	ç”¨ä¾†æ¨™ç¤ºç¶²é çš„ç‰ˆæ¬Šæˆ–è‘—ä½œæ¬Šè²æ˜
+<meta name="distribution" content="ç¶²é ç™¼ä½ˆåœ°å€">	ç”¨ä¾†è¨˜éŒ„ç¶²é çš„ç™¼ä½ˆåœ°å€
 
 
-<meta http-equiv="Content-Type" content="text/html"; charset="uft-8">	ºô­¶¤º®eªººØÃş¥H¤Î½s½X
-<meta http-equiv="Content-Language" content="zh-TW">			ºô­¶©Ò¨Ï¥Îªº»y¨¥ºØÃş
-<meta http-equiv="Refresh" content="time">				¦Û°Ê§ó·sºô­¶ªº®É¶¡
-<meta http-equiv="Pragma" content="no-cache">				¸T¤îÂsÄı¾¹¥Î§Ö¨ú¶}±Òºô­¶
-<meta http-equiv="windows-Target" content="_top">			±j¨î¦b³æ¤@µøµ¡¤¤Åã¥Üºô­¶
+<meta http-equiv="Content-Type" content="text/html"; charset="uft-8">	ç¶²é å…§å®¹çš„ç¨®é¡ä»¥åŠç·¨ç¢¼
+<meta http-equiv="Content-Language" content="zh-TW">			ç¶²é æ‰€ä½¿ç”¨çš„èªè¨€ç¨®é¡
+<meta http-equiv="Refresh" content="time">				è‡ªå‹•æ›´æ–°ç¶²é çš„æ™‚é–“
+<meta http-equiv="Pragma" content="no-cache">				ç¦æ­¢ç€è¦½å™¨ç”¨å¿«å–é–‹å•Ÿç¶²é 
+<meta http-equiv="windows-Target" content="_top">			å¼·åˆ¶åœ¨å–®ä¸€è¦–çª—ä¸­é¡¯ç¤ºç¶²é 
 
 
 
 -----------------------------------------------------------------------------------------
-****** CSS  ¿ï¾Ü¾¹¥Îªk  http://www.w3school.com.cn/cssref/css_selectors.asp
+****** CSS  é¸æ“‡å™¨ç”¨æ³•  http://www.w3school.com.cn/cssref/css_selectors.asp
 
 -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-          box-sizing: border-box;		//°Ñ¦Òºô§} : http://zh-tw.learnlayout.com/box-sizing.html
-// ¨Ï¥Î padding or border or other css ·|³y¦¨¤º¶Z©MÃä®Ø¼W¥[¡A¨Ï¥Î¥¦¡A¤º¶Z©MÃä®Ø±N¤£·|¼W¥[¤¸¯À¥»¨­ªº¼e«×
+          box-sizing: border-box;		//åƒè€ƒç¶²å€ : http://zh-tw.learnlayout.com/box-sizing.html
+// ä½¿ç”¨ padding or border or other css æœƒé€ æˆå…§è·å’Œé‚Šæ¡†å¢åŠ ï¼Œä½¿ç”¨å®ƒï¼Œå…§è·å’Œé‚Šæ¡†å°‡ä¸æœƒå¢åŠ å…ƒç´ æœ¬èº«çš„å¯¬åº¦
 
 
-column-count ¥HÄæ¤è¦¡¡AÅã¥Ü¤å¦r
-column-gap ³]©wÄæ»PÄæªº¶¡¶Z
+column-count ä»¥æ¬„æ–¹å¼ï¼Œé¡¯ç¤ºæ–‡å­—
+column-gap è¨­å®šæ¬„èˆ‡æ¬„çš„é–“è·
 
 
-position:static  ¤£·|³Q¯S§O©w¦ì¡AÂsÄı¾¹¹w³]
-position:relative  ªí²{ªº©M static ¤@¼Ë¡A°£«D§A¼W¥[¤F¤@¨ÇÃB¥~ªºÄİ©Ê¡C
-position:absolute  ©T©w©w¦ì
+position:static  ä¸æœƒè¢«ç‰¹åˆ¥å®šä½ï¼Œç€è¦½å™¨é è¨­
+position:relative  è¡¨ç¾çš„å’Œ static ä¸€æ¨£ï¼Œé™¤éä½ å¢åŠ äº†ä¸€äº›é¡å¤–çš„å±¬æ€§ã€‚
+position:absolute  å›ºå®šå®šä½
 
 
-overflow : 	§PÂ_¤å¦r ¡B ¹Ï¤ù¬O§_­nÅã¥Ü(¶W¹L½d³ò¤§Ãşªº)
-white-space: nowrap	³W©w¤å¦r¤£Â_¦æ
+overflow : 	åˆ¤æ–·æ–‡å­— ã€ åœ–ç‰‡æ˜¯å¦è¦é¡¯ç¤º(è¶…éç¯„åœä¹‹é¡çš„)
+white-space: nowrap	è¦å®šæ–‡å­—ä¸æ–·è¡Œ
 
-text-align: justify; + text-justify: inter-word;	¤å¦r««ª½¹ï»ô
-text-transform : capitalize	¦r¥À¶}ÀY¤j¼g 
-text-decoration : none		¤å¦r­×¹¢ - ¨ú®ø©³½uµ¥µ¥
-justify-content ·f°t display:flew (¤ô¥­¹ï»ô) (¶ë¦b¤÷ª«¥ó¡A¤lª«¥ó²¾°Ê)
-align-items (««ª½¹ï»ô) (¦P¤W)  
-align-self  (¦b¨Ï¥Î¹L align-items ªº±¡ªp¤U¡Aalign-items¦ì¸m¤w¸g©T©w¡A¥Ñ¦¹¨ç¦¡¥h§ï¼gª«¥ó¦ì¸m)
+text-align: justify; + text-justify: inter-word;	æ–‡å­—å‚ç›´å°é½Š
+text-transform : capitalize	å­—æ¯é–‹é ­å¤§å¯« 
+text-decoration : none		æ–‡å­—ä¿®é£¾ - å–æ¶ˆåº•ç·šç­‰ç­‰
+justify-content æ­é… display:flew (æ°´å¹³å°é½Š) (å¡åœ¨çˆ¶ç‰©ä»¶ï¼Œå­ç‰©ä»¶ç§»å‹•)
+align-items (å‚ç›´å°é½Š) (åŒä¸Š)  
+align-self  (åœ¨ä½¿ç”¨é align-items çš„æƒ…æ³ä¸‹ï¼Œalign-itemsä½ç½®å·²ç¶“å›ºå®šï¼Œç”±æ­¤å‡½å¼å»æ”¹å¯«ç‰©ä»¶ä½ç½®)
 
-*ª`·N : align-items °õ¦æ¬°ª«¥ó¥Ø«eªº¤¤¤ß¦ì¸m  align-content ¬°¸sÅéªº¤¤¤ß¦ì¸m
+*æ³¨æ„ : align-items åŸ·è¡Œç‚ºç‰©ä»¶ç›®å‰çš„ä¸­å¿ƒä½ç½®  align-content ç‚ºç¾¤é«”çš„ä¸­å¿ƒä½ç½®
 
-flex-wrap	·íª«¥ó¥Hdisplay:flow ´N¬O¥H³æ¦æ±o¤è¦¡±Æ¦C¡A¦pªG­n±j­¢´«¦æ¨Ï¥Î flex-wrap ¨Ó´«¦æ
+flex-wrap	ç•¶ç‰©ä»¶ä»¥display:flow å°±æ˜¯ä»¥å–®è¡Œå¾—æ–¹å¼æ’åˆ—ï¼Œå¦‚æœè¦å¼·è¿«æ›è¡Œä½¿ç”¨ flex-wrap ä¾†æ›è¡Œ
 
-vertical-align ¹Ï¤ù¦b¤å¦r«ü©w¦a¤è(¤å¦r¤W¤è ©ÎªÌ ¤å¦r¤U¤è) Åã¥Ü
+vertical-align åœ–ç‰‡åœ¨æ–‡å­—æŒ‡å®šåœ°æ–¹(æ–‡å­—ä¸Šæ–¹ æˆ–è€… æ–‡å­—ä¸‹æ–¹) é¡¯ç¤º
 
-flex-direction ª«¥ó±Æ§Ç row¡G¹w³]­È¡A¥Ñ¥ª¨ì¥k¡A±q¤W¨ì¤U  row-reverse¡G»P row ¬Û¤Ï
-			column¡G±q¤W¨ì¤U¡A¦A¥Ñ¥ª¨ì¥k	column-reverse¡G»P column ¬Û¤Ï
-( flex-wrap:wrap ¦Û°Ê´«¦æ ¡A flex-direction ¤£·|À°¦£¦Û°Ê´«¦£)
+flex-direction ç‰©ä»¶æ’åº rowï¼šé è¨­å€¼ï¼Œç”±å·¦åˆ°å³ï¼Œå¾ä¸Šåˆ°ä¸‹  row-reverseï¼šèˆ‡ row ç›¸å
+			columnï¼šå¾ä¸Šåˆ°ä¸‹ï¼Œå†ç”±å·¦åˆ°å³	column-reverseï¼šèˆ‡ column ç›¸å
+( flex-wrap:wrap è‡ªå‹•æ›è¡Œ ï¼Œ flex-direction ä¸æœƒå¹«å¿™è‡ªå‹•æ›å¿™)
 
-flex-grow: 0 (¥Nªí¤À¦¨´X¥÷);	( ¹w³]¬° 0 ) ©ñ¸m¤lª«¥ó¨­¤W¡Aµ¹¤©¤÷ª«¥ó³Ñ¾lªÅ¶¡
-				(¤÷ª«¥ó width 500¡A¤lª«¥ó 100 100 100 «h³Ñ¾l 200 ªÅ¶¡)
+flex-grow: 0 (ä»£è¡¨åˆ†æˆå¹¾ä»½);	( é è¨­ç‚º 0 ) æ”¾ç½®å­ç‰©ä»¶èº«ä¸Šï¼Œçµ¦äºˆçˆ¶ç‰©ä»¶å‰©é¤˜ç©ºé–“
+				(çˆ¶ç‰©ä»¶ width 500ï¼Œå­ç‰©ä»¶ 100 100 100 å‰‡å‰©é¤˜ 200 ç©ºé–“)
 
-background-attachment	(©T©w­I´º) ­I´º¤£·|ÀHµÛ·Æ¹«ºu½ü²¾°Ê
-
-
-z-index ¹Ï¤ù²`«×
-
-cursor §ïÅÜ´å¼Ğ
-
-opacity ³z©ú«×
-
-content Åã¥Ü url
-
-word-spacing	¦r»P¦r¤§¶¡ªº¶ZÂ÷
-letter-spacing  ¦r»P¦r¤§¶¡¼W¥[ªÅ¥Õ
+background-attachment	(å›ºå®šèƒŒæ™¯) èƒŒæ™¯ä¸æœƒéš¨è‘—æ»‘é¼ æ»¾è¼ªç§»å‹•
 
 
-width: calc(¥i¥H¶i¦æ¤£¦P³æ¦ìªº¼Æ¾Ç¹Bºâ : % - px)
+z-index åœ–ç‰‡æ·±åº¦
 
-1.ul -> li ²M³æ
-list-style: none;	** §R°£¶}ÀY£»
+cursor æ”¹è®Šæ¸¸æ¨™
+
+opacity é€æ˜åº¦
+
+content é¡¯ç¤º url
+
+word-spacing	å­—èˆ‡å­—ä¹‹é–“çš„è·é›¢
+letter-spacing  å­—èˆ‡å­—ä¹‹é–“å¢åŠ ç©ºç™½
 
 
-filter: ÂoÃè®ÄªG 
-blur(°ª´µ¼Ò½k) ³æ¦ì : px
-grayscale(¶Â¥Õ) ³æ¦ì : % 
+width: calc(å¯ä»¥é€²è¡Œä¸åŒå–®ä½çš„æ•¸å­¸é‹ç®— : % - px)
+
+1.ul -> li æ¸…å–®
+list-style: none;	** åˆªé™¤é–‹é ­Ë™
 
 
-css animation ¥ş¸ÑªR : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+filter: æ¿¾é¡æ•ˆæœ 
+blur(é«˜æ–¯æ¨¡ç³Š) å–®ä½ : px
+grayscale(é»‘ç™½) å–®ä½ : % 
+
+
+css animation å…¨è§£æ : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations
 
 *********************************************************************
 
-:active		//·Æ¹«ÂIÀ»
-:hover		//·Æ¹«²¾¹L
-:LINK		//©|¥¼³s±µ
-:VISITED	//¤w³s±µ
+:active		//æ»‘é¼ é»æ“Š
+:hover		//æ»‘é¼ ç§»é
+:LINK		//å°šæœªé€£æ¥
+:VISITED	//å·²é€£æ¥
 
-:first-child	//¤÷¤¸¯Àªº²Ä¤@­Ó¤lª«¥ó
-:last-child	//¤÷¤¸¯Àªº³Ì«á¤@­Ó¤lª«¥ó
+:first-child	//çˆ¶å…ƒç´ çš„ç¬¬ä¸€å€‹å­ç‰©ä»¶
+:last-child	//çˆ¶å…ƒç´ çš„æœ€å¾Œä¸€å€‹å­ç‰©ä»¶
 
 
 <h2 id="text">
-(#text) :: after or ::before		// after ¦b¥Ø«e«á¤è¥X²{ ¡C before ¦b¥Ø¼Ğ«e¤è¥X²{ ¡C
+(#text) :: after or ::before		// after åœ¨ç›®å‰å¾Œæ–¹å‡ºç¾ ã€‚ before åœ¨ç›®æ¨™å‰æ–¹å‡ºç¾ ã€‚
 {
-	content:  attr(id);		// content Åã¥Ü­n²K¥[ªº¤º®e ¡C
-					// attr (­Y¤£·Q¨Ï¤º®e©T©w¡A«h¨Ï¥Î attr(id) «K¥iÅã¥Ü "text" )¡C
+	content:  attr(id);		// content é¡¯ç¤ºè¦æ·»åŠ çš„å…§å®¹ ã€‚
+					// attr (è‹¥ä¸æƒ³ä½¿å…§å®¹å›ºå®šï¼Œå‰‡ä½¿ç”¨ attr(id) ä¾¿å¯é¡¯ç¤º "text" )ã€‚
 }
 
 
@@ -150,17 +150,17 @@ css animation ¥ş¸ÑªR : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Anim
 **********************************************************************
 
 
-ºô­¶¥i¨£°Ï°ì¼e¡Gdocument.body.clientWidth
-ºô­¶¥i¨£°Ï°ì°ª¡Gdocument.body.clientHeight
+ç¶²é å¯è¦‹å€åŸŸå¯¬ï¼šdocument.body.clientWidth
+ç¶²é å¯è¦‹å€åŸŸé«˜ï¼šdocument.body.clientHeight
 
-ºô­¶¥i¨£°Ï°ì¼e¡Gdocument.body.offsetWidth(¥]¬AÃä½u©M±²¶bªº¼e)
-ºô­¶¥i¨£°Ï°ì°ª¡Gdocument.body.offsetHeight(¥]¬AÃä½uªº¼e)
-
-
-@media screen and  (orientation: portrait)	µøµ¡¬°ª½¥ßªº¸Ü
+ç¶²é å¯è¦‹å€åŸŸå¯¬ï¼šdocument.body.offsetWidth(åŒ…æ‹¬é‚Šç·šå’Œæ²è»¸çš„å¯¬)
+ç¶²é å¯è¦‹å€åŸŸé«˜ï¼šdocument.body.offsetHeight(åŒ…æ‹¬é‚Šç·šçš„å¯¬)
 
 
+@media screen and  (orientation: portrait)	è¦–çª—ç‚ºç›´ç«‹çš„è©±
 
-@supports <±ø¥ó³W«h>
-@supports <±ø¥ó³W«h> and <±ø¥ó³W«h>
-@supports not <±ø¥ó³W«h>	//·íÂsÄı¾¹¤£¤ä«ù¦¹ css ®É
+
+
+@supports <æ¢ä»¶è¦å‰‡>
+@supports <æ¢ä»¶è¦å‰‡> and <æ¢ä»¶è¦å‰‡>
+@supports not <æ¢ä»¶è¦å‰‡>	//ç•¶ç€è¦½å™¨ä¸æ”¯æŒæ­¤ css æ™‚

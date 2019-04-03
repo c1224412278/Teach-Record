@@ -1,4 +1,4 @@
-public class TextureEditor
+﻿public class TextureEditor
 {
     [MenuItem("TextureEdit/Edit")]
     private static void Fn_EditTexture()

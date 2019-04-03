@@ -1,10 +1,10 @@
-°òÂ¦¾Ş§@ / ¾Ş±±
+ï»¿åŸºç¤æ“ä½œ / æ“æ§
 
 public class Controller : MonoBehaviour 
 {
-	private SteamVR_TrackedObject trackObj;		//±±¨î¾¹
+	private SteamVR_TrackedObject trackObj;		//æ§åˆ¶å™¨
 
-	//¨ú±o±±¨î¾¹ªº­ş­Ó«ö¶s³QÀ£¤U¡B©ñ¶}¡BÄ²¸I
+	//å–å¾—æ§åˆ¶å™¨çš„å“ªå€‹æŒ‰éˆ•è¢«å£“ä¸‹ã€æ”¾é–‹ã€è§¸ç¢°
 	private SteamVR_Controller.Device controller
 	{
 		get
@@ -13,51 +13,51 @@ public class Controller : MonoBehaviour
 		}
 	}
 
-	//³o­Ó½d¨Ò¥Ü½d¦p¦ó½T»{±±¨î¾¹ªº¿ï³æ¶s¬O§_³Q«ö¤U
+	//é€™å€‹ç¯„ä¾‹ç¤ºç¯„å¦‚ä½•ç¢ºèªæ§åˆ¶å™¨çš„é¸å–®éˆ•æ˜¯å¦è¢«æŒ‰ä¸‹
 	private EVRButtonId button = EVRButtonId.k_EButton_ApplicationMenu;
 	private bool buttonPressed;
 
 	private void Start ()
 	{
-		trackObj = GetComponent<SteamVR_TrackedObject>();//¨ú±o±±¨î¾¹¸}¥»ª«¥ó
+		trackObj = GetComponent<SteamVR_TrackedObject>();//å–å¾—æ§åˆ¶å™¨è…³æœ¬ç‰©ä»¶
 	}
 
 	private void Update ()
 	{
 		if(controller == null)
 		{
-			Debug.Log("±±¨î¾¹¨Ã¨S¦³³Qªì©l¤Æ");
+			Debug.Log("æ§åˆ¶å™¨ä¸¦æ²’æœ‰è¢«åˆå§‹åŒ–");
 			return;
 		}
 
-		//buttonPressed = controller.GetPressDown(button);//¨ú±o±±¨î¾¹ªº¿ï³æ«ö¶s¬O§_¦³³Q«ö¤U
+		//buttonPressed = controller.GetPressDown(button);//å–å¾—æ§åˆ¶å™¨çš„é¸å–®æŒ‰éˆ•æ˜¯å¦æœ‰è¢«æŒ‰ä¸‹
 		//Debug.Log(buttonPressed);
 
 		//var deviceIndex = SteamVR_Controller.GetDeviceIndex (SteamVR_Controller.DeviceRelation.Rightmost);
-		//SteamVR_Controller.Input (deviceIndex).TriggerHapticPulse(3000);		//¤â³¡(¥k)¾_°Ê
+		//SteamVR_Controller.Input (deviceIndex).TriggerHapticPulse(3000);		//æ‰‹éƒ¨(å³)éœ‡å‹•
 	}
 }
 
 
-// »·¶ZÂ÷©ì¦² http://www.cnblogs.com/GJM6/p/6594293.html
+// é è·é›¢æ‹–æ›³ http://www.cnblogs.com/GJM6/p/6594293.html
 
-VRTKªº30­Ó½d¨Ò¸Ñ»¡ : https://hk.saowen.com/a/5db4dfac554879d577c89eb1242058078b8b9db5704b6475ed7f3a851bde3969
-VRTK ¸}¥»¨Ï¥Î¸ÑÄÀ : https://vrtoolkit.readme.io/docs/vrtk_swapcontrollergrabaction
+VRTKçš„30å€‹ç¯„ä¾‹è§£èªª : https://hk.saowen.com/a/5db4dfac554879d577c89eb1242058078b8b9db5704b6475ed7f3a851bde3969
+VRTK è…³æœ¬ä½¿ç”¨è§£é‡‹ : https://vrtoolkit.readme.io/docs/vrtk_swapcontrollergrabaction
 
- * VRTK Interactable Object ª«¥ó§ì¨ú
-Allowed Touch Controllers:§PÂ_­ş­Ó³]³Æ§ì¨ú
-Ignored Colliders : ¥i¥H©¿²¤¸I¼²
-Hold Button To Grab : ¬O§_­n¤@ª½«öµÛ
-Stay Grabbed On Teleport : ¨¾¤î±¼¸¨
-Grab Attach Mechanic Script : §PÂ_±±¨î¾¹§ì¦í®É¡A­ş­Óª«¥ó­n¦b±±¨î¾¹¨­¤W¡C VRTK_Child Of Controller Grab Attach -> xxxx Snap Handle ³]©wª«¥ó
+ * VRTK Interactable Object ç‰©ä»¶æŠ“å–
+Allowed Touch Controllers:åˆ¤æ–·å“ªå€‹è¨­å‚™æŠ“å–
+Ignored Colliders : å¯ä»¥å¿½ç•¥ç¢°æ’
+Hold Button To Grab : æ˜¯å¦è¦ä¸€ç›´æŒ‰è‘—
+Stay Grabbed On Teleport : é˜²æ­¢æ‰è½
+Grab Attach Mechanic Script : åˆ¤æ–·æ§åˆ¶å™¨æŠ“ä½æ™‚ï¼Œå“ªå€‹ç‰©ä»¶è¦åœ¨æ§åˆ¶å™¨èº«ä¸Šã€‚ VRTK_Child Of Controller Grab Attach -> xxxx Snap Handle è¨­å®šç‰©ä»¶
 
 
- * VRTK_InteractControllerAppearance §ì¨úÁôÂÃ¤â§â
+ * VRTK_InteractControllerAppearance æŠ“å–éš±è—æ‰‹æŠŠ
 
- * VRTK_SwapControllerGrabAction ¤¹³\±±¨î¤¬¬Û§ì¨ú¬Û¤¬ªºª«
+ * VRTK_SwapControllerGrabAction å…è¨±æ§åˆ¶äº’ç›¸æŠ“å–ç›¸äº’çš„ç‰©
 
- * VRTK_InteractTouch ¬°¤â§â²K¥[¸I¼²¾¹
+ * VRTK_InteractTouch ç‚ºæ‰‹æŠŠæ·»åŠ ç¢°æ’å™¨
 
- * Interact Grab §PÂ_¤â§â»İ­nªº«ö¶s¡A¨Ã±±¨îª«¥ó
+ * Interact Grab åˆ¤æ–·æ‰‹æŠŠéœ€è¦çš„æŒ‰éˆ•ï¼Œä¸¦æ§åˆ¶ç‰©ä»¶
 
- * VRTK_SDKTransformModify ¥i¥H¦b¹B¦æ®É¡A§ïÅÜ¤è¦V
+ * VRTK_SDKTransformModify å¯ä»¥åœ¨é‹è¡Œæ™‚ï¼Œæ”¹è®Šæ–¹å‘

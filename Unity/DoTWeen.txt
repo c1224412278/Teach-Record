@@ -1,32 +1,32 @@
-* https://blog.csdn.net/LIQIANGEASTSUN/article/details/45892907  (¹ê¥Î) ¥Îªk¸Ô²Ó¤¶²Ğ
+ï»¿* https://blog.csdn.net/LIQIANGEASTSUN/article/details/45892907  (å¯¦ç”¨) ç”¨æ³•è©³ç´°ä»‹ç´¹
 
 -------------------------------	Sequence ----------------------------------------
 
-Sequence s = DOTween.Sequence();	//°õ¦æ¦hµ§°Ê§@
+Sequence s = DOTween.Sequence();	//åŸ·è¡Œå¤šç­†å‹•ä½œ
 
-s.Rewind() 				//¦^¨ì­ì¦ì
-s.SetLoops(-1, LoopType.Yoyo);		//´`Àô¼½©ñ (-1 ¬° µL­­¦¸¡A)
-s.SetUpdate(true);	//¤¹³\¤£¨ü timeScale ªº¼vÅT
-s.SetAutoKill(false);   //°Êµe¼½©ñ§¹¦¨¬O§_¦Û°Ê¾P·´ Tweener
+s.Rewind() 				//å›åˆ°åŸä½
+s.SetLoops(-1, LoopType.Yoyo);		//å¾ªç’°æ’­æ”¾ (-1 ç‚º ç„¡é™æ¬¡ï¼Œ)
+s.SetUpdate(true);	//å…è¨±ä¸å— timeScale çš„å½±éŸ¿
+s.SetAutoKill(false);   //å‹•ç•«æ’­æ”¾å®Œæˆæ˜¯å¦è‡ªå‹•éŠ·æ¯€ Tweener
 
 ------------------------------- tweener -----------------------------------------
 
-* https://blog.csdn.net/u013762848/article/details/82256276 ½w°Ê¨ç¼Æ
+* https://blog.csdn.net/u013762848/article/details/82256276 ç·©å‹•å‡½æ•¸
 -> tweener.SetEase(Ease.InQuad); 
 
-this.transform.DOPlayForward();         //¨Ï tweener ¬O§_Ä~Äò©¹«e¼½©ñ
-this.transform.DOPlayBackwards();       //¨Ï tweener ¬O§_¦^¼½
+this.transform.DOPlayForward();         //ä½¿ tweener æ˜¯å¦ç¹¼çºŒå¾€å‰æ’­æ”¾
+this.transform.DOPlayBackwards();       //ä½¿ tweener æ˜¯å¦å›æ’­
 
 
 DOTween.To (() => XXX.localPosition , x => XXX.localPosition = x , Vector3.zero , 1); 
-		//¥Ø¼Ğ			//¥Ø¼Ğªº x ¶b		     //²¾°Ê¦ì¸m  //´X¬í
+		//ç›®æ¨™			//ç›®æ¨™çš„ x è»¸		     //ç§»å‹•ä½ç½®  //å¹¾ç§’
 
 Tweener tweener01 = XXX01.DoLocalMove(Vector3.zero , 5) ;
 Tweener tweener02 = XXX02.DoLocalMove(Vector3.zero , 5) ;
 
-tweener01.Kill() ; 		//§R°£°Ê§@
-tweener01.Pause() ; 		//¼È°±
-tweener01.Play() ; 		//¶}©l
-tweener01.Restart() ; 		//­«·s¶}©l
-tweener01.Rewind() ; 		//ª½±µ¦^­ì©l¦ì¸m
+tweener01.Kill() ; 		//åˆªé™¤å‹•ä½œ
+tweener01.Pause() ; 		//æš«åœ
+tweener01.Play() ; 		//é–‹å§‹
+tweener01.Restart() ; 		//é‡æ–°é–‹å§‹
+tweener01.Rewind() ; 		//ç›´æ¥å›åŸå§‹ä½ç½®
 

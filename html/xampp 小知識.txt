@@ -1,4 +1,4 @@
-XAMPP > Config > Apache (httpd.conf)
+﻿XAMPP > Config > Apache (httpd.conf)
 =>
-DocumentRoot "C:/xampp/htdocs"		//���w�}�Ҹ��|
-<Directory "C:/xampp/htdocs">		//���|�ݬۦP
+DocumentRoot "C:/xampp/htdocs"		//指定開啟路徑
+<Directory "C:/xampp/htdocs">		//路徑需相同

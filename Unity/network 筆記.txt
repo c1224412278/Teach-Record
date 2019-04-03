@@ -1,16 +1,16 @@
-·s¼W network Manager ¡B network Manager HUD
-¦b network Manager -> Player Prefab Äæ¦ì ©ì©Ô­n²£¥Íªº¨¤¦â(¨¤¦â¨­¤W»İ¦³ NetWork Identity)
+ï»¿æ–°å¢ network Manager ã€ network Manager HUD
+åœ¨ network Manager -> Player Prefab æ¬„ä½ æ‹–æ‹‰è¦ç”¢ç”Ÿçš„è§’è‰²(è§’è‰²èº«ä¸Šéœ€æœ‰ NetWork Identity)
 
-³s½uCode »İ¥[¤W using UnityEngine.Networking; 
+é€£ç·šCode éœ€åŠ ä¸Š using UnityEngine.Networking; 
 		public class XXXX : NetworkBehaviour
 		{
 
 		}
 
-¨¤¦â¨­¤Wªº NetWork Identity > Local Player Authority ¤Ä¿ï ¥i°Ï¤ÀServer »P Client
-¤§«áµ{¦¡½X ¥[¤W if(!isLocalPlayer) §Y¥i°µ°Ï¤À
+è§’è‰²èº«ä¸Šçš„ NetWork Identity > Local Player Authority å‹¾é¸ å¯å€åˆ†Server èˆ‡ Client
+ä¹‹å¾Œç¨‹å¼ç¢¼ åŠ ä¸Š if(!isLocalPlayer) å³å¯åšå€åˆ†
 
 
-²K¥[ NetWork Transform ¡C 
-* ³]©w·N«ä 
-	NetWork Send Rate ¨C¬í´X¦¸¶Ç°e
+æ·»åŠ  NetWork Transform ã€‚ 
+* è¨­å®šæ„æ€ 
+	NetWork Send Rate æ¯ç§’å¹¾æ¬¡å‚³é€

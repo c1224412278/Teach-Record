@@ -1,7 +1,7 @@
-const «Å§i¤@©w­n¥ıµ¹­È
-public const int x = 10 ; 	//¦pªG¤£µ¹«h·|¥X¿ù
+ï»¿const å®£å‘Šä¸€å®šè¦å…ˆçµ¦å€¼
+public const int x = 10 ; 	//å¦‚æœä¸çµ¦å‰‡æœƒå‡ºéŒ¯
 
-readonly ¦³«Øºc¤èªk¡A´N¤£¤@©w­n¥ı½á¤©­È
+readonly æœ‰å»ºæ§‹æ–¹æ³•ï¼Œå°±ä¸ä¸€å®šè¦å…ˆè³¦äºˆå€¼
 public readonly int x ; 
 
 public class test

@@ -1,4 +1,4 @@
-*¤§«á¾Ç²ß : https://www.jianshu.com/p/4e8162ed0c8d
+ï»¿*ä¹‹å¾Œå­¸ç¿’ : https://www.jianshu.com/p/4e8162ed0c8d
 https://www.jianshu.com/p/80a932d1f11e
 https://blog.csdn.net/mobilebbki399/article/details/50493117
 https://www.patreon.com/posts/quick-game-art-15265060
@@ -9,38 +9,38 @@ https://www.patreon.com/posts/quick-game-art-15121329
 o.vertex = UnityObjectToClipPos(v.pos);
 o.uv =   TRANSFORM_TEX(v.texcoord,_MainTex);    =>  o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 o.normal = UnityObjectToWorldNormal(normal);	
-(ªk½u¸Ô¸Ñ : https://blog.csdn.net/candycat1992/article/details/41605257)
+(æ³•ç·šè©³è§£ : https://blog.csdn.net/candycat1992/article/details/41605257)
 
 
-Unity®y¼Ğ¨tÂà´«
+Unityåº§æ¨™ç³»è½‰æ›
 
-¼Ò«¬®y¼Ğ -> ¥@¬É®y¼Ğ -> ¬Û¾÷®y¼Ğ  -(§ë¼vÅÜ´«)>  °Åµô®y¼Ğ -> NDC[¿Ã¹õªÅ¶¡¡A°²¦p 1280x720 => x:1280 y:720] -> «Ì¹õ®y¼Ğ
+æ¨¡å‹åº§æ¨™ -> ä¸–ç•Œåº§æ¨™ -> ç›¸æ©Ÿåº§æ¨™  -(æŠ•å½±è®Šæ›)>  å‰ªè£åº§æ¨™ -> NDC[è¢å¹•ç©ºé–“ï¼Œå‡å¦‚ 1280x720 => x:1280 y:720] -> å±å¹•åº§æ¨™
 
 
-1: transform.localToWorldMatrix §½³¡Âà¥@¬Éªº¯x°};
-2: transfrom.worldToLocalMatrix ¥@¬É®y¼ĞÂà§½³¡®y¼Ğ¯x°};
-¡@MultiplyPoint, MultiplyPoint3x4 MultiplayVector ¨Ó¶i¦æ®y¼ĞÅÜ´«;
-4: shader¤¤ ¥ª­¼_World2Object¯x°}¨Ó¹ê²{¥@¬É®y¼ĞÂà§½³¡®y¼ĞÅÜ´«;
-5: shader¤¤¥ª­¼_Object2World¯x°}¨Ó¹ê²{§½³¡Âà¥@¬ÉªºÂà´«; 
-6: UNITY_MATRIX_MV °ò¥»ÅÜ´«¯x°} x Äá¹³¾÷¯x°};
-7: UNITY_MATRIX_MVP °ò¥»ÅÜ´«¯x°}xÄá¹³¾÷¯x°}x§ë¼v¯x°};
-8: UNITY_MATRIX_V Äá¹³¾÷¯x°};
-9: UNITY_MATRIX_P §ë¼v¯x°};
-10: UNITY_MATRIX_VPÄá¹³¾÷¯x°}x§ë¼v¯x°};
-11: UNITY_MATRIX_T_MV (°ò¥»ÅÜ´«¯x°} x Äá¹³¾÷¯x°}) Âà¸m¯x°};
-12: UNITY_MATRIX_IT_MV(°ò¥»ÅÜ´«¯x°} x Äá¹³¾÷¯x°}) ªº°fÂà¸m¯x°};
-13: UNITY_MATRIX_TEXTURE0 ¯¾²zÅÜ¤Æ¯x°};
+1: transform.localToWorldMatrix å±€éƒ¨è½‰ä¸–ç•Œçš„çŸ©é™£;
+2: transfrom.worldToLocalMatrix ä¸–ç•Œåº§æ¨™è½‰å±€éƒ¨åº§æ¨™çŸ©é™£;
+ã€€MultiplyPoint, MultiplyPoint3x4 MultiplayVector ä¾†é€²è¡Œåº§æ¨™è®Šæ›;
+4: shaderä¸­ å·¦ä¹˜_World2ObjectçŸ©é™£ä¾†å¯¦ç¾ä¸–ç•Œåº§æ¨™è½‰å±€éƒ¨åº§æ¨™è®Šæ›;
+5: shaderä¸­å·¦ä¹˜_Object2WorldçŸ©é™£ä¾†å¯¦ç¾å±€éƒ¨è½‰ä¸–ç•Œçš„è½‰æ›; 
+6: UNITY_MATRIX_MV åŸºæœ¬è®Šæ›çŸ©é™£ x æ”åƒæ©ŸçŸ©é™£;
+7: UNITY_MATRIX_MVP åŸºæœ¬è®Šæ›çŸ©é™£xæ”åƒæ©ŸçŸ©é™£xæŠ•å½±çŸ©é™£;
+8: UNITY_MATRIX_V æ”åƒæ©ŸçŸ©é™£;
+9: UNITY_MATRIX_P æŠ•å½±çŸ©é™£;
+10: UNITY_MATRIX_VPæ”åƒæ©ŸçŸ©é™£xæŠ•å½±çŸ©é™£;
+11: UNITY_MATRIX_T_MV (åŸºæœ¬è®Šæ›çŸ©é™£ x æ”åƒæ©ŸçŸ©é™£) è½‰ç½®çŸ©é™£;
+12: UNITY_MATRIX_IT_MV(åŸºæœ¬è®Šæ›çŸ©é™£ x æ”åƒæ©ŸçŸ©é™£) çš„é€†è½‰ç½®çŸ©é™£;
+13: UNITY_MATRIX_TEXTURE0 ç´‹ç†è®ŠåŒ–çŸ©é™£;
 
 ------------------------------------------------------------------------
 
-* ¿O¥ú ¸Ô¸Ñ https://blog.csdn.net/candycat1992/article/details/42460959 
+* ç‡ˆå…‰ è©³è§£ https://blog.csdn.net/candycat1992/article/details/42460959 
 
-_LightColor0				//Unity ·í«e¿O¥úÃC¦â
-UNITY_LIGHTMODEL_AMBIENT		//Unity ¤ù¬q´è¬V - Àô¹Ò¥ú
+_LightColor0				//Unity ç•¶å‰ç‡ˆå…‰é¡è‰²
+UNITY_LIGHTMODEL_AMBIENT		//Unity ç‰‡æ®µæ¸²æŸ“ - ç’°å¢ƒå…‰
 
 -------------------------------------------------------------------------
 
-Shader «¬ºA
+Shader å‹æ…‹
 	*Int
 	*Float
 	*Range
@@ -48,52 +48,52 @@ Shader «¬ºA
 	*Vector
 	*2D
 
-_Time.x ¡B _Time.y ¡B _Time.z ¡B _Time.w  => (t/20, t, t*2, t*3)
+_Time.x ã€ _Time.y ã€ _Time.z ã€ _Time.w  => (t/20, t, t*2, t*3)
 
 
 Tags {}
 
-{ "RenderType"="Opaque" }	//´è¬Vª«¥ó¬O§_³z©ú 
-³z©ú Opaque ¡A «D³z©ú Transparent
-( * ¥t¥~¸É¥R : "IgnoreProjector"="True" ¤£³QProjectors¼vÅT )
-("ForceNoShadowCasting"="True"(¤£²£¥Í³±¼v))
+{ "RenderType"="Opaque" }	//æ¸²æŸ“ç‰©ä»¶æ˜¯å¦é€æ˜ 
+é€æ˜ Opaque ï¼Œ éé€æ˜ Transparent
+( * å¦å¤–è£œå…… : "IgnoreProjector"="True" ä¸è¢«Projectorså½±éŸ¿ )
+("ForceNoShadowCasting"="True"(ä¸ç”¢ç”Ÿé™°å½±))
 
 
- -----------  ´è¬V¶¶§Ç ------------->  ( ¶V¤j¶V«á´è¬V¡AÅ|¶V°ª)
+ -----------  æ¸²æŸ“é †åº ------------->  ( è¶Šå¤§è¶Šå¾Œæ¸²æŸ“ï¼Œç–Šè¶Šé«˜)
 
-("Queue"="xxx" («ü©w´è¬V¶¶§Ç¡A¶V«á´è¬VÅ|¶V¤W¼h))
-* Background - ³Ì¦­´è¬V¤ÑªÅ²°©Î­I´º
-* Geometry - ´è¬V«D³z©úª« (¹w³])
-* AlphaTest - ´è¬V Alpha Testªº¹³¯À
-* Transparent - ±q«á©¹«eªº¤è¦¡´è¬V³z©úª«Ê^
-* Overlay - ¥Î¨Ó´è¬VÅ|¥[ªº®ÄªG¡A¬O´è¬Vªº³Ì«á¶¥¬q(¤ñ¦pÃèÀY¥ú·wµ¥¯S®Ä)
+("Queue"="xxx" (æŒ‡å®šæ¸²æŸ“é †åºï¼Œè¶Šå¾Œæ¸²æŸ“ç–Šè¶Šä¸Šå±¤))
+* Background - æœ€æ—©æ¸²æŸ“å¤©ç©ºç›’æˆ–èƒŒæ™¯
+* Geometry - æ¸²æŸ“éé€æ˜ç‰© (é è¨­)
+* AlphaTest - æ¸²æŸ“ Alpha Testçš„åƒç´ 
+* Transparent - å¾å¾Œå¾€å‰çš„æ–¹å¼æ¸²æŸ“é€æ˜ç‰©ä½“
+* Overlay - ç”¨ä¾†æ¸²æŸ“ç–ŠåŠ çš„æ•ˆæœï¼Œæ˜¯æ¸²æŸ“çš„æœ€å¾Œéšæ®µ(æ¯”å¦‚é¡é ­å…‰æšˆç­‰ç‰¹æ•ˆ)
 
 ---------------------------------------
--------------±`¥ÎShader³]©w-------------
+-------------å¸¸ç”¨Shaderè¨­å®š-------------
 
-* RenderType	//¥Î¤@­ÓShader¨ú¥N¥Ø«eÄá¼v¾÷·Ó®g¨ìªºShader
-* ColorMask RGB	//¥i¥H©¿²¤¬YºØÃC¦â  ColorMask R  ,  ColorMask RG , ColorMask RGB
+* RenderType	//ç”¨ä¸€å€‹Shaderå–ä»£ç›®å‰æ”å½±æ©Ÿç…§å°„åˆ°çš„Shader
+* ColorMask RGB	//å¯ä»¥å¿½ç•¥æŸç¨®é¡è‰²  ColorMask R  ,  ColorMask RG , ColorMask RGB
 
-* Cull Back¡X¡X ¤£Ã¸»s­I­±
-* Cull Front¡X¡X ¤£Ã¸»s«e­±
-* Cull Off ¡X¡X Åã¥Ü©Ò¦³­±
+* Cull Backâ€”â€” ä¸ç¹ªè£½èƒŒé¢
+* Cull Frontâ€”â€” ä¸ç¹ªè£½å‰é¢
+* Cull Off â€”â€” é¡¯ç¤ºæ‰€æœ‰é¢
 
-* ZWrite On | Off  ¦pªG»İ­nÃ¸»s¯Â¦âª«Åé -> ZWrite On¡C
-		 ¦pªG­nÃ¸»s¥b³z©ú®ÄªG -> ZWrite Off ¡C
-* Zwrite ¹w³] on  , ¬O§_­n¶i¦æ²`«×´è¬V  -> ¨Ì·ÓÄá¼v¾÷Z¶b´è¬V¶ZÂ÷¶V»·¥ı´è¬V
+* ZWrite On | Off  å¦‚æœéœ€è¦ç¹ªè£½ç´”è‰²ç‰©é«” -> ZWrite Onã€‚
+		 å¦‚æœè¦ç¹ªè£½åŠé€æ˜æ•ˆæœ -> ZWrite Off ã€‚
+* Zwrite é è¨­ on  , æ˜¯å¦è¦é€²è¡Œæ·±åº¦æ¸²æŸ“  -> ä¾ç…§æ”å½±æ©ŸZè»¸æ¸²æŸ“è·é›¢è¶Šé å…ˆæ¸²æŸ“
 
-* ZTest  ²`«×´ú¸Õ ¡A ¹w³] LEqual
-¥¿±`ªºª«¥ó±Æ§Ç®ÄªG : LEqual¡BLess
-³Q¾B¾×¤~·|´è¬V®ÄªG : GEqual¡BGreater
-¥Ã»·¤£·|³Q¾B¾× : Always¡BNotEqual
-¹p¤H¥Îªº : Equal
-
-
-* Blend SrcAlpha OneMinusSrcAlpha   //¿é¥XÃC¦â»Pµe­±ÃC¦â°µ¸I¼² -> §Ë¥X¥b³z©úÅé
+* ZTest  æ·±åº¦æ¸¬è©¦ ï¼Œ é è¨­ LEqual
+æ­£å¸¸çš„ç‰©ä»¶æ’åºæ•ˆæœ : LEqualã€Less
+è¢«é®æ“‹æ‰æœƒæ¸²æŸ“æ•ˆæœ : GEqualã€Greater
+æ°¸é ä¸æœƒè¢«é®æ“‹ : Alwaysã€NotEqual
+é›·äººç”¨çš„ : Equal
 
 
-* LOD (³]¸m¼Æ­È¨ú¨M¥i¥H¨Ï¥Î¤U­±­ş¶µ¥\¯à) 
-VertexLit¤Î¨ä¨t¦C = 100
+* Blend SrcAlpha OneMinusSrcAlpha   //è¼¸å‡ºé¡è‰²èˆ‡ç•«é¢é¡è‰²åšç¢°æ’ -> å¼„å‡ºåŠé€æ˜é«”
+
+
+* LOD (è¨­ç½®æ•¸å€¼å–æ±ºå¯ä»¥ä½¿ç”¨ä¸‹é¢å“ªé …åŠŸèƒ½) 
+VertexLitåŠå…¶ç³»åˆ— = 100
 Decal, Reflective VertexLit = 150
 Diffuse = 200
 Diffuse Detail, Reflective Bumped Unlit, Reflective Bumped VertexLit = 250
@@ -104,29 +104,29 @@ Parallax Specular = 600
 
 EndTags
 ------------------------------------------
---------------- ¤ù¬q´è¬V  ----------------
+--------------- ç‰‡æ®µæ¸²æŸ“  ----------------
 
 "LightMode"="xxxx"
-Always : ¤£ºŞ¨Ï¥Î­şºØ´è¬V¸ô®|¡A¤£·|­pºâ¥ô¦ó¥ú·Ó
-ForwardBase : ¦V«e´è¬V¡APass·|­pºâÀô¹Ò¥ú¡B¥­¦æ¥ú¡B³v³»ÂI/SH¥ú·½©MLightmaps
-ForwardAdd : ¦V«e´è¬V¡APass­pºâÃB¥~¹³¯À¥ú·½¡A¨C­ÓPass¹ï¤@­Ó¥ú·½
-Deferred : ©µ¿ğ´è¬V¡A¸ÓPass´è¬V G-buffer ½w¨R
-ShadowCaster : ª«Åé²`«×´è¬V¨ì ³±¼v¯¾²z ©Î ²`«×¯¾²z
-PrepassBase : ¿ò¯dªº©µ¿ğ´è¬V¡APass ´è¬Vªk½u ©M °ª¥ú¤Ï®gªº«ü¼Æ³¡¤À
-PrepassFinal : ¿ò¯dªº©µ¿ğ´è¬V¡APass³q¹L¦X¨Ö¯¾²z¡B¥ú·Ó¡B¦Ûµo¥ú¨Ó¨ú±o³Ì«áªºÃC¦â
+Always : ä¸ç®¡ä½¿ç”¨å“ªç¨®æ¸²æŸ“è·¯å¾‘ï¼Œä¸æœƒè¨ˆç®—ä»»ä½•å…‰ç…§
+ForwardBase : å‘å‰æ¸²æŸ“ï¼ŒPassæœƒè¨ˆç®—ç’°å¢ƒå…‰ã€å¹³è¡Œå…‰ã€é€é ‚é»/SHå…‰æºå’ŒLightmaps
+ForwardAdd : å‘å‰æ¸²æŸ“ï¼ŒPassè¨ˆç®—é¡å¤–åƒç´ å…‰æºï¼Œæ¯å€‹Passå°ä¸€å€‹å…‰æº
+Deferred : å»¶é²æ¸²æŸ“ï¼Œè©²Passæ¸²æŸ“ G-buffer ç·©æ²–
+ShadowCaster : ç‰©é«”æ·±åº¦æ¸²æŸ“åˆ° é™°å½±ç´‹ç† æˆ– æ·±åº¦ç´‹ç†
+PrepassBase : éºç•™çš„å»¶é²æ¸²æŸ“ï¼ŒPass æ¸²æŸ“æ³•ç·š å’Œ é«˜å…‰åå°„çš„æŒ‡æ•¸éƒ¨åˆ†
+PrepassFinal : éºç•™çš„å»¶é²æ¸²æŸ“ï¼ŒPassé€šéåˆä½µç´‹ç†ã€å…‰ç…§ã€è‡ªç™¼å…‰ä¾†å–å¾—æœ€å¾Œçš„é¡è‰²
 
 ---------------------------------------------------------------------------
 
-* §ì¨ú (¿Ã¹õ¦ì¸m) ´è¬V
+* æŠ“å– (è¢å¹•ä½ç½®) æ¸²æŸ“
 
 GrabPass{ "GrabPassTexture" }
 sampler2D GrabPassTexture;
 
 v2f vert(appdata_base v)
 {
-	o.grabPos = ComputeGrabScreenPos(o.pos);   //MVPªÅ¶¡Âà¨ì¿Ã¹õªÅ¶¡
+	o.grabPos = ComputeGrabScreenPos(o.pos);   //MVPç©ºé–“è½‰åˆ°è¢å¹•ç©ºé–“
 }
-half4 frag(v2f i) : SV_Target		//¥Îtex2Dproj¡BUNITY_PROJ_COORDµ¥¡A¥i¥H³B²z¸ó¥­¥xµ¥°İÃD¡C
+half4 frag(v2f i) : SV_Target		//ç”¨tex2Dprojã€UNITY_PROJ_COORDç­‰ï¼Œå¯ä»¥è™•ç†è·¨å¹³å°ç­‰å•é¡Œã€‚
 {
 	fixed4 color = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.grabPos));
 }
@@ -139,37 +139,37 @@ fixed4 frag (v2f v) : SV_Target
 }
 
 
-* §ì¨ú³õ´ºª«¥ó²`«×
+* æŠ“å–å ´æ™¯ç‰©ä»¶æ·±åº¦
 
 sampler2D _CameraDepthTexture;
 
 v2f vert()
 {
-	o.scrPos = ComputeScreenPos(o.pos);	//±N»ô¦¸®y¼Ğªğ¦^«Ì¹õ®y¼Ğ
-	COMPUTE_EYEDEPTH(o.scrPos.z);		//­pºâ³»ÂI¨ìÄá¼v¾÷ªº²`«×
+	o.scrPos = ComputeScreenPos(o.pos);	//å°‡é½Šæ¬¡åº§æ¨™è¿”å›å±å¹•åº§æ¨™
+	COMPUTE_EYEDEPTH(o.scrPos.z);		//è¨ˆç®—é ‚é»åˆ°æ”å½±æ©Ÿçš„æ·±åº¦
 }
 fixed4 frag (v2f i)
 {
 
-	SAMPLE_DEPTH_TEXTURE	//³B²z¥­¥x©Ò³y¦¨ªº®t²§
-	float d = SAMPLE_DEPTH_TEXTURE(_cameraDepthTexture,i.uv)	//¹ï²`«×¯¾²z¶i¦æ±Ä¼Ë
+	SAMPLE_DEPTH_TEXTURE	//è™•ç†å¹³å°æ‰€é€ æˆçš„å·®ç•°
+	float d = SAMPLE_DEPTH_TEXTURE(_cameraDepthTexture,i.uv)	//å°æ·±åº¦ç´‹ç†é€²è¡Œæ¡æ¨£
 
-""" ­n¨Dª«Åéªº Depth ­È´N¥Î³o­Ó
+""" è¦æ±‚ç‰©é«”çš„ Depth å€¼å°±ç”¨é€™å€‹
 
-	SAMPLE_DEPTH_TEXTURE_PROJ  //¨Ï¥Î tex2Dproj ¹ï²`«×¯¾²z¶i¦æ§ë¼v
+	SAMPLE_DEPTH_TEXTURE_PROJ  //ä½¿ç”¨ tex2Dproj å°æ·±åº¦ç´‹ç†é€²è¡ŒæŠ•å½±
         float sceneZ = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos)));
 
 	---------------------------------------------------------------------------
 
 	float depth = UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv));
 
-	float linear01Depth = Linear01Depth(depth);	//±N²`«×¹Ï¥H Linear ¤è¦¡Åã¥Ü¡AÂà´«¦¨[0,1]¤ºªº½u©ÊÅÜ¤Æ²`«×­È				
+	float linear01Depth = Linear01Depth(depth);	//å°‡æ·±åº¦åœ–ä»¥ Linear æ–¹å¼é¡¯ç¤ºï¼Œè½‰æ›æˆ[0,1]å…§çš„ç·šæ€§è®ŠåŒ–æ·±åº¦å€¼				
 	return linear01Depth;				
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-* ªÅ¶¡­pºâÂà´«
+* ç©ºé–“è¨ˆç®—è½‰æ›
 
 	struct v2f
 	{
@@ -179,54 +179,54 @@ fixed4 frag (v2f i)
 	{	
 		1. o.vertex = UnityObjectToClipPos(v.vertex); 
 			<= or => 
-				mul(unity_ObjectToWorld, v.vertex).xyz; ª«Åé®y¼Ğ¦ì¸m¡Aªğ¦^float3
+				mul(unity_ObjectToWorld, v.vertex).xyz; ç‰©é«”åº§æ¨™ä½ç½®ï¼Œè¿”å›float3
 		
 
 
-		* ¥@¬É®y¼Ğ¨Dºâ ---------------------------------------
+		* ä¸–ç•Œåº§æ¨™æ±‚ç®— ---------------------------------------
 
 		float3 worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-		* ª«Åéªk¦V¶q¨Dºâ -------------------------------------
+		* ç‰©é«”æ³•å‘é‡æ±‚ç®— -------------------------------------
 
-		float3 worldNormal = normalize(mul(v.normal , (float3x3)unity_WorldToObject)); ¥@¬É®y¼Ğªk½u¦V¶q
+		float3 worldNormal = normalize(mul(v.normal , (float3x3)unity_WorldToObject)); ä¸–ç•Œåº§æ¨™æ³•ç·šå‘é‡
 		
 		--------------------------------------------------------
 		
-		* Camera ¥@¬É®y¼Ğ¦ì¸m
+		* Camera ä¸–ç•Œåº§æ¨™ä½ç½®
 
-		_WorldSpaceCameraPos	//¬Û¾÷ªº¥@¬É®y¼ĞªÅ¶¡¦ì¸m
+		_WorldSpaceCameraPos	//ç›¸æ©Ÿçš„ä¸–ç•Œåº§æ¨™ç©ºé–“ä½ç½®
 		
 		---------------------------------------------------------
 
-		* Äá¼v¾÷·Ó®g¤è¦V
+		* æ”å½±æ©Ÿç…§å°„æ–¹å‘
 
-		UnityWorldSpaceViewDir(o.worldPos)	//¿é¤J¤@­Ó³»ÂI¦ì¸m¡Aªğ¦^³»ÂI¦ì¸m¨ìÄá¼v¾÷·Ó®gªº¤è¦V(¨S¦³³W¤@¤Æ)
+		UnityWorldSpaceViewDir(o.worldPos)	//è¼¸å…¥ä¸€å€‹é ‚é»ä½ç½®ï¼Œè¿”å›é ‚é»ä½ç½®åˆ°æ”å½±æ©Ÿç…§å°„çš„æ–¹å‘(æ²’æœ‰è¦ä¸€åŒ–)
 		UnityWorldSpaceViewDir == _WorldSpaceCameraPos.xyz - mul(unity_ObjectToWorld, v.vertex.xyz);
 
 		---------------------------------------------------------
 
-		* ¼Ò«¬ªÅ¶¡ªº¿O¥ú¦ì¸m¤è¦V
+		* æ¨¡å‹ç©ºé–“çš„ç‡ˆå…‰ä½ç½®æ–¹å‘
 		
 		ObjSpaceLightDir(float3)
-		normalize(_WorldSpaceLightPos0.xyz) == normalize(UnityWorldSpaceLightDir(float4)) //¿é¤J¤@­Ó³»ÂI¦ì¸m¡A§PÂ_³»ÂI¦ì¸m¨ì¥ú·½ªº¤è¦V(¨S¦³³W¤@¤Æ)
+		normalize(_WorldSpaceLightPos0.xyz) == normalize(UnityWorldSpaceLightDir(float4)) //è¼¸å…¥ä¸€å€‹é ‚é»ä½ç½®ï¼Œåˆ¤æ–·é ‚é»ä½ç½®åˆ°å…‰æºçš„æ–¹å‘(æ²’æœ‰è¦ä¸€åŒ–)
 	
 		---------------------------------------------------------
 	}
 	
 
-* #pragma ©M #include ¤º«Ø¨ç¦¡
+* #pragma å’Œ #include å…§å»ºå‡½å¼
 
-	#pragma multi_compile_fwdbase «ü©w½T«O¥i¥H¦bshader¤¤¨Ï¥Î¥ú·½°I®z¡A©M³±¼v¨Ï¥Î
-	#include "Lighting.cginc" ·í¨Ï¥Î _Lighting0 ®É¡A¥²¶·®M¥Î
-	#include "AutoLight.cginc"	¨Ï¥Î³±¼v§ë¼v¡A¥²¶·®M¥Î
+	#pragma multi_compile_fwdbase æŒ‡å®šç¢ºä¿å¯ä»¥åœ¨shaderä¸­ä½¿ç”¨å…‰æºè¡°å¼±ï¼Œå’Œé™°å½±ä½¿ç”¨
+	#include "Lighting.cginc" ç•¶ä½¿ç”¨ _Lighting0 æ™‚ï¼Œå¿…é ˆå¥—ç”¨
+	#include "AutoLight.cginc"	ä½¿ç”¨é™°å½±æŠ•å½±ï¼Œå¿…é ˆå¥—ç”¨
 
 
-* ³±¼v­pºâ (¨Ï¥Î½d¨Ò)
+* é™°å½±è¨ˆç®— (ä½¿ç”¨ç¯„ä¾‹)
 
 	struct v2f
 	{
-		SHADOW_COORDS(int) <-- (int)¿ï¾Ü¤@­Ó©|¥¼¨Ï¥ÎªºTexcoord³q¹D -> ´è¬V®É¥²¶·¯¸¤@­Ó³q¹D¦ì¸m
+		SHADOW_COORDS(int) <-- (int)é¸æ“‡ä¸€å€‹å°šæœªä½¿ç”¨çš„Texcoordé€šé“ -> æ¸²æŸ“æ™‚å¿…é ˆç«™ä¸€å€‹é€šé“ä½ç½®
 	}
 	v2f vert()
 	{
@@ -241,48 +241,48 @@ fixed4 frag (v2f i)
 
 
 
-*v2f vert(³o¸Ì)  ¥i¥H§ó§ï¬°¥H¤U¡AÀuÂI¬O¤£»İ¦A«Å§iappdata(¥i¥H¨ú¥N)
+*v2f vert(é€™è£¡)  å¯ä»¥æ›´æ”¹ç‚ºä»¥ä¸‹ï¼Œå„ªé»æ˜¯ä¸éœ€å†å®£å‘Šappdata(å¯ä»¥å–ä»£)
 
-	v2f vert(appdata_base / appdata_tan / appdata_full) ³»ÂI¼Æ¾Ú ´£¨Ñµ¹ ³»ÂIµ{§Ç
-	appdata_base : ³»ÂI¥Ñ¦ì¸m¡Bªk¦V¡B¤@­Ó¯¾²z®y¼Ğ ºc¦¨
-	appdata_tan : ³»ÂI¥Ñ¦ì¸m¡B¤Á½u¡Bªk¦V¡B¤@­Ó¯¾²z®y¼Ğ ºc¦¨
-	appdata_full : ³»ÂI¥Ñ¦ì¸m¡B¤Á½u¡Bªk¦V¡B¨â­Ó¯¾²z®y¼Ğ ©M ÃC¦â ºc¦¨
+	v2f vert(appdata_base / appdata_tan / appdata_full) é ‚é»æ•¸æ“š æä¾›çµ¦ é ‚é»ç¨‹åº
+	appdata_base : é ‚é»ç”±ä½ç½®ã€æ³•å‘ã€ä¸€å€‹ç´‹ç†åº§æ¨™ æ§‹æˆ
+	appdata_tan : é ‚é»ç”±ä½ç½®ã€åˆ‡ç·šã€æ³•å‘ã€ä¸€å€‹ç´‹ç†åº§æ¨™ æ§‹æˆ
+	appdata_full : é ‚é»ç”±ä½ç½®ã€åˆ‡ç·šã€æ³•å‘ã€å…©å€‹ç´‹ç†åº§æ¨™ å’Œ é¡è‰² æ§‹æˆ
 
 ----------------------------------------------
---------------- ª«Åéº©®g¥ú©T©w¤½¦¡ -----------
+--------------- ç‰©é«”æ¼«å°„å…‰å›ºå®šå…¬å¼ -----------
 
-º©®g¥ú - ¤½¦¡ : (c * m)max(0 , n * i)
+æ¼«å°„å…‰ - å…¬å¼ : (c * m)max(0 , n * i)
 
 fixed3 albedo = tex2D(_MainTex, i.uvMainTex).rgb * _Color;
 fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
 fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
 return fixed4(ambient + diffuse, 1);
 
-* saturate ©M max ¬O®t¤£¦h¥\¯à¤@¼ËªºªF¦è¡A¦]¦¹ÀH«K¨Ï¥Î¤@­Ó³£¥i¥H
+* saturate å’Œ max æ˜¯å·®ä¸å¤šåŠŸèƒ½ä¸€æ¨£çš„æ±è¥¿ï¼Œå› æ­¤éš¨ä¾¿ä½¿ç”¨ä¸€å€‹éƒ½å¯ä»¥
 ------------------------------------------------
----------------- ¤Á½uªÅ¶¡ ---------------------
+---------------- åˆ‡ç·šç©ºé–“ ---------------------
 
-# tengent space rotation matrix ¬O float3x3( v.tangent.xyz, binormal, v.normal)
+# tengent space rotation matrix æ˜¯ float3x3( v.tangent.xyz, binormal, v.normal)
 
 struct appdata 
 {
 	float4 tangent : TANGENT;
 };
 
-# ¸ÑªR tengent ­n¥Îfloat4 ¦Ó¤£¬O float3 :
-   Maya ­pºâvertex ªº tangent ¬O¾a UV¡A¦ÓUVªº¶¶§Ç¦³¥¿¦V©M¤Ï¦V¡A
-  ¨Ò¦p§Ú­Ì¦b§@¤@­Óª±¥ş¹ïºÙªº¼Ò«¬®É¡AUV³q±`¬°¤F¸`¬ÙªÅ¶¡¡A§Ú­Ì·|¥ıunwrap
-   ¤@¥b mesh «á §â¥t¥~¤@¥b¤Ï¹L¨Ó­«Å|UV¡C³o®É­Ô´N¦³UV¬O¥¿¦V©M¤Ï¦V¡C¬°¤F
-  ­pºâ¥X¥¿½Tªºtangent space §Ú­Ì»İ­n²Ä¥|­Ófloat ¥h°O¿ıUVªº¤è¦V
+# è§£æ tengent è¦ç”¨float4 è€Œä¸æ˜¯ float3 :
+   Maya è¨ˆç®—vertex çš„ tangent æ˜¯é  UVï¼Œè€ŒUVçš„é †åºæœ‰æ­£å‘å’Œåå‘ï¼Œ
+  ä¾‹å¦‚æˆ‘å€‘åœ¨ä½œä¸€å€‹ç©å…¨å°ç¨±çš„æ¨¡å‹æ™‚ï¼ŒUVé€šå¸¸ç‚ºäº†ç¯€çœç©ºé–“ï¼Œæˆ‘å€‘æœƒå…ˆunwrap
+   ä¸€åŠ mesh å¾Œ æŠŠå¦å¤–ä¸€åŠåéä¾†é‡ç–ŠUVã€‚é€™æ™‚å€™å°±æœ‰UVæ˜¯æ­£å‘å’Œåå‘ã€‚ç‚ºäº†
+  è¨ˆç®—å‡ºæ­£ç¢ºçš„tangent space æˆ‘å€‘éœ€è¦ç¬¬å››å€‹float å»è¨˜éŒ„UVçš„æ–¹å‘
 
-binormal = cross( normalize(v.normal), normalize(v.tangent.xyz)) *  v.tangent.w  ¤½¦¡
+binormal = cross( normalize(v.normal), normalize(v.tangent.xyz)) *  v.tangent.w  å…¬å¼
 
-# TANGENT_SPACE_ROTATION : ±N object space Âà´«¨ì tangent space¤¤¡C
-  ´N¬O§¹¦¨¥H¤Wªº¨BÆJ¡A¨Ï¥Î«á·|¦Û°Ê©w¸q¤F rotation ³o­ÓÅÜ¼Æ
+# TANGENT_SPACE_ROTATION : å°‡ object space è½‰æ›åˆ° tangent spaceä¸­ã€‚
+  å°±æ˜¯å®Œæˆä»¥ä¸Šçš„æ­¥é©Ÿï¼Œä½¿ç”¨å¾Œæœƒè‡ªå‹•å®šç¾©äº† rotation é€™å€‹è®Šæ•¸
 
-# TRANSFER_VERTEX_TO_FRAGMENT : ±N¥ú·Ó«H®§¶Ç»¼µ¹¹³¯ÀµÛ¦â¾¹¡C
-  ¦b AutoLight.cginc ©w¸q¡A·|®Ú¾Ú pass ³B²zªº¥ú·½Ãş«¬¨Ó­pºâ¥ú·½®y¼Ğªº¨ãÅé­È
-  ¡A¨Ó¶i¦æ©M shadow ¬ÛÃöªº­pºâµ¥¡C
+# TRANSFER_VERTEX_TO_FRAGMENT : å°‡å…‰ç…§ä¿¡æ¯å‚³éçµ¦åƒç´ è‘—è‰²å™¨ã€‚
+  åœ¨ AutoLight.cginc å®šç¾©ï¼Œæœƒæ ¹æ“š pass è™•ç†çš„å…‰æºé¡å‹ä¾†è¨ˆç®—å…‰æºåº§æ¨™çš„å…·é«”å€¼
+  ï¼Œä¾†é€²è¡Œå’Œ shadow ç›¸é—œçš„è¨ˆç®—ç­‰ã€‚
 
 
 v2f vert(appdata_tan v)
@@ -290,57 +290,57 @@ v2f vert(appdata_tan v)
 	o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
 }
 
-* ¶i¦æ¤Á½uªÅ¶¡­pºâ®É¡A»İ¥ıÂà´«¦¨¥@¬É®y¼Ğ«á¡A¤~¯àÂà´«¦¨¬°¤Á½u®y¼Ğ
+* é€²è¡Œåˆ‡ç·šç©ºé–“è¨ˆç®—æ™‚ï¼Œéœ€å…ˆè½‰æ›æˆä¸–ç•Œåº§æ¨™å¾Œï¼Œæ‰èƒ½è½‰æ›æˆç‚ºåˆ‡ç·šåº§æ¨™
 
 fixed4 packedNormal = tex2D(_BumpTex, i.uv.zw);
-fixed3 tangentNormal = UnpackNormal(packedNormal);	//±N Texture Type -> Normal Map¡A¨ú±o¥¿½Tªºªk¦V¶q
+fixed3 tangentNormal = UnpackNormal(packedNormal);	//å°‡ Texture Type -> Normal Mapï¼Œå–å¾—æ­£ç¢ºçš„æ³•å‘é‡
 
-------- world space to tangent space ªº ±ÛÂà¯x°} ---------------
+------- world space to tangent space çš„ æ—‹è½‰çŸ©é™£ ---------------
 
-* TANGENT_SPACE_ROTATION ªº¨ç¦¡¡A¦b°õ¦æ¥H¤Uªº°Ê§@¡G
+* TANGENT_SPACE_ROTATION çš„å‡½å¼ï¼Œåœ¨åŸ·è¡Œä»¥ä¸‹çš„å‹•ä½œï¼š
  float3 binormal = cross( v.normal, v.tangent.xyz ) * v.tangent.w;
  float3x3 rotation = float3x3( v.tangent.xyz, binormal, v.normal );
 
 
-* UnpackNormal(fixed4) ¬O¦b°µ¤U­±ªº¨Æ±¡¡A©Ò¥H¥i¥Hª½±µ¥Î¨ç¦¡°µ¨ú¥N
+* UnpackNormal(fixed4) æ˜¯åœ¨åšä¸‹é¢çš„äº‹æƒ…ï¼Œæ‰€ä»¥å¯ä»¥ç›´æ¥ç”¨å‡½å¼åšå–ä»£
  fixed4 normal = tex2D(_Bump, i.uv);
  fixed3 norm;
  norm.xy = normal.wy * 2 - 1;
 
 
 
-¤Á½uªÅ¶¡ : ¥D­nÀ³¥Î¦b¥ú·½¤W¡A°w¹ï¼Ò«¬¤£¦P­±°µ¥X«G«×½Õ¾ã
+åˆ‡ç·šç©ºé–“ : ä¸»è¦æ‡‰ç”¨åœ¨å…‰æºä¸Šï¼Œé‡å°æ¨¡å‹ä¸åŒé¢åšå‡ºäº®åº¦èª¿æ•´
 o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
 -----------------------------------------------
----------------- ªí­±´è¬V surf -----------------
+---------------- è¡¨é¢æ¸²æŸ“ surf -----------------
 struct Input
 {
-	float3 viewDir;			//§ì¨úÄá¼v¾÷µø½u¤è¦V
+	float3 viewDir;			//æŠ“å–æ”å½±æ©Ÿè¦–ç·šæ–¹å‘
 }
 
 
- #pragma surface surf Lambert ¥ú·Ó¶K¹Ï  (*ª`·N:¤£¯à¦³Pass)
+ #pragma surface surf Lambert å…‰ç…§è²¼åœ–  (*æ³¨æ„:ä¸èƒ½æœ‰Pass)
 void surf(Input IN , inout SurfaceOutput o){}
 
 #SurfaceOutput : https://docs.unity3d.com/560/Documentation/Manual/SL-SurfaceShaders.html
 
 
 
-(* ª`·N : (­n§ïÅÜAlpha®É¡A«hÅÜ¦¨ - #pragma surface surf Lambert alpha : fade - ))
-UnpackNormal()±NÃC¦âªÅ¶¡ªºªk½u[0,1],Âà´«¨ì¯u¥¿ªº3DªÅ¶¡¸Ìªºªk½u½d³ò[-1,1]
-TRANSFORM_TEX(¯¾²z , sampler2D); => v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+(* æ³¨æ„ : (è¦æ”¹è®ŠAlphaæ™‚ï¼Œå‰‡è®Šæˆ - #pragma surface surf Lambert alpha : fade - ))
+UnpackNormal()å°‡é¡è‰²ç©ºé–“çš„æ³•ç·š[0,1],è½‰æ›åˆ°çœŸæ­£çš„3Dç©ºé–“è£¡çš„æ³•ç·šç¯„åœ[-1,1]
+TRANSFORM_TEX(ç´‹ç† , sampler2D); => v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 
 
 
 
-*surf ¥]§t¨â­Óµ²ºcÅé + ¥|­Ó¨ç¼Æ
+*surf åŒ…å«å…©å€‹çµæ§‹é«” + å››å€‹å‡½æ•¸
 
 1. void vert(inout appdata_full v)    
 
-2. #pragma surface surf CustomDiffuse (CustomDiffuse ¬Oname)
-shader¹ï¦W¦r¦³ÄY®æ³W©w¡A¦]¦¹Lighting<Your Chosen Name> => LightingCustomDiffuse
+2. #pragma surface surf CustomDiffuse (CustomDiffuse æ˜¯name)
+shaderå°åå­—æœ‰åš´æ ¼è¦å®šï¼Œå› æ­¤Lighting<Your Chosen Name> => LightingCustomDiffuse
 inline float4 LightingCustomDiffuse (SurfaceOutput s, fixed3 lightDir, fixed atten){}
-				    (ÂI°µ¥ú½u³B²z   ¡B	¥ú½u¤è¦V     ¡B¥ú°I´î¨t¼Æ)
+				    (é»åšå…‰ç·šè™•ç†   ã€	å…‰ç·šæ–¹å‘     ã€å…‰è¡°æ¸›ç³»æ•¸)
 Ex :
 inline float4 LightingCustomDiffuse (SurfaceOutput s, fixed3 lightDir, fixed atten) {
 		    float difLight = max(0, dot (s.Normal, lightDir));
@@ -359,10 +359,10 @@ ex : #pragma surface surf Lambert finalcolor:final
 
 4.
 float3 normal = UnpackNormal(tex2D(_NormalTex, IN.uv_NormalTex));
-	=> ¬°¬Æ»ò­n¥Î UnpackNormal?  ³q±`­n§â¶K¹Ï"Texture Type"³]¸m¬° "Normal Map"¤~·|Åã¥Ü¥¿½T¡C
-		UnpackNormal ª½±µÀ°§Ú­Ì³B²z¤F³o¥ó¨Æ
+	=> ç‚ºç”šéº¼è¦ç”¨ UnpackNormal?  é€šå¸¸è¦æŠŠè²¼åœ–"Texture Type"è¨­ç½®ç‚º "Normal Map"æ‰æœƒé¡¯ç¤ºæ­£ç¢ºã€‚
+		UnpackNormal ç›´æ¥å¹«æˆ‘å€‘è™•ç†äº†é€™ä»¶äº‹
 
--------------- UnpackNormal ¨ç¦¡¤¶²Ğ ----------------------
+-------------- UnpackNormal å‡½å¼ä»‹ç´¹ ----------------------
 inline fixed3 UnpackNormalDXT5nm (fixed4 packednormal)
 {
 	fixed3 normal;
@@ -387,9 +387,9 @@ inline fixed3 UnpackNormal(fixed4 packednormal)
 ------------------------------------------------------------------	
 
 -----------------------------------------------
-------------- Shader ¨ç¦¡¨Ï¥Î¸ÑªR -------------   (­«­n)
+------------- Shader å‡½å¼ä½¿ç”¨è§£æ -------------   (é‡è¦)
 
-*Shader ¥ş­pºâ¨ç¦¡¸ÑªR -> http://blog.csdn.net/laverfever/article/details/23962411
-*±`¥ÎªÅ¶¡­pºâ¨ç¼Æ -> http://blog.csdn.net/biezhihua/article/details/78587898
+*Shader å…¨è¨ˆç®—å‡½å¼è§£æ -> http://blog.csdn.net/laverfever/article/details/23962411
+*å¸¸ç”¨ç©ºé–“è¨ˆç®—å‡½æ•¸ -> http://blog.csdn.net/biezhihua/article/details/78587898
 
 ---------------------------------------------------

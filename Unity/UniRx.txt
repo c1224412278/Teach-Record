@@ -1,20 +1,20 @@
-https://blog.csdn.net/zhenghongzhi6/article/details/79229585		//UniRx ¸ÑªR
-https://www.jianshu.com/p/94b857be40ec		//¹ê¾Ôµ§°O
-https://kuailey.github.io/DungeonsGame/2016/11/06/UniRx-%E5%AD%A6%E4%B9%A0/	//¸Ô²Ó»¡©ú
+ï»¿https://blog.csdn.net/zhenghongzhi6/article/details/79229585		//UniRx è§£æ
+https://www.jianshu.com/p/94b857be40ec		//å¯¦æˆ°ç­†è¨˜
+https://kuailey.github.io/DungeonsGame/2016/11/06/UniRx-%E5%AD%A6%E4%B9%A0/	//è©³ç´°èªªæ˜
 
 
-* ­«ÂI : Subscribe() ¿é¥X«á¡A¨Ã¤£·|°±¤î­q¾\¡C
+* é‡é» : Subscribe() è¼¸å‡ºå¾Œï¼Œä¸¦ä¸æœƒåœæ­¢è¨‚é–±ã€‚
 	var disposable = new CompositeDisposable();	
 	disposable.Disposable = Observable.EveryUpdate()
     		.Subscribe(_ =>
     		{
         		if ()
         		{
-           			 disposable.Dispose();		**** ¦¹¦æ¥i¥H°±¤îÄ~Äò­q¾\
+           			 disposable.Dispose();		**** æ­¤è¡Œå¯ä»¥åœæ­¢ç¹¼çºŒè¨‚é–±
         		}
     		});
 
-Observable.Create  ( OnNext() ·|°õ¦æµ¹¤J­È¡A¨ìOnCompleted()°±¤î¡A³Ì«á°õ¦æDisposable.Createªº¤èªk)
+Observable.Create  ( OnNext() æœƒåŸ·è¡Œçµ¦å…¥å€¼ï¼Œåˆ°OnCompleted()åœæ­¢ï¼Œæœ€å¾ŒåŸ·è¡ŒDisposable.Createçš„æ–¹æ³•)
 	Ex : 	var obs = Observable.Create<int>(x => 
         	{
             		x.OnNext(3);
@@ -27,7 +27,7 @@ Observable.Create  ( OnNext() ·|°õ¦æµ¹¤J­È¡A¨ìOnCompleted()°±¤î¡A³Ì«á°õ¦æDisposa
         	obs.Subscribe(x => Debug.Log(x));
 	
 
-Observable.Defer()  ª½¨ìÆ[¹îªÌ­q¾\®É¡A¤~³Ğ«Ø Observable
+Observable.Defer()  ç›´åˆ°è§€å¯Ÿè€…è¨‚é–±æ™‚ï¼Œæ‰å‰µå»º Observable
 	Ex : 	var random = new System.Random();
         	var obser = Observable.Defer(() => Observable.Start(() => random.Next(0, 5)))
             		.Delay(TimeSpan.FromMilliseconds(1000))
@@ -40,18 +40,18 @@ Observable.Defer()  ª½¨ìÆ[¹îªÌ­q¾\®É¡A¤~³Ğ«Ø Observable
 Buffer		Observable.Range(0, 10)
         		.Buffer(3)
         		.Subscribe(xx => Debug.Log(xx[0]));
-		(¿é¥Xµ²ªG = 0 , 3 , 6 , 9)
+		(è¼¸å‡ºçµæœ = 0 , 3 , 6 , 9)
 	
 
-Do	(©I¥s¤èªk)
+Do	(å‘¼å«æ–¹æ³•)
 	Ex : Observable.Range(0 , 3)
             	.Do(e => Fn_Debug(e))
             	.Subscribe();
 
 
 
-When µ¥«İ§¹¦¨  
-WhenAll µ¥«İ©Ò¦³§¹¦¨¡A±N¸ê®Æµ²¦X
+When ç­‰å¾…å®Œæˆ  
+WhenAll ç­‰å¾…æ‰€æœ‰å®Œæˆï¼Œå°‡è³‡æ–™çµåˆ
 	Ex : 	var heavyMethod = Observable.Start(() => { return 10; });
     		var heavyMethod2 = Observable.Start(() => { return 20; });
     		Observable.WhenAll(heavyMethod, heavyMethod2)
@@ -60,33 +60,33 @@ WhenAll µ¥«İ©Ò¦³§¹¦¨¡A±N¸ê®Æµ²¦X
             			Debug.Log(xs[0] + ":" + xs[1]);
         		});
 
-yield return Observable.Range(0, 10).StartAsCoroutine()		¦^¶Ç§¹¦¨«áªº³Ì«á¤@­Ó¼Æ­È
-	*  Ãş¦ü for °j°éªº·§©À
+yield return Observable.Range(0, 10).StartAsCoroutine()		å›å‚³å®Œæˆå¾Œçš„æœ€å¾Œä¸€å€‹æ•¸å€¼
+	*  é¡ä¼¼ for è¿´åœˆçš„æ¦‚å¿µ
 
-Observable.Start	¥Ó©ú¦¹¨ç¦¡¥u·|°õ¦æ¤@¦¸
-Observable.EveryUpdate() °µUpdate°õ¦æ
+Observable.Start	ç”³æ˜æ­¤å‡½å¼åªæœƒåŸ·è¡Œä¸€æ¬¡
+Observable.EveryUpdate() åšUpdateåŸ·è¡Œ
 
 
-Buffer(int)		½w½Ä¡C¿é¤Jint·í¼Æ¶q¹F¨ì¤@©w¼Æ­È¡A¤~¤@¦¸©Ê¿é¥X
-Buffer(int , int)	(¤£¤@©w­n¼g) ½w½Ä¡C²Ä¤G­Ó int ªí¥Ü­n¿é¥Xªº¼Æ¶q
+Buffer(int)		ç·©è¡ã€‚è¼¸å…¥intç•¶æ•¸é‡é”åˆ°ä¸€å®šæ•¸å€¼ï¼Œæ‰ä¸€æ¬¡æ€§è¼¸å‡º
+Buffer(int , int)	(ä¸ä¸€å®šè¦å¯«) ç·©è¡ã€‚ç¬¬äºŒå€‹ int è¡¨ç¤ºè¦è¼¸å‡ºçš„æ•¸é‡
 
-Observable.Defer	©µ¿ğµû¦ô
-	* Ex : Return ¼Æ­È·|©T©w¡A»P Create¤£¦P¡C¦¹®É¥i¥H¨Ï¥Î Defer ©µ¿ğ¡AÅı¼Æ­È¤£©T©w
+Observable.Defer	å»¶é²è©•ä¼°
+	* Ex : Return æ•¸å€¼æœƒå›ºå®šï¼Œèˆ‡ Createä¸åŒã€‚æ­¤æ™‚å¯ä»¥ä½¿ç”¨ Defer å»¶é²ï¼Œè®“æ•¸å€¼ä¸å›ºå®š
 		Observable.Defer(() => Observable.Return(random.Next()))
 
-Return		ªğ¦^¼Æ¾Ú
+Return		è¿”å›æ•¸æ“š
 	Ex : Observable.Return(new Vector2(0, 1.5f)).Subscribe(v => gameObject.transform.position = v);
 
 	Ex : var value = Observable.Return<string>("value");
         		value.Subscribe(x => Debug.Log(x));
 
-Interval	¨C¤@¬q®É¶¡«á¡Aµo°e¤@¦¸
+Interval	æ¯ä¸€æ®µæ™‚é–“å¾Œï¼Œç™¼é€ä¸€æ¬¡
 	Ex : Observable.Interval(TimeSpan.FromMilliseconds(1000))
         	.Subscribe(_ => { Debug.Log(_); });
 
 
-Throttle	¹L¤@¬q®É¶¡¡A¦pªG¼Æ¾ÚÁÙ¨S©ñ¥X®É¡Aµ¥«İ´X¬í¼È°±«á¤~Ä~Äò°õ¦æ
-ThrottleFirst	¥ı°õ¦æ«á¡Aµ¥«İ´X¬í¤~¯à¦A¦¸°õ¦æ
+Throttle	éä¸€æ®µæ™‚é–“ï¼Œå¦‚æœæ•¸æ“šé‚„æ²’æ”¾å‡ºæ™‚ï¼Œç­‰å¾…å¹¾ç§’æš«åœå¾Œæ‰ç¹¼çºŒåŸ·è¡Œ
+ThrottleFirst	å…ˆåŸ·è¡Œå¾Œï¼Œç­‰å¾…å¹¾ç§’æ‰èƒ½å†æ¬¡åŸ·è¡Œ
 	Ex :  	var clickStream = Observable.EveryUpdate()
         	.Where(_ => Input.GetMouseButtonDown(0));
 
@@ -96,12 +96,12 @@ ThrottleFirst	¥ı°õ¦æ«á¡Aµ¥«İ´X¬í¤~¯à¦A¦¸°õ¦æ
 
 
 Select(i=>(int)i)
-Select(i => i + 1) ©w¸qÅÜ¼Æ
-Select(_ => 2)	¥H¨â­¿³t«×°õ¦æ¥H¤U¥N½X
+Select(i => i + 1) å®šç¾©è®Šæ•¸
+Select(_ => 2)	ä»¥å…©å€é€Ÿåº¦åŸ·è¡Œä»¥ä¸‹ä»£ç¢¼
 
 
-First		¥uµo®g²Ä¤@­Ó§¹¦¨ªº¼Æ¾Ú
-FirstOrDefault	( ¨óµ{¨Ï¥Î ) ª½¨ì§¹¦¨²Ä¤@¥ó¨Æ±¡
+First		åªç™¼å°„ç¬¬ä¸€å€‹å®Œæˆçš„æ•¸æ“š
+FirstOrDefault	( å”ç¨‹ä½¿ç”¨ ) ç›´åˆ°å®Œæˆç¬¬ä¸€ä»¶äº‹æƒ…
 	Ex : yield return this.OnCollisionEnterAsObservable()
         	.FirstOrDefault()
         	.Select(x => x.gameObject)
@@ -110,7 +110,7 @@ FirstOrDefault	( ¨óµ{¨Ï¥Î ) ª½¨ì§¹¦¨²Ä¤@¥ó¨Æ±¡
 	
 
 
-Take(3)		(­«½Æ´X¦¸ªº¦æ¬°)
+Take(3)		(é‡è¤‡å¹¾æ¬¡çš„è¡Œç‚º)
 	Ex : Observable.Interval(TimeSpan.FromSeconds(1))
             .Select(i => i + 1)
             .Take(3)
@@ -120,14 +120,14 @@ Take(3)		(­«½Æ´X¦¸ªº¦æ¬°)
             });
 
 
-TakeUntil(this.UpdateAsObservable().Where(_ => Input.GetMouseButtonDown(0))	µ¥«İ¬Y­Ó±ø¥ó§¹¦¨
-TakeWhile(count => count < 2)		//¥i¥H¨M©wµ¥«İ¬í¼Æ
+TakeUntil(this.UpdateAsObservable().Where(_ => Input.GetMouseButtonDown(0))	ç­‰å¾…æŸå€‹æ¢ä»¶å®Œæˆ
+TakeWhile(count => count < 2)		//å¯ä»¥æ±ºå®šç­‰å¾…ç§’æ•¸
 		
-		*(¥u¯à¦b Take §À³¡®M¥Î ) Repeat()	·íOnCompleted¥X²{®É¡A­«·s½Õ¥Î
+		*(åªèƒ½åœ¨ Take å°¾éƒ¨å¥—ç”¨ ) Repeat()	ç•¶OnCompletedå‡ºç¾æ™‚ï¼Œé‡æ–°èª¿ç”¨
 
 
-Last		¥uµo®g³Ì«á¤@­Ó¼Æ­È
-Distinct	¹LÂo­«½Æªº¿ï¶µ
+Last		åªç™¼å°„æœ€å¾Œä¸€å€‹æ•¸å€¼
+Distinct	éæ¿¾é‡è¤‡çš„é¸é …
 	Ex : var ss = new int[] { 1, 2, 5, 5, 6, 8, 9, 6 };
         	ss.ToObservable()
             	.Distinct()

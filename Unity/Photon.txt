@@ -1,11 +1,11 @@
- * ¤Z¬O®M¥Î Photon ¸}¥»©ÎªÌ­n¨Ï¥Î (PhotonNetwork.Instantiate("­n²£¥Íªº³o­Óª«¥ó")) ªºª«¥ó³£¥²¶·±¾¤W photonView.cs
+ï»¿ * å‡¡æ˜¯å¥—ç”¨ Photon è…³æœ¬æˆ–è€…è¦ä½¿ç”¨ (PhotonNetwork.Instantiate("è¦ç”¢ç”Ÿçš„é€™å€‹ç‰©ä»¶")) çš„ç‰©ä»¶éƒ½å¿…é ˆæ›ä¸Š photonView.cs
  
 
- * [ RPC·§©À ] : ·íª±®aÂ÷¶}©Ğ¶¡®É¡A­Y·íª«¥ó·Q«O¯d¤£®ø¥¢µ¹¨ä¥LClient¨Ï¥Îªº¸Ü¡A«h®M¥Î¡C 
-(¥Î¤Ó¦h RPC ¡A¹L¦hªº¶Ç¿é³y¦¨Queue·¸º¡¤Şµo QueueIncomingReliableWarning ¿ù»~)
+ * [ RPCæ¦‚å¿µ ] : ç•¶ç©å®¶é›¢é–‹æˆ¿é–“æ™‚ï¼Œè‹¥ç•¶ç‰©ä»¶æƒ³ä¿ç•™ä¸æ¶ˆå¤±çµ¦å…¶ä»–Clientä½¿ç”¨çš„è©±ï¼Œå‰‡å¥—ç”¨ã€‚ 
+(ç”¨å¤ªå¤š RPC ï¼Œéå¤šçš„å‚³è¼¸é€ æˆQueueæº¢æ»¿å¼•ç™¼ QueueIncomingReliableWarning éŒ¯èª¤)
 
 Vector3 pos = new Vector3(Random.Range(-5f, 5f), 0, 0);
-Instantiate(Prefab , pos, Quaternion.identity);			//¥ı¦b¦Û¤vªº¹CÀ¸«Ø¥ß (¤£¬Ophoton«Ø¥ß)¡A¤§«á¦A®M¥Î RPC
+Instantiate(Prefab , pos, Quaternion.identity);			//å…ˆåœ¨è‡ªå·±çš„éŠæˆ²å»ºç«‹ (ä¸æ˜¯photonå»ºç«‹)ï¼Œä¹‹å¾Œå†å¥—ç”¨ RPC
 
 PhotonView photonView = PhotonView.Get(this);
 photonView.RPC("PutBomb" , PhotonTargets.All , pos);
@@ -18,17 +18,17 @@ void PutBomb(Vector3 BombPos)
 
 
 
-* ´¶³qª«¥ó«Ø¥ß : PhotonNetwork.Instantiate ()
+* æ™®é€šç‰©ä»¶å»ºç«‹ : PhotonNetwork.Instantiate ()
 
-* ¦Û°Ê³s½u : 
+* è‡ªå‹•é€£ç·š : 
 void Awake()
 {
-	PhotonNetwork.ConnectUsingSettings("1.0");              //¥[¤J®É¡A¦Û°Ê³s½u
+	PhotonNetwork.ConnectUsingSettings("1.0");              //åŠ å…¥æ™‚ï¼Œè‡ªå‹•é€£ç·š
 }
 
-photon ·í«e³s½uª¬ºA : PhotonNetwork.connectionStateDetailed
+photon ç•¶å‰é€£ç·šç‹€æ…‹ : PhotonNetwork.connectionStateDetailed
 
-* «Ø¥ß©Ğ¶¡ :
+* å»ºç«‹æˆ¿é–“ :
 
 PhotonNetwork.CreateRoom("" , new RoomOptions()
                     { maxPlayers = 4 }, null);
@@ -37,12 +37,12 @@ public void OnCreatedRoom()
         Debug.Log("OnCreatedRoom");
 }
 
-* ¥[¤J©Ğ¶¡ :
+* åŠ å…¥æˆ¿é–“ :
 
 RoomInfo[] roomInfo = PhotonNetwork.GetRoomList();
 if (roomInfo.Length > 0)
 {
-	// ±N©Ò¦³©Ğ¶¡¦CªíÂà¦¨¦r¦ê°}¦C
+	// å°‡æ‰€æœ‰æˆ¿é–“åˆ—è¡¨è½‰æˆå­—ä¸²é™£åˆ—
         string[] roomNames = new string[roomInfo.Length];
         for (int i = 0; i < roomInfo.Length; i++)
         {

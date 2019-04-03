@@ -1,36 +1,36 @@
-Mute ÀR­µ¡ATimeLine¸T¤î
-Lock Âê©w¡A¨¾¤î¤£¤p¤ß°µ§ó§ï
+ï»¿Mute éœéŸ³ï¼ŒTimeLineç¦æ­¢
+Lock é–å®šï¼Œé˜²æ­¢ä¸å°å¿ƒåšæ›´æ”¹
 
 
-.playable ÀÉ®×¸ê®Æ :
-	Update Method : GameTime (¨ü¹CÀ¸®É¶¡¼vÅT) ¡B Unscaled Game Time(¤£¨ü¹CÀ¸®É¶¡¼vÅT)
- 	Wrap Mode : Loop ¡B None ¡B Hode(«O«ù)
-	Frame Rate : ¨C¬í¼½©ñ¦h¤Ö°»¼Æ
-	Duration Mode : Based On Clips => ¼½©ñ¨ìµ²§ô
-			Fixed Length => ¥i¥H³]©w¼½©ñµ²§ôªº®É¶¡
+.playable æª”æ¡ˆè³‡æ–™ :
+	Update Method : GameTime (å—éŠæˆ²æ™‚é–“å½±éŸ¿) ã€ Unscaled Game Time(ä¸å—éŠæˆ²æ™‚é–“å½±éŸ¿)
+ 	Wrap Mode : Loop ã€ None ã€ Hode(ä¿æŒ)
+	Frame Rate : æ¯ç§’æ’­æ”¾å¤šå°‘åµæ•¸
+	Duration Mode : Based On Clips => æ’­æ”¾åˆ°çµæŸ
+			Fixed Length => å¯ä»¥è¨­å®šæ’­æ”¾çµæŸçš„æ™‚é–“
 
 
-Active		(¼½©ñµ²§ô«á¡A±Nª«ÅéÅã¥Ü)
+Active		(æ’­æ”¾çµæŸå¾Œï¼Œå°‡ç‰©é«”é¡¯ç¤º)
 
-Inactive	(¼½©ñµ²§ô«á¡A±Nª«ÅéÁôÂÃ)
+Inactive	(æ’­æ”¾çµæŸå¾Œï¼Œå°‡ç‰©é«”éš±è—)
 
-Revert		(¼½©ñµ²§ô«á¡Aªğ¦^²Ä¤@°»)
+Revert		(æ’­æ”¾çµæŸå¾Œï¼Œè¿”å›ç¬¬ä¸€åµ)
 
-Leave As Is	(¼½©ñµ²§ô«á¡A«O«ù¦b³Ì«á¤@°»)
+Leave As Is	(æ’­æ”¾çµæŸå¾Œï¼Œä¿æŒåœ¨æœ€å¾Œä¸€åµ)
 
-------------		­«ÂI 			--------------------
+------------		é‡é» 			--------------------
 
-//±N¹ï¶H¥µ¨ì TimeLine ¶i¦æ³B²z
-* ExposedReference.Resolve(graph.GetResolver()).GetComponent<T>();-> ¤£¶ë GameObject ¡A­n§ìª«¥ó => Transform
+//å°‡å°è±¡æ‰”åˆ° TimeLine é€²è¡Œè™•ç†
+* ExposedReference.Resolve(graph.GetResolver()).GetComponent<T>();-> ä¸å¡ GameObject ï¼Œè¦æŠ“ç‰©ä»¶ => Transform
 
 Ex : public class PlayableBehaviourSample : PlayableAsset
      {
-	public Transform aaa;			// ¥u¯à©ñ Project µøµ¡¤¤ªºª«¥ó
-	public ExposedReference<Transform> targetObject;	// ¥i©ñ¸m Hierarchy µøµ¡¤¤ªºª«¥ó
+	public Transform aaa;			// åªèƒ½æ”¾ Project è¦–çª—ä¸­çš„ç‰©ä»¶
+	public ExposedReference<Transform> targetObject;	// å¯æ”¾ç½® Hierarchy è¦–çª—ä¸­çš„ç‰©ä»¶
     	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
     	{
-        	(Ä~©ÓPlayableBehaviour¸}¥») testScript = new (Ä~©ÓPlayableBehaviour¸}¥»)();
-        	var scriptPlayable = ScriptPlayable<(Ä~©ÓPlayableBehaviour¸}¥»)>.Create(graph);
+        	(ç¹¼æ‰¿PlayableBehaviourè…³æœ¬) testScript = new (ç¹¼æ‰¿PlayableBehaviourè…³æœ¬)();
+        	var scriptPlayable = ScriptPlayable<(ç¹¼æ‰¿PlayableBehaviourè…³æœ¬)>.Create(graph);
         	scriptPlayable.GetBehaviour().targetObject = targetObject.Resolve(graph.GetResolver()).GetComponent<Transform>();
         	return scriptPlayable;
     	}
@@ -38,58 +38,58 @@ Ex : public class PlayableBehaviourSample : PlayableAsset
 
 
 
-( PlayableAsset ¡B PlayableBehaviour) vs (BasePlayableBehaviour) ¬O¤@¼ËªºªF¦è
+( PlayableAsset ã€ PlayableBehaviour) vs (BasePlayableBehaviour) æ˜¯ä¸€æ¨£çš„æ±è¥¿
 
 ------------------------------------------------------------------
 
-* TimelineAsset ©M PlayableBehaviour ¤Ş¥Î¤èªk
+* TimelineAsset å’Œ PlayableBehaviour å¼•ç”¨æ–¹æ³•
 https://blog.csdn.net/beihuanlihe130/article/details/79233320
-BasicPlayableBehaviour ±Ğ¾Ç½g : https://blog.csdn.net/ILYPL/article/details/78062591
+BasicPlayableBehaviour æ•™å­¸ç¯‡ : https://blog.csdn.net/ILYPL/article/details/78062591
 
 
-* Cinemachine Äá¼v¾÷±±¨î®M¥ó - Unity Asset Store¤º«Ø´£¨Ñ
-	CineMachine -> 	Virtual Camera ´¶³qÄá¼v¾÷
+* Cinemachine æ”å½±æ©Ÿæ§åˆ¶å¥—ä»¶ - Unity Asset Storeå…§å»ºæä¾›
+	CineMachine -> 	Virtual Camera æ™®é€šæ”å½±æ©Ÿ
 			FreeLook Camera 
 			State-driven Camera
 			ClearShot Camera
-			Dolly Camera with Track ­y¹DÄá¼v¾÷
-			Create Target Group Camera »P¥Ø¼Ğ¶i¦æ²¾°Ê
+			Dolly Camera with Track è»Œé“æ”å½±æ©Ÿ
+			Create Target Group Camera èˆ‡ç›®æ¨™é€²è¡Œç§»å‹•
 	
-	* ·í®M¥Î Cinemachine ®M¥ó®É¡AMainCamera ·|¦Û°Ê¥X²{ Cinemachine Brain ²Õ¥ó
-		Show Debug Text ¥ª¤W¨¤¥X²{Debug°T®§
-		Show Camera Frustum µô¤Á±¼¤£¦AÅã¥Ü½d³òªºÃä½u
-		Ignore Time Scale ©¿²¤¹CÀ¸®É¶¡
-		Update Method §ó·s¤èªk(Update¡BLateUpdate¡BFixedUpdate)
-		Default Blend ¬Û¾÷Àq»{ªº¤Á´«¼Ò¦¡
-		Custom Blends ¦Û©w¸q¬Û¾÷¤Á´«¼Ò¦¡
+	* ç•¶å¥—ç”¨ Cinemachine å¥—ä»¶æ™‚ï¼ŒMainCamera æœƒè‡ªå‹•å‡ºç¾ Cinemachine Brain çµ„ä»¶
+		Show Debug Text å·¦ä¸Šè§’å‡ºç¾Debugè¨Šæ¯
+		Show Camera Frustum è£åˆ‡æ‰ä¸å†é¡¯ç¤ºç¯„åœçš„é‚Šç·š
+		Ignore Time Scale å¿½ç•¥éŠæˆ²æ™‚é–“
+		Update Method æ›´æ–°æ–¹æ³•(Updateã€LateUpdateã€FixedUpdate)
+		Default Blend ç›¸æ©Ÿé»˜èªçš„åˆ‡æ›æ¨¡å¼
+		Custom Blends è‡ªå®šç¾©ç›¸æ©Ÿåˆ‡æ›æ¨¡å¼
 		Events -> Camera Cut Event
 			  Camera Activated Event 
 
 
 	* Cinemachine Virtual 
-	Status ¬Û¾÷·í«eªºª¬ºA (Live ¥¿¦b¨Ï¥Î¡AStandby ·Ç³Æ¨Ï¥Î¡C«öSolo«ö¶s ·|¤Á´«¨ì³o¥x¬Û¾÷)
-	Priority ¬Û¾÷Àu¥ı«×
-	Follow ¬Û¾÷¸òÀH¥Ø¼Ğ
-	Look At ¬Û¾÷¬İªº¥Ø¼Ğ
+	Status ç›¸æ©Ÿç•¶å‰çš„ç‹€æ…‹ (Live æ­£åœ¨ä½¿ç”¨ï¼ŒStandby æº–å‚™ä½¿ç”¨ã€‚æŒ‰SoloæŒ‰éˆ• æœƒåˆ‡æ›åˆ°é€™å°ç›¸æ©Ÿ)
+	Priority ç›¸æ©Ÿå„ªå…ˆåº¦
+	Follow ç›¸æ©Ÿè·Ÿéš¨ç›®æ¨™
+	Look At ç›¸æ©Ÿçœ‹çš„ç›®æ¨™
 	
 
-	Body : Hard constraint(«O«ù¶ZÂ÷¡A²Ä¤@¤HºÙ)
-		Orbital Transposer (¦ü¥G¬O²Ä¤T¤HºÙ)
-		Tracked Dolly (¬Û¾÷¥u¯à¦b­y¹D¹B¦æ¡A§Y¨Ï³]¸m¤F Follow ¹ï¶H)
+	Body : Hard constraint(ä¿æŒè·é›¢ï¼Œç¬¬ä¸€äººç¨±)
+		Orbital Transposer (ä¼¼ä¹æ˜¯ç¬¬ä¸‰äººç¨±)
+		Tracked Dolly (ç›¸æ©Ÿåªèƒ½åœ¨è»Œé“é‹è¡Œï¼Œå³ä½¿è¨­ç½®äº† Follow å°è±¡)
 		
-	* FreeLook Camera ( ´¶³q²Ä¤T¤HºÙÄá¼v¾÷ )	
+	* FreeLook Camera ( æ™®é€šç¬¬ä¸‰äººç¨±æ”å½±æ©Ÿ )	
 	* Cinemachine Blend List Camera
-		(* ¤@©w­n©ñ¤lª«¥ó¡A¤lª«¥óÄá¼v¾÷½ü¬y½u©Ê¤Á´«¼½©ñ)
+		(* ä¸€å®šè¦æ”¾å­ç‰©ä»¶ï¼Œå­ç‰©ä»¶æ”å½±æ©Ÿè¼ªæµç·šæ€§åˆ‡æ›æ’­æ”¾)
 		
 	
 	* Cinemachine Mixing Camera 
-		( ¬Û¾÷¿Ã¹õ¦@¨É )
+		( ç›¸æ©Ÿè¢å¹•å…±äº« )
 
-	* State Driven Camera ( ¥i¥H°w¹ï¨¤¦âªºAnimator°µ¥XÄá¼v¾÷¤Á´« *«D±`±j¤j )
-		( *¤@©w­n©ñ¤lª«¥ó )
+	* State Driven Camera ( å¯ä»¥é‡å°è§’è‰²çš„Animatoråšå‡ºæ”å½±æ©Ÿåˆ‡æ› *éå¸¸å¼·å¤§ )
+		( *ä¸€å®šè¦æ”¾å­ç‰©ä»¶ )
 
-	* ClearShot Camera (»ÙÃªª«§PÂ_¤Á´«)
-		( * ¤@©w­n©ñ¤lª«¥ó¡A·í¤lª«¥óÄá¼v¾÷³Q¾B¾×·|¦Û°Ê¤Á´«¨ì³Ì¦nªºÄá¼v¾÷)
+	* ClearShot Camera (éšœç¤™ç‰©åˆ¤æ–·åˆ‡æ›)
+		( * ä¸€å®šè¦æ”¾å­ç‰©ä»¶ï¼Œç•¶å­ç‰©ä»¶æ”å½±æ©Ÿè¢«é®æ“‹æœƒè‡ªå‹•åˆ‡æ›åˆ°æœ€å¥½çš„æ”å½±æ©Ÿ)
 
-¥´¬[¯S¼gÃèÀY :  https://zhuanlan.zhihu.com/p/29585350
-Cinemachine ®M¥ó±Ğ¾Ç : http://m.gad.qq.com/article/detail/38458
+æ‰“æ¶ç‰¹å¯«é¡é ­ :  https://zhuanlan.zhihu.com/p/29585350
+Cinemachine å¥—ä»¶æ•™å­¸ : http://m.gad.qq.com/article/detail/38458

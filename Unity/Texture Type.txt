@@ -1,22 +1,22 @@
-*******		Texture Type: Texture		****************
+ï»¿*******		Texture Type: Texture		****************
 
 Wrap Mode :
-Repeat	The Texture repeats (tiles) itself	(­«½ÆÅã¥Ü¯¾²z¶K¹Ï)
-Clamp	The Texture¡¦s edges get stretched	(¤£­«½Æ¯¾²z¶K¹Ï)
+Repeat	The Texture repeats (tiles) itself	(é‡è¤‡é¡¯ç¤ºç´‹ç†è²¼åœ–)
+Clamp	The Textureâ€™s edges get stretched	(ä¸é‡è¤‡ç´‹ç†è²¼åœ–)
 
 Filter Mode :
-Point		The Texture becomes blocky up close	(³æ½u©Ê)¥~³òÂIª¬³B²z
-Bilinear	The Texture becomes blurry up close	(Âù½u©Ê)¥~³òÂI¦V¶q¼Ò½k³B²z
+Point		The Texture becomes blocky up close	(å–®ç·šæ€§)å¤–åœé»ç‹€è™•ç†
+Bilinear	The Texture becomes blurry up close	(é›™ç·šæ€§)å¤–åœé»å‘é‡æ¨¡ç³Šè™•ç†
 Trilinear	Like Bilinear, but the Texture also blurs between the different mip levels
 
-Aniso Level °~®k¨¤«×¬İ¯¾²z¡A·|´£°ª¯¾²z½è¶q¡C ¾A¦X¦aªO©M¦a­±¯¾²z
+Aniso Level é™¡å³­è§’åº¦çœ‹ç´‹ç†ï¼Œæœƒæé«˜ç´‹ç†è³ªé‡ã€‚ é©åˆåœ°æ¿å’Œåœ°é¢ç´‹ç†
 
 *******		Texture Type: Normal Map		****************
 
-Create from Greyscale ¨Ï¥Î¦¹¥\¯à¦¹·|Åã¥Ü½w½Ä©M¹LÂoªº¿ï¶µ
+Create from Greyscale ä½¿ç”¨æ­¤åŠŸèƒ½æ­¤æœƒé¡¯ç¤ºç·©è¡å’Œéæ¿¾çš„é¸é …
 
 
 **************************	Advanced	***************************
 
-Read/Write Enabled	(¦p¨S¦³»İ­n¥Î¨ìMesh¡Bºô®æ³B²z)	«h¥i¥HÃö³¬
-Generate Mip Maps	( 3D¼Ò«¬ ) Ãş¦ü LOD §Ş³N¡A®Ú¾ÚÄá¼v¾÷ªº¶ZÂ÷¨Ó¤Á´«¤£¦Pºë«×ªº¶K¹Ï
+Read/Write Enabled	(å¦‚æ²’æœ‰éœ€è¦ç”¨åˆ°Meshã€ç¶²æ ¼è™•ç†)	å‰‡å¯ä»¥é—œé–‰
+Generate Mip Maps	( 3Dæ¨¡å‹ ) é¡ä¼¼ LOD æŠ€è¡“ï¼Œæ ¹æ“šæ”å½±æ©Ÿçš„è·é›¢ä¾†åˆ‡æ›ä¸åŒç²¾åº¦çš„è²¼åœ–

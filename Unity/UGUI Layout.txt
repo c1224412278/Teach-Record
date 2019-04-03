@@ -1,28 +1,28 @@
-°Ñ¦Òºô§} : 
+ï»¿åƒè€ƒç¶²å€ : 
  http://www.arkaistudio.com/blog/2016/06/19/unity-ugui-%E5%8E%9F%E7%90%86%E7%AF%87%E4%BA%94%EF%BC%9Aauto-layout-%E8%87%AA%E5%8B%95%E4%BD%88%E5%B1%80/
 
-* Canvas Group - ¥i¨Ï Canvas ¶i¦æ alpha ªº¤Á´«°Ê§@
+* Canvas Group - å¯ä½¿ Canvas é€²è¡Œ alpha çš„åˆ‡æ›å‹•ä½œ
 
 
-(±¾¤÷ª«¥ó) Horizontal Layout Group - (¨Ï¤lª«¥ó)¦Û°Ê¤ô¥­¹ï»ô
+(æ›çˆ¶ç‰©ä»¶) Horizontal Layout Group - (ä½¿å­ç‰©ä»¶)è‡ªå‹•æ°´å¹³å°é½Š
 
-	* Padding (¶¡¹j)
-	* Spacing (¤lª«¥ó©¼¦¹ªºªÅ¥Õ³B)
-	* Child Aignment (¾a¦V­ş¸Ì¹ï»ô)
-	* Child Control Size (·íÅÜ¦¨¤â°Ê¹ï»ô®É¡A¤lª«¥ó¦³¨Ï¥Î(Layout Element)¥²¶·¤Ä¿ï¦¹¶µ¥Ø¤~·|¦³¤ÏÀ³)
-	* Child Force Expand (§PÂ_¬O§_¨Ï Horizontal Layout Group ¤£¦Û°Ê¹ï»ô¡A§ï¦¨¤â°Ê¹ï»ô)
+	* Padding (é–“éš”)
+	* Spacing (å­ç‰©ä»¶å½¼æ­¤çš„ç©ºç™½è™•)
+	* Child Aignment (é å‘å“ªè£¡å°é½Š)
+	* Child Control Size (ç•¶è®Šæˆæ‰‹å‹•å°é½Šæ™‚ï¼Œå­ç‰©ä»¶æœ‰ä½¿ç”¨(Layout Element)å¿…é ˆå‹¾é¸æ­¤é …ç›®æ‰æœƒæœ‰åæ‡‰)
+	* Child Force Expand (åˆ¤æ–·æ˜¯å¦ä½¿ Horizontal Layout Group ä¸è‡ªå‹•å°é½Šï¼Œæ”¹æˆæ‰‹å‹•å°é½Š)
 
-(±¾¤÷ª«¥ó) Content Size Fitter - ³]©w¤÷ª«¥ó°t¦X¤lª«¥ó¶i¦æÁY©ñ
-* ¤lª«¥ó¥²¶·±¾¦³ Layout Element ¤¸¥ó¤~¦æ
-	* Horizontal Fit - °t¦X¤lª«¥óªº Layout Element ¼e«×
-	* Vertical Fit - °t¦X¤lª«¥óªº Layout Element ªø«×
+(æ›çˆ¶ç‰©ä»¶) Content Size Fitter - è¨­å®šçˆ¶ç‰©ä»¶é…åˆå­ç‰©ä»¶é€²è¡Œç¸®æ”¾
+* å­ç‰©ä»¶å¿…é ˆæ›æœ‰ Layout Element å…ƒä»¶æ‰è¡Œ
+	* Horizontal Fit - é…åˆå­ç‰©ä»¶çš„ Layout Element å¯¬åº¦
+	* Vertical Fit - é…åˆå­ç‰©ä»¶çš„ Layout Element é•·åº¦
 
 
 
-(±¾¤lª«¥ó) Layout Element (°t¦X¤÷ª«¥ó¦Û°Ê§ïÅÜ¦Û¨­ Size)
-	* Min Width (³Ì¤p¼e«×)
-	* Min Height (³Ì¤p°ª«×)
-	* Preferred Width (³Ì¤j¼e«×)
-	* Preferred Height (³Ì¤j°ª«×)
-	* Fiexible width (ÃB¥~¼e«×) - ·íÁÙ¦³ÃB¥~ªÅ¶¡®É¡A«h·|¤À°tµ¹¥L
+(æ›å­ç‰©ä»¶) Layout Element (é…åˆçˆ¶ç‰©ä»¶è‡ªå‹•æ”¹è®Šè‡ªèº« Size)
+	* Min Width (æœ€å°å¯¬åº¦)
+	* Min Height (æœ€å°é«˜åº¦)
+	* Preferred Width (æœ€å¤§å¯¬åº¦)
+	* Preferred Height (æœ€å¤§é«˜åº¦)
+	* Fiexible width (é¡å¤–å¯¬åº¦) - ç•¶é‚„æœ‰é¡å¤–ç©ºé–“æ™‚ï¼Œå‰‡æœƒåˆ†é…çµ¦ä»–
 	

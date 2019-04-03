@@ -1,10 +1,10 @@
-Path.GetDirectoryName	
+ï»¿Path.GetDirectoryName	
 AssetDatabase.GetAssetPath
 
 
--- §ä´M type = Sprite ªº¸ê·½
+-- æ‰¾å°‹ type = Sprite çš„è³‡æº
 
 string[] folders = new string[] { "Assets/Resources" };
 string[] findasset = AssetDatabase.FindAssets("t:Sprite" , folders);
 
-* AssetDatabase.FindAssets ´M§ä¨ì¬° GUID¡A»İ³z¹L AssetDatabase.GUIDToAssetPath ¶i¦æÂà´«¨Ó¨ú±o ( ¸ê·½¸ô®| )
+* AssetDatabase.FindAssets å°‹æ‰¾åˆ°ç‚º GUIDï¼Œéœ€é€é AssetDatabase.GUIDToAssetPath é€²è¡Œè½‰æ›ä¾†å–å¾— ( è³‡æºè·¯å¾‘ )

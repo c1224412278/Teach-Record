@@ -1,7 +1,7 @@
-1. PHP Connect MYSQL : http://ps.hsuweni.idv.tw/?p=4951
+﻿1. PHP Connect MYSQL : http://ps.hsuweni.idv.tw/?p=4951
 
 
 
-define('name' , 100)		//�ŧi�ܼơC�u�I:�O�I
+define('name' , 100)		//宣告變數。優點:保險
 
 

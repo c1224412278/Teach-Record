@@ -1,6 +1,6 @@
-	* UnityWebRequest ®M¥Î 
+ï»¿	* UnityWebRequest å¥—ç”¨ 
 
-https://dev.twsiyuan.com/2016/09/unity-web-request.html		// «ä¤¸¤jªºµ§°O
+https://dev.twsiyuan.com/2016/09/unity-web-request.html		// æ€å…ƒå¤§çš„ç­†è¨˜
 
 using UnityEngine.Networking;
 
@@ -17,7 +17,7 @@ private IEnumerator DoRequest()
             yield break;
         }
         
-        var html = request.downloadHandler.text;		// print ¥X html½X
+        var html = request.downloadHandler.text;		// print å‡º htmlç¢¼
         Debug.Log(html);
 }
 
@@ -45,6 +45,6 @@ var request = UnityWebRequest.GetAudioClip("http://example.com", AudioType.MPEG)
 yield return request.Send();
 
 
-	* var audioClip = DownloadHandlerAudioClip.GetContent(request);		// ¥i¨Ï¥Î DownloadHandlerAudioClip °µ»Î±µ
+	* var audioClip = DownloadHandlerAudioClip.GetContent(request);		// å¯ä½¿ç”¨ DownloadHandlerAudioClip åšéŠœæ¥
 	* var request = UnityWebRequestTexture.GetTexture("http://twsiyuan.com/images/profile.jpg");	// UnityWebRequestTexture
 

@@ -1,8 +1,8 @@
-------------------------------------------------- ¸Ë¹¢ªÌ ¼Ò¦¡ -------------------------------------
+ï»¿------------------------------------------------- è£é£¾è€… æ¨¡å¼ -------------------------------------
 
-* ¤À¦¨¨â­Ó³¡¤À¡A¤À§O¸Ë¹¢ªÌ©M³Q¸Ë¹¢ªÌ¡C
-¸Ë¹¢ªÌ ¬° Player 
-³Q¸Ë¹¢ªÌ ¬° Decorator_A ¡B Decorator_B
+* åˆ†æˆå…©å€‹éƒ¨åˆ†ï¼Œåˆ†åˆ¥è£é£¾è€…å’Œè¢«è£é£¾è€…ã€‚
+è£é£¾è€… ç‚º Player 
+è¢«è£é£¾è€… ç‚º Decorator_A ã€ Decorator_B
 
 public class test : MonoBehaviour
 {
@@ -28,7 +28,7 @@ class Player : Component
 {
     public override void Operation()
     {
-        Debug.Log("ª±®aªº¸Ë³Æ : ");
+        Debug.Log("ç©å®¶çš„è£å‚™ : ");
     }
 }
 abstract class Decorator : Component
@@ -48,7 +48,7 @@ class Decorator_A : Decorator
     public override void Operation()
     {
         base.Operation();
-        Debug.Log("¸Ë³Æ¤F Ä_¼C¡A§ğÀ»¤O+10");
+        Debug.Log("è£å‚™äº† å¯¶åŠï¼Œæ”»æ“ŠåŠ›+10");
     }
 }
 class Decorator_B : Decorator
@@ -56,14 +56,14 @@ class Decorator_B : Decorator
     public override void Operation()
     {
         base.Operation();
-        Debug.Log("¸Ë³Æ¤F Å@¬Ş¡A¨¾¿m¤O+5");
+        Debug.Log("è£å‚™äº† è­·ç›¾ï¼Œé˜²ç¦¦åŠ›+5");
     }
 }
 
 
 
 
-------------------------------------------------- ©R¥O ¼Ò¦¡ ----------------------------------------
+------------------------------------------------- å‘½ä»¤ æ¨¡å¼ ----------------------------------------
 
 
 public class test : MonoBehaviour
@@ -73,10 +73,10 @@ public class test : MonoBehaviour
     {
         Invoker invoker = new Invoker();
 
-        ReceiverRobot robot = new ReceiverRobot(); // °õ¦æ©R¥Oª«¥ó
+        ReceiverRobot robot = new ReceiverRobot(); // åŸ·è¡Œå‘½ä»¤ç‰©ä»¶
 
-        GoAheadCommand cmd_go_ahead = new GoAheadCommand(robot); // ¦V«e¨««ü¥O
-        TurnLeftCommand cmd_turn_left = new TurnLeftCommand(robot); // ¥ªÂà«ü¥O
+        GoAheadCommand cmd_go_ahead = new GoAheadCommand(robot); // å‘å‰èµ°æŒ‡ä»¤
+        TurnLeftCommand cmd_turn_left = new TurnLeftCommand(robot); // å·¦è½‰æŒ‡ä»¤
 
         invoker.Fn_SetCommand(cmd_go_ahead);
         invoker.Fn_SetCommand(cmd_go_ahead);
@@ -116,15 +116,15 @@ public class ReceiverRobot
 {
     public void GoAhead()
     {
-        Debug.Log("¦V«e¨«¤@¨B");
+        Debug.Log("å‘å‰èµ°ä¸€æ­¥");
     }
     public void TurnLeft()
     {
-        Debug.Log("¦V¥ªÂà");
+        Debug.Log("å‘å·¦è½‰");
     }
     public void TurnRight()
     {
-        Debug.Log("¦V¥kÂà");
+        Debug.Log("å‘å³è½‰");
     }
 }
 public class GoAheadCommand : Command

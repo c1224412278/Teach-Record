@@ -1,53 +1,53 @@
+ï»¿
 
-
-*** Joint ¸Ô²Ó¨Ï¥Î¤Î¤¶²Ð :    https://blog.csdn.net/RICKShaozhiheng/article/details/78509632
+*** Joint è©³ç´°ä½¿ç”¨åŠä»‹ç´¹ :    https://blog.csdn.net/RICKShaozhiheng/article/details/78509632
 
 
 Distance Joint 2D => https://docs.unity3d.com/Manual/class-DistanceJoint2D.html
 			youtube : https://www.youtube.com/watch?v=wpd2W3bIwx4&t=0s
-( »PÃö¸`«O«ù¤@©w¶ZÂ÷ )
-	* Rigidbody2D -> Gravity ¤@©w­n¶}±Ò
+( èˆ‡é—œç¯€ä¿æŒä¸€å®šè·é›¢ )
+	* Rigidbody2D -> Gravity ä¸€å®šè¦é–‹å•Ÿ
 
 			-----------------------------------
-	* Enable Collision (¦pªG Connected Rigidbody ¦³¸j©wª«¥ó®É¡A§PÂ_¨â­Óª«¥ó¬O§_¥i¥H¸I¼²)
-	* Connected Rigidbody (¸j©w³sµ²ª«¥ó)
-	* Auto Configure Connect (¹p¤H¥Î)
-	* Anchor (³]©w¦Û¨­ÁãÂI)
-	* Connected Anchor (³]©w­n³sµ²ªºÁãÂI ps : ¦Û¨­ªºÁãÂI·|¦b³sµ²ªºÁãÂIªþªñ­«½ÆÂ\°Ê)
-	* Auto Configure Distance (¹p¤H¥Î)
-	* Distance (ª«¥ó³Ì¤j¬Û®tªº¶ZÂ÷)
+	* Enable Collision (å¦‚æžœ Connected Rigidbody æœ‰ç¶å®šç‰©ä»¶æ™‚ï¼Œåˆ¤æ–·å…©å€‹ç‰©ä»¶æ˜¯å¦å¯ä»¥ç¢°æ’ž)
+	* Connected Rigidbody (ç¶å®šé€£çµç‰©ä»¶)
+	* Auto Configure Connect (é›·äººç”¨)
+	* Anchor (è¨­å®šè‡ªèº«éŒ¨é»ž)
+	* Connected Anchor (è¨­å®šè¦é€£çµçš„éŒ¨é»ž ps : è‡ªèº«çš„éŒ¨é»žæœƒåœ¨é€£çµçš„éŒ¨é»žé™„è¿‘é‡è¤‡æ“ºå‹•)
+	* Auto Configure Distance (é›·äººç”¨)
+	* Distance (ç‰©ä»¶æœ€å¤§ç›¸å·®çš„è·é›¢)
 
 Fixed Joint 2D => https://docs.unity3d.com/Manual/class-FixedJoint2D.html
-( Â¼Â¼ªO )
+( ç¿¹ç¿¹æ¿ )
 
-	* Rigidbody2D -> Gravity ¤@©w­n¶}±Ò
+	* Rigidbody2D -> Gravity ä¸€å®šè¦é–‹å•Ÿ
 			
 			-------------------------------------
 
-	* Damping Ratio (§í¨î¼uÂ®®¶Àúªºµ{«×¡A0~1­È¶V¤j°Ê¶V¤Ö)
-	* Frequency (­È¶V°ª¡A¼uÂ®¶V»øµw ¡C ¦pªG³]¬° 0 ¡A«h§¹¥þ»øµw)
+	* Damping Ratio (æŠ‘åˆ¶å½ˆç°§æŒ¯ç›ªçš„ç¨‹åº¦ï¼Œ0~1å€¼è¶Šå¤§å‹•è¶Šå°‘)
+	* Frequency (å€¼è¶Šé«˜ï¼Œå½ˆç°§è¶Šåƒµç¡¬ ã€‚ å¦‚æžœè¨­ç‚º 0 ï¼Œå‰‡å®Œå…¨åƒµç¡¬)
 
 
 Hinge Joint 2D => https://docs.unity3d.com/Manual/class-HingeJoint2D.html
-( ¨Ó¦^ÀúÃ·µ² )
+( ä¾†å›žç›ªç¹©çµ )
 
 
  Relative Joint 2D => https://docs.unity3d.com/Manual/class-RelativeJoint2D.html
-( ½ò½ñ¶¥±è®É¡A¤U¼Y¤§«á¦ù°ª )
+( è¸©è¸éšŽæ¢¯æ™‚ï¼Œä¸‹å¢œä¹‹å¾Œä¼¸é«˜ )
 Youtube : https://www.youtube.com/watch?v=V6eGtas_EaY
 
 
 Slider Joint 2D => https://docs.unity3d.com/Manual/class-SliderJoint2D.html
-( ¶Ç°e¶¥±è )
+( å‚³é€éšŽæ¢¯ )
 
 
 Spring Joint 2D => https://docs.unity3d.com/Manual/class-SpringJoint2D.html
-( ·È·È²y )
+( æºœæºœçƒ )
 Youtube : https://www.youtube.com/watch?v=zvHB1fsRadQ
 
 
 Target Joint 2D => https://docs.unity3d.com/Manual/class-TargetJoint2D.html
-( ÃßÃßªO )
+( è¹ºè¹ºæ¿ )
 
 
 Wheel Joint 2D => https://docs.unity3d.com/Manual/class-WheelJoint2D.html

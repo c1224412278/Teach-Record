@@ -1,8 +1,8 @@
-* Tile Map ­«ÂI³]©w
+ï»¿* Tile Map é‡é»è¨­å®š
 
-	1. Sprite -> Wrap Mode => Clamp , Filter Mode => Point (¥H¤W³]©w¥iÁ×§KTile Map»PTile Map²£¥Í¶Â½u)
+	1. Sprite -> Wrap Mode => Clamp , Filter Mode => Point (ä»¥ä¸Šè¨­å®šå¯é¿å…Tile Mapèˆ‡Tile Mapç”¢ç”Ÿé»‘ç·š)
 
-Tile Map ¹Ï¤ù¤ñ¨Ò°İÃD : ³q±`2D¹Ï¤ù¤j¤p¤@­P©Ê 
+Tile Map åœ–ç‰‡æ¯”ä¾‹å•é¡Œ : é€šå¸¸2Dåœ–ç‰‡å¤§å°ä¸€è‡´æ€§ 
 
 
 --------------------------------------------------------------------------
@@ -14,9 +14,9 @@ Create TileAsset :
 		AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<Base class OO>() , path);
 
 
-Base Tile : 	override void RefreshTile (¨M©w²K¥[Sprite¤§«á¡A©P³ò¦³­ş¨ÇSprite­nÅÜ§ó)
-		override void GetTileData (¦b Tile ­±ªO¤¤ªº Tile Map Åã¥Ü)
-		override void GetTileAnimationData (°Êµe¼½©ñ)		
+Base Tile : 	override void RefreshTile (æ±ºå®šæ·»åŠ Spriteä¹‹å¾Œï¼Œå‘¨åœæœ‰å“ªäº›Spriteè¦è®Šæ›´)
+		override void GetTileData (åœ¨ Tile é¢æ¿ä¸­çš„ Tile Map é¡¯ç¤º)
+		override void GetTileAnimationData (å‹•ç•«æ’­æ”¾)		
 
 	public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
 	{
@@ -27,15 +27,15 @@ Base Tile : 	override void RefreshTile (¨M©w²K¥[Sprite¤§«á¡A©P³ò¦³­ş¨ÇSprite­nÅÜ
     		tileData.flags = this.flags;
 
 		tileData.colliderType = this.colliderType;		
-		//¸I¼²³]©w tileData.colliderType = isPassable 
+		//ç¢°æ’è¨­å®š tileData.colliderType = isPassable 
 				? Tile.ColliderType.None : Tile.ColliderType.Grid;
 	}
 
 
-Rule Tile : ÂIÀ»¥kÁä·s¼W Rule Tile ¡C (¦¹¥\¯à·|¦Û°Ê§P§O­n¤£­nÂà´«¦¨§Oªº Tile)
+Rule Tile : é»æ“Šå³éµæ–°å¢ Rule Tile ã€‚ (æ­¤åŠŸèƒ½æœƒè‡ªå‹•åˆ¤åˆ¥è¦ä¸è¦è½‰æ›æˆåˆ¥çš„ Tile)
 
 
-* ¹Ï¼h·s¼W
-	GameObject - 2D - tileMap (¤§«á¨ìTile Paletteµøµ¡¡AActive Tilemap ¥i¶i¦æ¤Á´«¹Ï¼h°Ê§@)
+* åœ–å±¤æ–°å¢
+	GameObject - 2D - tileMap (ä¹‹å¾Œåˆ°Tile Paletteè¦–çª—ï¼ŒActive Tilemap å¯é€²è¡Œåˆ‡æ›åœ–å±¤å‹•ä½œ)
 
  

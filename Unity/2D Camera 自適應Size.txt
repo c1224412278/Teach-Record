@@ -1,7 +1,7 @@
-
- * pixels to units ´«ºâ¨ì Unity ®y¼Ğºâªk
-°²³] Heigh : 640 ¡Apixels to units ¬° 100 ªº±¡ªp¤U
-orthographic size ¬° 640/2/100 = 3.2 
+ï»¿
+ * pixels to units æ›ç®—åˆ° Unity åº§æ¨™ç®—æ³•
+å‡è¨­ Heigh : 640 ï¼Œpixels to units ç‚º 100 çš„æƒ…æ³ä¸‹
+orthographic size ç‚º 640/2/100 = 3.2 
 
 
 float cameraHeight = Camera.main.orthographicSize * 2;

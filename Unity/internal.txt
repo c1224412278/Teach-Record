@@ -1,7 +1,7 @@
-public class BaseClass   
+ï»¿public class BaseClass   
 {  
    internal static int intM = 0;  
 } 
-³o¼Ë«Å§i§¹«á¡A¥u¯à¦b³o­ÓÃş§O¸Ì¨Ï¥Î intM
+é€™æ¨£å®£å‘Šå®Œå¾Œï¼Œåªèƒ½åœ¨é€™å€‹é¡åˆ¥è£¡ä½¿ç”¨ intM
 
-¦pªG¦b¨ä¥LÃş§O¨Ï¥Î intM ·|Åª¤£¨ì¡A©ÎªÌ¨Ï¥Î¿ù»~
+å¦‚æœåœ¨å…¶ä»–é¡åˆ¥ä½¿ç”¨ intM æœƒè®€ä¸åˆ°ï¼Œæˆ–è€…ä½¿ç”¨éŒ¯èª¤

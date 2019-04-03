@@ -1,1 +1,1 @@
-Mathf.Asin(Vector3.Distance(Vector3.zero, Vector3.Cross(a.normalized, b.normalized))) * Mathf.Rad2Deg;
+﻿Mathf.Asin(Vector3.Distance(Vector3.zero, Vector3.Cross(a.normalized, b.normalized))) * Mathf.Rad2Deg;

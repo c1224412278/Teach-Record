@@ -1,9 +1,9 @@
-public static float Dot(Vector3 lhs, Vector3 rhs);
+ï»¿public static float Dot(Vector3 lhs, Vector3 rhs);
 
-******* Vector3.Dot »İ­n¼W¥[ Normalize «á¡A±o¨ìªº¼Æ­È¤~·|¦b -1 ~ 1 ¤§¶¡
+******* Vector3.Dot éœ€è¦å¢åŠ  Normalize å¾Œï¼Œå¾—åˆ°çš„æ•¸å€¼æ‰æœƒåœ¨ -1 ~ 1 ä¹‹é–“
 
-§PÂ_( ¥Ø¼Ğ¤@ )»P( ¥Ø¼Ğ¤G )ªº­±¹ï¤è¦V
+åˆ¤æ–·( ç›®æ¨™ä¸€ )èˆ‡( ç›®æ¨™äºŒ )çš„é¢å°æ–¹å‘
 
-¨â­Ó¤è¦V¬Û¹ï«h·| ªğ¦^ 1 
+å…©å€‹æ–¹å‘ç›¸å°å‰‡æœƒ è¿”å› 1 
 
-§_«h 0 
+å¦å‰‡ 0 

@@ -1,14 +1,14 @@
-matrix.SetTRS (transform.position , transform.rotation , transform.localScale);
+ï»¿matrix.SetTRS (transform.position , transform.rotation , transform.localScale);
 
 		matrix.m11 = Mathf.Cos (angle * Mathf.Deg2Rad);
 		matrix.m12 = -Mathf.Sin (angle * Mathf.Deg2Rad);
 		matrix.m21 = Mathf.Sin (angle * Mathf.Deg2Rad);
 		matrix.m22 = Mathf.Cos (angle * Mathf.Deg2Rad);
 
-		float qw = Mathf.Sqrt (1f + matrix.m00 + matrix.m11 + matrix.m22) / 2;   // ¤½¦¡
+		float qw = Mathf.Sqrt (1f + matrix.m00 + matrix.m11 + matrix.m22) / 2;   // å…¬å¼
 		float w = 4 * qw;
-		float qx = (matrix.m21 - matrix.m12) / w;	// ¤½¦¡
-		float qy = (matrix.m02 - matrix.m20) / w;	// ¤½¦¡
-		float qz = (matrix.m10 - matrix.m01) / w;	// ¤½¦¡
+		float qx = (matrix.m21 - matrix.m12) / w;	// å…¬å¼
+		float qy = (matrix.m02 - matrix.m20) / w;	// å…¬å¼
+		float qz = (matrix.m10 - matrix.m01) / w;	// å…¬å¼
 
 		this.transform.rotation = new Quaternion (qx,qy,qz,qw);
