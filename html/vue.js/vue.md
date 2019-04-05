@@ -11,7 +11,7 @@ import'@/'// src目錄下開始找
 import''// 直接打名稱則是node_modules
 ```
 
-** 套件載入 **
+*   套件載入 **
 * bootStrap 套件載入
 參考網址 : https://bootstrap-vue.js.org/docs/
 
