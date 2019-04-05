@@ -119,14 +119,74 @@ new Vue({
 * 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變
 (1)html 範例
 
+<template>
+  <div id="app">
+      <div :title="data"> test </div>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+export default
+{
+    data(){
+        return{
+            data : "It's my title"
+        }
+    }
+}
+</script>
+
+
 (2)Class範例
 
-(3)Style範例
 
+<template>
+  <div id="app">
+      <div :class="{active : myCheck}"> test </div>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+export default
+{
+    data(){
+        return{
+            myCheck : true,
+        }
+    }
+}
+</script>
+
+<style>
+    .active
+    {
+        color:red;
+    }
+</style>
 
 ----------------------------------------------------  compoent  -------------------------------------------
 
+<template>
+  <div id="app">
+      <blog-post title="hello"></blog-post>
+  </div>
+</template>
 
+<script>
+import Vue from 'vue'
+
+Vue.component('blog-post', {
+    props:['title'],
+    template:'<h3>{{ title }}</h3>'
+})
+
+export default
+{
+    
+}
+</script>
 
 ----------------------------------------------------  On  -------------------------------------------
 <button @click.prevent="">
@@ -139,7 +199,26 @@ new Vue({
 
 ----------------------------------------------------  vue 頁面轉換  -------------------------------------------
 
+<router-link :to="'HelloWorld'"></router-link>
 
+
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
+import Parent from '@/components/Parent'
+import Child from '@/components/Child'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+       path: '/',
+       name: 'HelloWorld',
+       component: HelloWorld
+    },
+  ]
+})
 
 
 ----------------------------------------------------  (Props) Parentand Child  -------------------------------------------
