@@ -1,6 +1,6 @@
 * vue 小知識
 
-1. <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> (會自動抓取 Vue.js 最新版本，html 可使用)
+1. <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">  </script> (會自動抓取 Vue.js 最新版本，html 可使用)
 2. Vue 生命週期參考網址 : https://cythilya.github.io/2017/04/11/vue-instance/
 3. @import
 import'./'// 同一層目錄開始找
