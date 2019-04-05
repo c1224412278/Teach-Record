@@ -233,8 +233,8 @@ export default new Router({
 ----------------------------------------------------  (Props) Parentand Child  -------------------------------------------
 
 	child.vue (將變數 message 藉由 props 方式傳遞給父物件)
+```
   *---------------------------------------------------------------
-  ```
     <template>
         < h5>{{ message }}< /h5>
     </template>
@@ -247,8 +247,8 @@ export default new Router({
     
     
 	parent.vue
+  ```
   *---------------------------------------------------------------
-    ```
     <template>
       <div>
         <p>This is Parent.</p>
