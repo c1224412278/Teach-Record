@@ -248,9 +248,11 @@ export default new Router({
         props:['message']
       }
     </script>
-    
+``` 
     
 	parent.vue
+
+```
   *---------------------------------------------------------------
     <template>
       <div>
