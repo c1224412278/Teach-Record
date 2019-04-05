@@ -198,9 +198,9 @@ export default
 ```
 ----------------------------------------------------  On  -------------------------------------------
 ```
-< button @click.prevent="">
-    < a href="#"> click < /a>
-< /button>
+<button @click.prevent="">
+    <a href="#"> click </a>
+</button>
 ```
 <button v-on:click.prevent="handle"></button>
 * prevent 頁面轉換如果是同個頁面時，url 後會出現 #，若不想 url 出現 # ，則使用
