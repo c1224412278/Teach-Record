@@ -144,11 +144,10 @@ export default
     }
 }
 </script>
-```
 
 (2)Class範例
 
-```
+
 <template>
   <div id="app">
       <div :class="{active : myCheck}"> test </div>
@@ -174,7 +173,9 @@ export default
     }
 </style>
 ```
+
 ----------------------------------------------------  compoent  -------------------------------------------
+
 ```
 <template>
   <div id="app">
@@ -196,17 +197,21 @@ export default
 }
 </script>
 ```
+
 ----------------------------------------------------  On  -------------------------------------------
+
 ```
 <button @click.prevent="">
     <a href="#"> click </a>
 </button>
 ```
+
 <button v-on:click.prevent="handle"></button>
 * prevent 頁面轉換如果是同個頁面時，url 後會出現 #，若不想 url 出現 # ，則使用
 
 
 ----------------------------------------------------  vue 頁面轉換  -------------------------------------------
+
 ```
 <router-link :to="'HelloWorld'">< /router-link>
 
@@ -228,8 +233,8 @@ export default new Router({
     },
   ]
 })
-
 ```
+
 ----------------------------------------------------  (Props) Parentand Child  -------------------------------------------
 
 	child.vue (將變數 message 藉由 props 方式傳遞給父物件)
@@ -243,11 +248,9 @@ export default new Router({
         props:['message']
       }
     </script>
-    ```
     
     
 	parent.vue
-  ```
   *---------------------------------------------------------------
     <template>
       <div>
@@ -273,11 +276,12 @@ export default new Router({
 ```
 ---------------------------------------------------- Props -------------------------------------------
 
+```
 prop=(型態) : 限制使用者只能塞特定型態
 required : 一定要用此 prop
 default : 當使用者沒有輸入值時，就設定默認值
 validator : 條件限定，若判斷錯誤則會error
-
+```
 
 	child.vue 
   * ---------------------------------------------------------------
@@ -320,8 +324,11 @@ export default {
 }
 </script>
 ```
+
+
 	parent.vue 
   * ---------------------------------------------------------------
+  
   ```
   <template>
     <div id="app">
@@ -340,6 +347,7 @@ export default {
   </script>
 
 ```
+
 參考網址 : https://www.jianshu.com/p/91416e11f012
 (* 注意 : 只能單向傳輸。(單:父物件抓子物件，不可雙向傳輸))
 
@@ -376,7 +384,8 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 
 	parent.vue
   *----------------------------------------
-  ```
+  
+```
   <template>
     <div>
       <p> 我是父組件 !! </p>
@@ -397,6 +406,7 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
   }
   </script>
 ```
+
 參考網址 : https://www.jianshu.com/p/91416e11f012
 
 * 藉由 ref = msg 指定 msg 為 child.vue
