@@ -21,7 +21,7 @@ import''// 直接打名稱則是node_modules
 
 < div id="app" >
     <p v-if="seen">you look me.</p>
-</div>
+< /div >
 
 new Vue({
     el:"#app" ,
@@ -34,11 +34,11 @@ new Vue({
 
 ----------------------------------------------------  v_for  -------------------------------------------
 
-<div id="app">
+< div id="app" >
     <p v-for="(item, index) in items" :key="index">
         {{ item.id }}
     </p>
-</div>
+< /div >
 
 new Vue({
     el:"#app" ,
@@ -71,9 +71,9 @@ new Vue({
 ----------------------------------------------------  is vs : is  -------------------------------------------
 
 (1) is (指定一個 component 直接使用)
-<div id="app">
-    <div is="com"></div>
-</div>
+< div id="app" >
+    < div is="com">< /div >
+< /div >
 
 Vue.component('com', {
     template:'<p> title </p>'
@@ -84,9 +84,9 @@ new Vue({
 })
 
 (2) : is (需指定一個變數，並用變數去呼叫compoent)
-<div id="app">
-    <div :is="view"></div>
-</div>
+< div id="app" >
+    < div :is="view" >< /div >
+< /div >
 
 var vm = new Vue({
     el:"#app" ,
@@ -104,10 +104,10 @@ var vm = new Vue({
 
 
 ----------------------------------------------------  v_model (雙向綁定)  -------------------------------------------
-<div id="app">
-    <p>{{ message }}</p>
-    <input v-model="message">
-</div>
+< div id="app">
+    < p>{{ message }}< /p>
+    < input v-model="message">
+< /div>
 
 new Vue({
     el:"#app" ,
@@ -123,13 +123,13 @@ new Vue({
 * 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變
 (1)html 範例
 
-<template>
+< template>
   <div id="app">
       <div :title="data"> test </div>
   </div>
-</template>
+< /template>
 
-<script>
+< script>
 import Vue from 'vue'
 export default
 {
@@ -139,19 +139,19 @@ export default
         }
     }
 }
-</script>
+< /script>
 
 
 (2)Class範例
 
 
-<template>
-  <div id="app">
-      <div :class="{active : myCheck}"> test </div>
-  </div>
-</template>
+< template>
+  < div id="app">
+      < div :class="{active : myCheck}"> test </div>
+  < /div>
+< /template>
 
-<script>
+< script>
 import Vue from 'vue'
 export default
 {
@@ -161,22 +161,22 @@ export default
         }
     }
 }
-</script>
+< /script>
 
-<style>
+< style>
     .active
     {
         color:red;
     }
-</style>
+< /style>
 
 ----------------------------------------------------  compoent  -------------------------------------------
 
-<template>
-  <div id="app">
+< template>
+  < div id="app">
       <blog-post title="hello"></blog-post>
-  </div>
-</template>
+  < /div>
+< /template>
 
 <script>
 import Vue from 'vue'
@@ -193,9 +193,9 @@ export default
 </script>
 
 ----------------------------------------------------  On  -------------------------------------------
-<button @click.prevent="">
-    <a href="#"> click </a>
-</button>
+< button @click.prevent="">
+    < a href="#"> click < /a>
+< /button>
 
 <button v-on:click.prevent="handle"></button>
 * prevent 頁面轉換如果是同個頁面時，url 後會出現 #，若不想 url 出現 # ，則使用
@@ -203,7 +203,7 @@ export default
 
 ----------------------------------------------------  vue 頁面轉換  -------------------------------------------
 
-<router-link :to="'HelloWorld'"></router-link>
+< router-link :to="'HelloWorld'">< /router-link>
 
 
 import Vue from 'vue'
@@ -229,28 +229,28 @@ export default new Router({
 
 	child.vue (將變數 message 藉由 props 方式傳遞給父物件)\
   *---------------------------------------------------------------
-    <template>
-        <h5>{{ message }}</h5>
-    </template>
-    <script>
+    < template>
+        < h5>{{ message }}< /h5>
+    < /template>
+    < script>
       export default {
         props:['message']
       }
-    </script>
+    < /script>
     
     
     
 	parent.vue
   *---------------------------------------------------------------
-    <template>
-      <div>
-        <p>This is Parent.</p>
-        <child message='Text'></child>
-        <child :message='a'></child>
-      </div>
-    </template>
+    < template>
+      < div>
+        < p>This is Parent.< /p>
+        < child message='Text'>< /child>
+        < child :message='a'>< /child>
+      < /div>
+    < /template>
 
-    <script>
+    < script>
     import Child from '../components/child.vue'
 
     export default {
@@ -262,7 +262,7 @@ export default new Router({
             }
         }
     }
-    </script>
+    < /script>
 
 ---------------------------------------------------- Props -------------------------------------------
 
@@ -276,11 +276,11 @@ validator : 條件限定，若判斷錯誤則會error
   * ---------------------------------------------------------------
 
 <template>
-    <div>
-        <span>Message : {{propA}}</span>
-        <span>Message : {{propB}}</span>
-        <span>Message : {{propF}}</span>
-    </div>
+    < div>
+        < span>Message : {{propA}}</span>
+        < span>Message : {{propB}}</span>
+        < span>Message : {{propF}}</span>
+    < /div>
 </template>
 
 <script>
