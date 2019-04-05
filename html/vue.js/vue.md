@@ -36,6 +36,7 @@ new Vue({
 ```
 
 <h3 id="autoescape"> v_for </h3>
+
 ```
 <div id="app">
     <p v-for="(item, index) in items" :key="index">
@@ -90,6 +91,7 @@ new Vue({
     el:"#app"
 })
 ```
+
 (2) : is (需指定一個變數，並用變數去呼叫compoent)
 ```
 <div id="app">
@@ -112,6 +114,7 @@ var vm = new Vue({
 ```
 
 <h3 id="autoescape"> v_model (雙向綁定) </h3>
+
 ```
 <div id="app">
     <p>{{ message }}</p>
@@ -129,6 +132,7 @@ new Vue({
 ```
 
 <h3 id="autoescape"> v_bind </h3>
+
 * 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變
 (1)html 範例
 ```
@@ -217,6 +221,7 @@ export default
 
 
 <h3 id="autoescape"> vue 頁面轉換 </h3>
+
 ```
 <router-link :to="'HelloWorld'">< /router-link>
 
@@ -364,6 +369,7 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 
 <h3 id="autoescape"> $ref </h3>
   
+
 	child.vue (一般的寫法。)
 
 ```
@@ -505,6 +511,7 @@ export default {
 ```
 
 <h3 id="autoescape"> v-Html </h3>
+
 
 * (可以將 msg 的資料轉為 html 輸出)
 ```
