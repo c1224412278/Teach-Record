@@ -292,7 +292,7 @@ validator : 條件限定，若判斷錯誤則會error
 ```
 
 	child.vue 
-  * ---------------------------------------------------------------
+
 ```
 <template>
     <div>
@@ -335,8 +335,7 @@ export default {
 
 
 	parent.vue 
-  * ---------------------------------------------------------------
-  
+
   ```
   <template>
     <div id="app">
@@ -353,7 +352,6 @@ export default {
 
   }
   </script>
-
 ```
 
 參考網址 : https://www.jianshu.com/p/91416e11f012
@@ -369,7 +367,6 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 	child.vue (一般的寫法。)
 
 ```
-
   <template>
       <h5>{{ message }}</h5>
   </template>
@@ -394,8 +391,6 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 	parent.vue
 
 ```
-
-
   <template>
     <div>
       <p> 我是父組件 !! </p>
