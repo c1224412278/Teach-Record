@@ -19,9 +19,9 @@ import''// 直接打名稱則是node_modules
 
 ----------------------------------------------------  v_if  -------------------------------------------
 
-//<div id="app">
+< div id="app" >
     <p v-if="seen">you look me.</p>
-//</div>
+</div>
 
 new Vue({
     el:"#app" ,
