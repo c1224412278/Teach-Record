@@ -18,10 +18,10 @@ import''// 直接打名稱則是node_modules
 
 
 ----------------------------------------------------  v_if  -------------------------------------------
-
-< div id="app" >
+```
+<div id="app">
     <p v-if="seen">you look me.</p>
-< /div >
+</div>
 
 new Vue({
     el:"#app" ,
@@ -31,14 +31,14 @@ new Vue({
         }
     },
 })
-
+```
 ----------------------------------------------------  v_for  -------------------------------------------
-
-< div id="app" >
+```
+<div id="app">
     <p v-for="(item, index) in items" :key="index">
         {{ item.id }}
     </p>
-< /div >
+</div>
 
 new Vue({
     el:"#app" ,
@@ -50,7 +50,7 @@ new Vue({
         }
     },
 })
-
+```
 (建議最好每個 for 都設定 key，假如 array 更動時，資料不會更著陣列一起更新，如果設定 key 時，資料就會自動更動到該欄位)
 
  * Array 小知識
@@ -71,9 +71,10 @@ new Vue({
 ----------------------------------------------------  is vs : is  -------------------------------------------
 
 (1) is (指定一個 component 直接使用)
-< div id="app" >
-    < div is="com">< /div >
-< /div >
+```
+<div id="app">
+    <div is="com">< /div>
+</div>
 
 Vue.component('com', {
     template:'<p> title </p>'
@@ -82,11 +83,12 @@ Vue.component('com', {
 new Vue({
     el:"#app"
 })
-
+```
 (2) : is (需指定一個變數，並用變數去呼叫compoent)
-< div id="app" >
-    < div :is="view" >< /div >
-< /div >
+```
+<div id="app">
+    <div :is="view" >< /div>
+</div>
 
 var vm = new Vue({
     el:"#app" ,
@@ -101,13 +103,14 @@ var vm = new Vue({
         }
     }
 })
-
+```
 
 ----------------------------------------------------  v_model (雙向綁定)  -------------------------------------------
-< div id="app">
-    < p>{{ message }}< /p>
+```
+<div id="app">
+    <p>{{ message }}</p>
     < input v-model="message">
-< /div>
+</div>
 
 new Vue({
     el:"#app" ,
@@ -117,19 +120,19 @@ new Vue({
         }
     },
 })
-
+```
 
 ----------------------------------------------------  v_bind  -------------------------------------------
 * 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變
 (1)html 範例
-
-< template>
+```
+<template>
   <div id="app">
       <div :title="data"> test </div>
   </div>
-< /template>
+</template>
 
-< script>
+<script>
 import Vue from 'vue'
 export default
 {
@@ -139,19 +142,19 @@ export default
         }
     }
 }
-< /script>
-
+</script>
+```
 
 (2)Class範例
 
+```
+<template>
+  <div id="app">
+      <div :class="{active : myCheck}"> test </div>
+  </div>
+</template>
 
-< template>
-  < div id="app">
-      < div :class="{active : myCheck}"> test </div>
-  < /div>
-< /template>
-
-< script>
+<script>
 import Vue from 'vue'
 export default
 {
@@ -161,22 +164,22 @@ export default
         }
     }
 }
-< /script>
+</script>
 
-< style>
+<style>
     .active
     {
         color:red;
     }
-< /style>
-
+</style>
+```
 ----------------------------------------------------  compoent  -------------------------------------------
-
-< template>
-  < div id="app">
+```
+<template>
+  <div id="app">
       <blog-post title="hello"></blog-post>
-  < /div>
-< /template>
+  </div>
+</template>
 
 <script>
 import Vue from 'vue'
@@ -191,19 +194,20 @@ export default
     
 }
 </script>
-
+```
 ----------------------------------------------------  On  -------------------------------------------
+```
 < button @click.prevent="">
     < a href="#"> click < /a>
 < /button>
-
+```
 <button v-on:click.prevent="handle"></button>
 * prevent 頁面轉換如果是同個頁面時，url 後會出現 #，若不想 url 出現 # ，則使用
 
 
 ----------------------------------------------------  vue 頁面轉換  -------------------------------------------
-
-< router-link :to="'HelloWorld'">< /router-link>
+```
+<router-link :to="'HelloWorld'">< /router-link>
 
 
 import Vue from 'vue'
@@ -224,33 +228,35 @@ export default new Router({
   ]
 })
 
-
+```
 ----------------------------------------------------  (Props) Parentand Child  -------------------------------------------
 
 	child.vue (將變數 message 藉由 props 方式傳遞給父物件)\
   *---------------------------------------------------------------
-    < template>
+  ```
+    <template>
         < h5>{{ message }}< /h5>
-    < /template>
-    < script>
+    </template>
+    <script>
       export default {
         props:['message']
       }
-    < /script>
-    
+    </script>
+    ```
     
     
 	parent.vue
   *---------------------------------------------------------------
-    < template>
-      < div>
-        < p>This is Parent.< /p>
-        < child message='Text'>< /child>
-        < child :message='a'>< /child>
-      < /div>
-    < /template>
+    ```
+    <template>
+      <div>
+        <p>This is Parent.</p>
+        <child message='Text'></child>
+        <child :message='a'></child>
+      </div>
+    </template>
 
-    < script>
+    <script>
     import Child from '../components/child.vue'
 
     export default {
@@ -262,8 +268,8 @@ export default new Router({
             }
         }
     }
-    < /script>
-
+    </script>
+```
 ---------------------------------------------------- Props -------------------------------------------
 
 prop=(型態) : 限制使用者只能塞特定型態
@@ -274,13 +280,13 @@ validator : 條件限定，若判斷錯誤則會error
 
 	child.vue 
   * ---------------------------------------------------------------
-
+```
 <template>
-    < div>
-        < span>Message : {{propA}}</span>
-        < span>Message : {{propB}}</span>
-        < span>Message : {{propF}}</span>
-    < /div>
+    <div>
+        <span>Message : {{propA}}</span>
+        <span>Message : {{propB}}</span>
+        <span>Message : {{propF}}</span>
+    </div>
 </template>
 
 <script>
@@ -312,9 +318,10 @@ export default {
     }
 }
 </script>
-
+```
 	parent.vue 
   * ---------------------------------------------------------------
+  ```
   <template>
     <div id="app">
       <child :propA='10' propB="20" :propF="100"></child>
@@ -331,7 +338,7 @@ export default {
   }
   </script>
 
-
+```
 參考網址 : https://www.jianshu.com/p/91416e11f012
 (* 注意 : 只能單向傳輸。(單:父物件抓子物件，不可雙向傳輸))
 
@@ -344,6 +351,7 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
   
 	child.vue (一般的寫法。)
   *----------------------------------------
+  ```
   <template>
       <h5>{{ message }}</h5>
   </template>
@@ -362,11 +370,12 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
       }
     }
   </script>
-
+```
 
 
 	parent.vue
   *----------------------------------------
+  ```
   <template>
     <div>
       <p> 我是父組件 !! </p>
@@ -386,7 +395,7 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
       }
   }
   </script>
-
+```
 參考網址 : https://www.jianshu.com/p/91416e11f012
 
 * 藉由 ref = msg 指定 msg 為 child.vue
@@ -397,6 +406,7 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 
 
 ----------------------------------------------------  全局註冊  -------------------------------------------
+```
 *Import Vue from 'vue' 是重點，一定要寫入
 import Vue from 'vue'
 
@@ -404,8 +414,9 @@ Vue.component('example' , {
   template:'<button> click </button>'
 })
 
-
+```
 ----------------------------------------------------  Computed(計算屬系)  -------------------------------------------
+```
 <template>
   <div id="app">
     <p>{{ message }}</p>
@@ -427,10 +438,10 @@ export default {
   },
 }
 </script>
-
+```
 
 ----------------------------------------------------  (get , set)  -------------------------------------------
-
+```
 <template>
   <div id="app">
     <button v-on:click="handle()"> click </button>
@@ -467,12 +478,13 @@ export default {
   }
 }
 </script>
-
+```
 
 
 ------ v-Html ------
 
 * (可以將 msg 的資料轉為 html 輸出)
+```
 <template>
   <div id="app">
       <div v-html='msg'></div>
@@ -490,4 +502,4 @@ export default
         }
     }
 }
-
+```
