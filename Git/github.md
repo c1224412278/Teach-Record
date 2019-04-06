@@ -55,7 +55,7 @@ git branch (分支名稱) -d               // 刪除 branch 。 (master 不可�
 git merge (別的分支名稱)               // branch 合併，將別的 branch 資料合併過來，注意可能會有 “衝突”。
 ```
 
-<h5 id="autoescape"> 互動模式操作 </h5>
+<h3 id="autoescape"> 互動模式操作 </h3>
 
 ```
 離開 Esc + :
@@ -64,9 +64,9 @@ git merge (別的分支名稱)               // branch 合併，將別的 branch
 存檔 + 離開 : Esc + : -> wq
 ```
 
-<h5 id="autoescape"> 額外狀況 </h5>
+<h1 id="autoescape"> 額外狀況 </h1>
 
-<h2 id="autoescape"> git commit 指令下完，想要收回 </h2>
+<h3 id="autoescape"> git commit 指令下完，想要收回 </h3>
 
 ```
 git reset HEAD content.txt  or  git reset HEAD^^
@@ -74,14 +74,14 @@ git checkout (檔案名稱)
 * 取離暫存檔 (單個 / 全部) -> git checkout => 復原回上個 commit
 ```
 
-<h2 id="autoescape"> git commit ( HEAD )收回時，又想要復原 </h2>
+<h3 id="autoescape"> git commit ( HEAD )收回時，又想要復原 </h3>
 
 ```
 git reset (commit 版本號) --hard
 * 復原上一次的 Commit。  ( 若忘記查看版本號 : git reflog )
 ```
   
-<h2 id="autoescape"> 若想更改最後一筆 git commit 所傳送的訊息  </h2>
+<h3 id="autoescape"> 若想更改最後一筆 git commit 所傳送的訊息  </h3>
 
 ```
 git commit --amend -m "(重新輸入要傳送的訊息)"
