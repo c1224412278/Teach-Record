@@ -7,6 +7,7 @@ Css 小技巧
 https://bootstrap.hexschool.com/docs/4.0/components/forms/	bootstrap 官方前端教學
 http://www.w3school.com.cn/cssref/css_selectors.asp		CSS  選擇器用法
 https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations		css animation 全解析
+https://webgradients.com/					Html 漸層顏色 參考標準
 ```
 
 
