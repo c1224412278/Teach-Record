@@ -215,8 +215,6 @@ https://home.gamer.com.tw/creationDetail.php?sn=3635492&fbclid=IwAR2K_1M9XREpO3q
 
 
 - 官方教學
-https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.htmlfbclid=IwAR239seqvkhzXTYxI3NoHbQY4_nuSdtfBhAbaGS9vFiWF9dRdFlJaeO2des
-
 https://docs.unity3d.com/Manual/SL-ShaderSemantics.html?fbclid=IwAR1Qt14W-37FTNEG2vVr6WP8ucFW2b3JJaC2XajITzCnWDWAejOg1mGtg2E
 
 
