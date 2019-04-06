@@ -1,0 +1,2 @@
+
+git add (檔案名稱 ex : content.txt)  新增檔案到暫存檔
