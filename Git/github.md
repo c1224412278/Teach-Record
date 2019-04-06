@@ -1,6 +1,7 @@
 Git 小知識
 ==================
 
+```
 <h3 id="autoescape"> 資料新增 </h3>
 git add (檔案名稱 ex : content.txt)   // 新增檔案到暫存檔
 git add --all                        // 新增該資料夾的所有檔案
@@ -42,32 +43,25 @@ git merge (別的分支名稱)               // branch 合併，將別的 branch
 
 
 <h5 id="autoescape"> 互動模式操作 </h5>
-```
 離開 Esc + :
 編輯 : i
 復原 : u 
 存檔 + 離開 : Esc + : -> wq
-```
 
 
 <h5 id="autoescape"> 額外狀況 </h5>
 
 <h2 id="autoescape"> git commit 指令下完，想要收回 </h2>
-```
 git reset HEAD content.txt  or  git reset HEAD^^
 git checkout (檔案名稱)
 
 * 取離暫存檔 (單個 / 全部) -> git checkout => 復原回上個 commit
-```
 
 <h2 id="autoescape"> git commit ( HEAD )收回時，又想要復原 </h2>
-```
 git reset (commit 版本號) --hard
 * 復原上一次的 Commit。  ( 若忘記查看版本號 : git reflog )
-```
  
 <h2 id="autoescape"> 若想更改最後一筆 git commit 所傳送的訊息  </h2>
-```
 git commit --amend -m "(重新輸入要傳送的訊息)"
 ```
   
