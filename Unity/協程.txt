@@ -1,1 +1,9 @@
-﻿https://dev.twsiyuan.com/2017/05/unity-coroutine.html
+參考網址 : https://dev.twsiyuan.com/2017/05/unity-coroutine.html
+
+
+IEnumerator Example()
+{
+   yield return new WaitUntil(() => { return !audioSource.isPlaying; });    //等待條件完成，結束後回傳 true
+   yield return new WaitWhile(() => { return audioSource.isPlaying; });     //等待條件完成，結束後回傳 false
+   yield return new WaitForAnimatorState(animator, "Attack");               //等待動畫播放
+}
