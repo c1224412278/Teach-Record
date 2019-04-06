@@ -1,11 +1,15 @@
 Css 小技巧
 =================================
 
+<h3 id="autoescape"> 參考網址 </h3>
 
-bootstrap 官方前端教學 : https://bootstrap.hexschool.com/docs/4.0/components/forms/
+```
+https://bootstrap.hexschool.com/docs/4.0/components/forms/	bootstrap 官方前端教學
+http://web.thu.edu.tw/hzed/www/tag.htm				Html常用標籤
+http://www.w3school.com.cn/cssref/css_selectors.asp		CSS  選擇器用法
+https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations		css animation 全解析
+```
 
-Html  常用標籤 http://web.thu.edu.tw/hzed/www/tag.htm *****
-section 標題 + 內容
 
 * 選項選擇 - 
 
@@ -62,14 +66,11 @@ name = descript 以及 name=keywords，每個 meta 使用 name 的時候，都�
 
 
 
------------------------------------------------------------------------------------------
-****** CSS  選擇器用法  http://www.w3school.com.cn/cssref/css_selectors.asp
-
+```
 -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;		//參考網址 : http://zh-tw.learnlayout.com/box-sizing.html
 // 使用 padding or border or other css 會造成內距和邊框增加，使用它，內距和邊框將不會增加元素本身的寬度
-
 
 column-count 以欄方式，顯示文字
 column-gap 設定欄與欄的間距
@@ -129,10 +130,6 @@ blur(高斯模糊) 單位 : px
 grayscale(黑白) 單位 : % 
 
 
-css animation 全解析 : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations
-
-*********************************************************************
-
 :active		//滑鼠點擊
 :hover		//滑鼠移過
 :LINK		//尚未連接
@@ -149,9 +146,7 @@ css animation 全解析 : https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_A
 					// attr (若不想使內容固定，則使用 attr(id) 便可顯示 "text" )。
 }
 
-
-
-**********************************************************************
+```
 
 
 網頁可見區域寬：document.body.clientWidth
