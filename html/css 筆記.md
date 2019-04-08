@@ -27,12 +27,79 @@ css (常用) 選擇器
 
 ```
 
-
 ```
--webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;		//參考網址 : http://zh-tw.learnlayout.com/box-sizing.html
-// 使用 padding or border or other css 會造成內距和邊框增加，使用它，內距和邊框將不會增加元素本身的寬度
+<h2> API </h2>
+
+<h3> 樣式背景 </h3>
+
+background-color:#6495ed;
+background-image:url('xxxx.png');		//背景圖片
+background-repeat:repeat-x;			//背景樣式圖片往水平的方向鋪成(url : http://www.runoob.com/css/css-background.html)
+background-repeat:no-repeat;			//背景不重複
+
+	-- 設置背景位置
+		background-attachment:fixed;
+		background-position:center;	//使用 position 設定背景的位置 (可配合 background-repeat:no-repeat 做搭配)
+
+
+<h3> 文字教學 </h3>
+
+font-family:"Times New Roman"			//設定字體樣式
+normal	//正常文字		italic	//斜體
+
+
+<h3> 清單樣式 </h3>
+
+list-style: none;				//刪除開頭˙
+list-style-image:url('xxx.jpg');		//清單開頭設為圖片
+
+<h3> 版面設定 </h3>
+
+參考網址 : (超詳細) http://zh-tw.learnlayout.com/no-layout.html
+
+* 使用 padding or border or other css 會造成內距和邊框增加，使用它，內距和邊框將不會增加元素本身的寬度
+( box-sizing )可以完美解決問題
+
+	-webkit-box-sizing: border-box;
+     		-moz-box-sizing: border-box;
+          		box-sizing: border-box;
+
+
+
+
+float:left;		//往左側靠
+
+
+Margin			//外邊界
+Border			//邊框
+Padding			//內邊框
+Content			//內容
+
+
+( border:5px solid red; )			//邊框用法
+border-style:solid				//邊框樣式
+border-width:5px				//邊框大小
+border-top-style				//單邊樣式
+
+
+
+max-height	元素的最大高度。
+max-width	元素的最大宽度。
+min-height	元素的最小高度。
+min-width	元素的最小宽度。
+
+
+
+(display:none) vs (visibility:hidden)
+完全隱藏不佔位置    隱藏但佔位置
+
+	display : 
+		block 強迫分段
+		inline 水平
+
+
+
+
 
 column-count 以欄方式，顯示文字
 column-gap 設定欄與欄的間距
@@ -82,9 +149,6 @@ letter-spacing  字與字之間增加空白
 
 
 width: calc(可以進行不同單位的數學運算 : % - px)
-
-1.ul -> li 清單
-list-style: none;	** 刪除開頭˙
 
 
 filter: 濾鏡效果 
