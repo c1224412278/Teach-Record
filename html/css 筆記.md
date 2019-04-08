@@ -27,11 +27,10 @@ css (常用) 選擇器
 
 ```
 
-```
 <h2 id="autoescape"> API </h2>
-
 <h3 id="autoescape"> 樣式背景 </h3>
 
+```
 background-color:#6495ed;
 background-image:url('xxxx.png');		//背景圖片
 background-repeat:repeat-x;			//背景樣式圖片往水平的方向鋪成(url : http://www.runoob.com/css/css-background.html)
@@ -41,20 +40,28 @@ background-repeat:no-repeat;			//背景不重複
 		background-attachment:fixed;
 		background-position:center;	//使用 position 設定背景的位置 (可配合 background-repeat:no-repeat 做搭配)
 
+```
 
 <h3 id="autoescape"> 文字教學 </h3>
+
+```
 
 font-family:"Times New Roman"			//設定字體樣式
 normal	//正常文字		italic	//斜體
 
+```
 
 <h3 id="autoescape"> 清單樣式 </h3>
 
+```
+
 list-style: none;				//刪除開頭˙
 list-style-image:url('xxx.jpg');		//清單開頭設為圖片
+```
 
 <h3 id="autoescape"> 版面設定 </h3>
 
+```
 參考網址 : (超詳細) http://zh-tw.learnlayout.com/no-layout.html
 
 * 使用 padding or border or other css 會造成內距和邊框增加，使用它，內距和邊框將不會增加元素本身的寬度
@@ -163,7 +170,6 @@ grayscale(黑白) 單位 : %
 	content:  attr(id);		// content 顯示要添加的內容 。
 					// attr (若不想使內容固定，則使用 attr(id) 便可顯示 "text" )。
 }
-
 
 
 @media screen and  (orientation: portrait)	視窗為直立的話
