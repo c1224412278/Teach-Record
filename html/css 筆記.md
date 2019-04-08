@@ -40,21 +40,35 @@ background-repeat:no-repeat;			//背景不重複
 		background-attachment:fixed;
 		background-position:center;	//使用 position 設定背景的位置 (可配合 background-repeat:no-repeat 做搭配)
 
+
+
+background-attachment	(固定背景) 背景不會隨著滑鼠滾輪移動
 ```
 
 <h3 id="autoescape"> 文字教學 </h3>
 
 ```
-
 font-family:"Times New Roman"			//設定字體樣式
 normal	//正常文字		italic	//斜體
 
+text-transform : capitalize	字母開頭大寫 
+text-decoration : none		文字修飾 - 取消底線等等
+
+
+column-count 	以欄方式，顯示文字
+column-gap 	設定欄與欄的間距
+
+
+text-align: justify; + text-justify: inter-word;	文字垂直對齊
+
+
+overflow : 	判斷文字 、 圖片是否要顯示(超過範圍之類的)
+white-space: nowrap	規定文字不斷行
 ```
 
 <h3 id="autoescape"> 清單樣式 </h3>
 
 ```
-
 list-style: none;				//刪除開頭˙
 list-style-image:url('xxx.jpg');		//清單開頭設為圖片
 ```
@@ -75,7 +89,7 @@ list-style-image:url('xxx.jpg');		//清單開頭設為圖片
 
 
 float:left;		//往左側靠
-
+cleat:left;		//取消靠左移動，直接移動到 (div float) 的下方
 
 Margin			//外邊界
 Border			//邊框
@@ -103,26 +117,21 @@ min-width	元素的最小宽度。
 	display : 
 		block 強迫分段
 		inline 水平
+		
+		inline-block 差別只是多個可以自由設定寬高而已
+
+
+position:static  	不會被特別定位 ( 瀏覽器預設 )
+position:relative  	表現的和 static 一樣，除非你增加了一些額外的屬性。
+position:absolute  	固定定位
+position:fixed		固定定位
+
+	(fixed) vs (absolute) : 需要指定 bottom / top / left / right : 0
+		fixed : 永遠固定位置。 (頁面滑動時，還是會在原位)
+		absolute : 固定位置。 (頁面滑動時，會跟著頁面移動)
 
 
 
-
-
-column-count 以欄方式，顯示文字
-column-gap 設定欄與欄的間距
-
-
-position:static  不會被特別定位，瀏覽器預設
-position:relative  表現的和 static 一樣，除非你增加了一些額外的屬性。
-position:absolute  固定定位
-
-
-overflow : 	判斷文字 、 圖片是否要顯示(超過範圍之類的)
-white-space: nowrap	規定文字不斷行
-
-text-align: justify; + text-justify: inter-word;	文字垂直對齊
-text-transform : capitalize	字母開頭大寫 
-text-decoration : none		文字修飾 - 取消底線等等
 justify-content 搭配 display:flew (水平對齊) (塞在父物件，子物件移動)
 align-items (垂直對齊) (同上)  
 align-self  (在使用過 align-items 的情況下，align-items位置已經固定，由此函式去改寫物件位置)
@@ -139,8 +148,6 @@ flex-direction 物件排序 row：預設值，由左到右，從上到下  row-r
 
 flex-grow: 0 (代表分成幾份);	( 預設為 0 ) 放置子物件身上，給予父物件剩餘空間
 				(父物件 width 500，子物件 100 100 100 則剩餘 200 空間)
-
-background-attachment	(固定背景) 背景不會隨著滑鼠滾輪移動
 
 
 z-index 圖片深度
