@@ -10,10 +10,19 @@ https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animat
 https://webgradients.com/					Html 漸層顏色 參考標準
 ```
 
+```
 
+css (常用) 選擇器 
 
+:active		//滑鼠點擊
+:hover		//滑鼠移過
+:LINK		//尚未連接
+:VISITED	//已連接
 
------------------------------------------------------------------------------------------
+:first-child	//父元素的第一個子物件
+:last-child	//父元素的最後一個子物件
+
+```
 
 
 ```
@@ -79,14 +88,6 @@ filter: 濾鏡效果
 blur(高斯模糊) 單位 : px
 grayscale(黑白) 單位 : % 
 
-
-:active		//滑鼠點擊
-:hover		//滑鼠移過
-:LINK		//尚未連接
-:VISITED	//已連接
-
-:first-child	//父元素的第一個子物件
-:last-child	//父元素的最後一個子物件
 
 
 <h2 id="text">
