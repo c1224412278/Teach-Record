@@ -37,7 +37,7 @@ http://www.cnblogs.com/tonge/p/3899981.html                         // 一般光
 https://nuysoft.gitbooks.io/unity-manual/content/Manual/StandardShaderMaterialParameterNormalMap.html?fbclid=IwAR2X6y6RYWauiQX4CrxLnlBP-3HlOJAtwGK1glLBR4le2EWwL0IWeefU-UY
 
 
-<h3 id="autoescape"> Light 詳細介紹 </h3>
+<h3 id="autoescape"> B </h3>
 
 ```
 public GameObject CloneObject ; 
