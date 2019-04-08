@@ -14,6 +14,7 @@ https://webgradients.com/					Html 漸層顏色 參考標準
 
 css (常用) 選擇器 
 
+div > div		//抓下一個 div
 :active		//滑鼠點擊
 :hover		//滑鼠移過
 :LINK		//尚未連接
