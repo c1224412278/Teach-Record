@@ -64,6 +64,10 @@ text-align: justify; + text-justify: inter-word;	文字垂直對齊
 
 overflow : 	判斷文字 、 圖片是否要顯示(超過範圍之類的)
 white-space: nowrap	規定文字不斷行
+
+
+
+Content			//內容 (只能在偽元數下插入內容) ex: .class:after
 ```
 
 <h3 id="autoescape"> 清單樣式 </h3>
@@ -94,7 +98,6 @@ cleat:left;		//取消靠左移動，直接移動到 (div float) 的下方
 Margin			//外邊界
 Border			//邊框
 Padding			//內邊框
-Content			//內容
 
 
 ( border:5px solid red; )			//邊框用法
