@@ -28,9 +28,9 @@ css (常用) 選擇器
 ```
 
 ```
-<h2> API </h2>
+<h2 id="autoescape"> API </h2>
 
-<h3> 樣式背景 </h3>
+<h3 id="autoescape"> 樣式背景 </h3>
 
 background-color:#6495ed;
 background-image:url('xxxx.png');		//背景圖片
@@ -42,18 +42,18 @@ background-repeat:no-repeat;			//背景不重複
 		background-position:center;	//使用 position 設定背景的位置 (可配合 background-repeat:no-repeat 做搭配)
 
 
-<h3> 文字教學 </h3>
+<h3 id="autoescape"> 文字教學 </h3>
 
 font-family:"Times New Roman"			//設定字體樣式
 normal	//正常文字		italic	//斜體
 
 
-<h3> 清單樣式 </h3>
+<h3 id="autoescape"> 清單樣式 </h3>
 
 list-style: none;				//刪除開頭˙
 list-style-image:url('xxx.jpg');		//清單開頭設為圖片
 
-<h3> 版面設定 </h3>
+<h3 id="autoescape"> 版面設定 </h3>
 
 參考網址 : (超詳細) http://zh-tw.learnlayout.com/no-layout.html
 
