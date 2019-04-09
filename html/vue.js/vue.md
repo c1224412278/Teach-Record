@@ -5,10 +5,10 @@ vue 小知識
 2. Vue 生命週期參考網址 : https://cythilya.github.io/2017/04/11/vue-instance/
 3. @import
 ```
-import'./'// 同一層目錄開始找
-import'../'// 上一層目錄開始找
-import'@/'// src目錄下開始找
-import''// 直接打名稱則是node_modules
+import'./'      同一層目錄開始找
+import'../'     上一層目錄開始找
+import'@/'      src目錄下開始找
+import''        直接打名稱則是node_modules
 ```
 
 *   套件載入
