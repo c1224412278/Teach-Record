@@ -131,9 +131,9 @@ new Vue({
 
 <h3 id="autoescape"> v_bind </h3>
 
-* 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變
-(1)html 範例
 ```
+* 在 Vue Data 宣告的變數，可在 html 裡使用 ": " 來進行呼叫 Vue 的變數呼叫
+
 <template>
   <div id="app">
       <div :title="data"> test </div>
