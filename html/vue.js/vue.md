@@ -15,7 +15,21 @@ import''        直接打名稱則是node_modules
     (1) bootStrap 套件載入。 參考網址 : https://bootstrap-vue.js.org/docs/
 
 
+### CSS 模塊
+```
+<div>
+  <p :class="$style.red">title</p>      // 當 css 有模塊時，便可直接呼叫
+</div>
 
+
+<style module> 
+.red
+{
+  color:red
+}
+</style>
+```
+###
 
 ### export / import
 
