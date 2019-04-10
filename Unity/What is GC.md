@@ -16,8 +16,8 @@ GC
 
 <h3 id="autoescape"> 缓存 </h3>
 
-GameObject.Find ， GetComponent，transform ... 這類的 api 會造成效能的浪費，
-能少用就盡可能少用。
+    GameObject.Find ， GetComponent，transform ... 這類的 api 會造成效能的浪費，
+    能少用就盡可能少用。
 
 ```
 void Update(){
@@ -25,34 +25,34 @@ void Update(){
     this.GetComponent<Rigidbody>().AddForce(Vector3.forward);
 }
 ```
-像在 update 這種寫法，每偵呼叫 GetComponent 會造成過多的 GC 浪費。
+    像在 update 這種寫法，每偵呼叫 GetComponent 會造成過多的 GC 浪費。
 
-建議 :
-      void Awake(){
-          myRigi = this.GetComponent<Rigidbody>();
-          myTransform = this.transform;
-      }
-(在 Awake 、 Start 先把資料儲存在進行使用)      
+    建議 :
+          void Awake(){
+              myRigi = this.GetComponent<Rigidbody>();
+              myTransform = this.transform;
+          }
+    (在 Awake 、 Start 先把資料儲存在進行使用)      
 
 <h3 id="autoescape"> 頻繁使用 Instantiate 和 Destroy </h3>
 
-頻繁使用 Instantiate 和 Destroy 會讓腳本製造出很多垃圾，會大量佔取到 CPU 的時間，
-可以使用 對象池(Object Pool) 的技術，來降低效能消耗
+    頻繁使用 Instantiate 和 Destroy 會讓腳本製造出很多垃圾，會大量佔取到 CPU 的時間，
+    可以使用 對象池(Object Pool) 的技術，來降低效能消耗
 
 
 <h3 id="autoescape"> 空代碼 </h3>
 
 
-當有空的 Start 、 Update 也會造成 GC 的效能浪費，因此遊戲中能盡量減少 Update 的呼叫就盡量減少
+    當有空的 Start 、 Update 也會造成 GC 的效能浪費，因此遊戲中能盡量減少 Update 的呼叫就盡量減少
 
 
 <h3 id="autoescape"> CPU 峰值 </h3>
 
 
-同一時間內如果大量產生物件，會造成cpu峰值，因此在某個特定時間點上，有可能會使遊戲卡頓。
+    同一時間內如果大量產生物件，會造成cpu峰值，因此在某個特定時間點上，有可能會使遊戲卡頓。
 
-* 建議 :
-      讓大量物件分開產生，不要一次性產生巨量的物件
+    * 建議 :
+          讓大量物件分開產生，不要一次性產生巨量的物件
 
 
 <h3 id="autoescape"> GC (垃圾回收) </h3>
