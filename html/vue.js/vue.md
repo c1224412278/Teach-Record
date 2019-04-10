@@ -242,6 +242,36 @@ new Vue({
     },
 })
 ```
+* checkbox
+
+```
+<template>
+  <div id="app">
+    <input type="checkbox" value="Jack" v-model="checkedNames">
+    <label> Jack </label>
+
+    <input type="checkbox" value="John" v-model="checkedNames">
+    <label> John </label>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue';
+
+export default {
+  data(){
+    return{
+      checkedNames: []
+    }
+  },
+  updated()
+  {
+    console.log(this.checkedNames);
+  }
+}
+</script>
+```
+
 
 <h3 id="autoescape"> v_bind </h3>
 
