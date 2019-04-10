@@ -16,8 +16,17 @@ import''        直接打名稱則是node_modules
 
 
 ### 事件
+
+參考文獻 : https://cythilya.github.io/2017/04/17/vue-methods-and-event-handling/
+
+* .stop：等同於event.stopPropagation()，防止事件冒泡。
+* .prevent：等同於event.preventDefault()，防止執行預設的行為。
+* .capture：與事件冒泡的方向相反，事件捕獲 (event capturing) 是由外而內的。
+* .self：只會觸發自己範圍內的事件，不包含子元素。
+* .once：只會觸發一次
+
 ```
-獲取 html Tag
+* 獲取 html Tag
 
 <template>
   <div id="app">
