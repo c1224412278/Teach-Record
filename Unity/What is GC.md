@@ -16,15 +16,13 @@ GC
 
 <h3 id="autoescape"> 缓存 </h3>
 
-    GameObject.Find ， GetComponent，transform ... 這類的 api 會造成效能的浪費，
-    能少用就盡可能少用。
+    GameObject.Find ， GetComponent，transform ... 這類的 api 會造成效能的浪費，能少用就盡可能少用。
 
-```
-void Update(){
-    this.transform.Translate(0, 1, 0);
-    this.GetComponent<Rigidbody>().AddForce(Vector3.forward);
-}
-```
+    void Update(){
+        this.transform.Translate(0, 1, 0);
+        this.GetComponent<Rigidbody>().AddForce(Vector3.forward);
+    }
+
     像在 update 這種寫法，每偵呼叫 GetComponent 會造成過多的 GC 浪費。
 
     建議 :
