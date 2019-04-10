@@ -14,9 +14,7 @@ GC
 
 ***
 
-###
-1.缓存
-###
+<h3 id="autoescape"> 1.缓存 </h3>
 
 GameObject.Find ， GetComponent，transform ... 這類的 api 會造成效能的浪費，
 能少用就盡可能少用。
