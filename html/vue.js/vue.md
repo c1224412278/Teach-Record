@@ -14,6 +14,18 @@ import''        直接打名稱則是node_modules
 *   套件載入
     (1) bootStrap 套件載入。 參考網址 : https://bootstrap-vue.js.org/docs/
 
+### js陣列 - 條件篩選
+```
+參考文獻 : https://wcc723.github.io/javascript/2017/06/29/es6-native-array/
+
+    判斷陣列 number 欄位值是否大於 10，之後再返回一個新陣列
+    this.arys = this.arys.filter(function(item , index , array)
+    {
+      return item.number > 10
+    });
+```
+###
+
 
 ### CSS 模塊
 ```
