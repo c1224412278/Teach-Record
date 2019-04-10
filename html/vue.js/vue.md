@@ -14,6 +14,40 @@ import''        直接打名稱則是node_modules
 *   套件載入
     (1) bootStrap 套件載入。 參考網址 : https://bootstrap-vue.js.org/docs/
 
+
+### 事件
+```
+獲取 html Tag
+
+<template>
+  <div id="app">
+      <button v-on:click="greet">Greet</button>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue';
+
+export default {
+  data(){
+    return{
+      
+    }
+  } , 
+  methods:{
+    greet(event)
+    {
+      if(event)
+      {
+        alert(event.target.tagName);
+      }
+    }
+  }
+}
+</script>
+```
+###
+
 ### js陣列 - 條件篩選
 ```
 參考文獻 : https://wcc723.github.io/javascript/2017/06/29/es6-native-array/
