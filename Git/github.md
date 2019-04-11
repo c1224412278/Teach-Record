@@ -14,6 +14,7 @@ git commit -m "(要備註的訊息)"        // 將暫存檔的所有資料送出
 ```
 git push                              // 提交所有暫存檔的資料到 Online
 git push -u origin origin             // 提交所有暫存檔的資料到 Online ，並選擇要提交的 branch
+(-u 的時候，git會把它設為預設值，當你下次上傳只需要輸入 git push 就可以了)
 ```
 
 <h3 id="autoescape"> 刪除檔案 </h3>
