@@ -509,8 +509,10 @@ props 擅長傳遞變數(不傳屬系、方法)、$ref 擅長傳方法(不傳變
 <h3 id="autoescape"> $emit </h3>
 
 ```
-參考網址 : https://jeremysu0131.github.io/Vue-js-%E7%88%B6%E5%AD%90%E7%B5%84%E4%BB%B6%E6%BA%9D%E9%80%9A-emit-on/
-
+參考網址 :  
+        (1) https://jeremysu0131.github.io/Vue-js-%E7%88%B6%E5%AD%90%E7%B5%84%E4%BB%B6%E6%BA%9D%E9%80%9A-emit-on/
+        (2) https://blog.csdn.net/sllailcp/article/details/78595077
+        
 	parent.vue 
 
     <template>
