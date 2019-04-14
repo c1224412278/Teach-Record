@@ -1,5 +1,3 @@
-﻿ * 注意 : 不能老是使用同一個網格，需要 new 出來
-
 private int VERTICES_COUNT = 6;
 
 MeshFilter meshFilter = this.GetComponent<MeshFilter> (); 
