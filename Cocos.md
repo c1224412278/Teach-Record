@@ -83,7 +83,49 @@ project.json 文件和 assets 文件夹一起，作为验证 Cocos Creator 项�
 Cocos Code
 ###
 
+屬系申明 
 
+const LEVEL = cc.Enum({EASY:1,HARD:2});
+
+@ccclass
+export class Game extends cc.Component {
+	// 整型
+    @property(cc.Integer)
+    intVar: number = 0;
+    // 浮点型
+    @property(cc.Float)
+    floatVar: number = 0;
+    // 布尔型
+    @property(cc.Boolean)
+    boolVar: boolean = false;
+    // 节点
+    @property(cc.Node)
+    nodeVar: cc.Node = null;
+    // 节点数组
+    @property([cc.Node])
+    nodeArrVar: Array<cc.Node> = [];
+    // Label
+    @property(cc.Label)
+    labelVar: cc.Label = null;
+    // 预制体
+    @property(cc.Prefab)
+    prefabVar: cc.Prefab = null;
+    // 点
+    @property(cc.Vec2)
+    vec2Var: cc.Vec2 = cc.v2();
+    // 自定义节点
+    @property(Player)
+    palyerVar: Player = null;
+    // 重点来了，自定义枚举
+    /**
+     * 全局变量
+     * const LEVEL = cc.Enum({EASY:1,HARD:2});
+     */ 
+    @property({
+        type:LEVEL
+    })
+    enumVa = LEVEL.EASY;
+}
 
 
 
@@ -92,9 +134,8 @@ Cocos Code
 
 問題 :
 
-1. AnchorPoint - Sprite Layer 調整
 2. AtlasSprite - 效能查看
-3. AnimatedWidget - 動畫製作
+
 
 
 02_ui_04_progressbar 回頭看
@@ -106,6 +147,8 @@ webview     也只能android ? 用法 ?
 05_scripting  code 了解
 
 switch 了解
+
+get; set;
 
 
 * 目前理解到 05_scripting
