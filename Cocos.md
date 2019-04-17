@@ -83,7 +83,7 @@ project.json 文件和 assets 文件夹一起，作为验证 Cocos Creator 项�
 Cocos Code
 ###
 
-屬系申明 
+屬系申明
 
 const LEVEL = cc.Enum({EASY:1,HARD:2});
 
@@ -128,7 +128,69 @@ export class Game extends cc.Component {
 }
 
 
+Cocos2D Life Time
 
+- onLoad	腳本初始化階段，在start之前，可用於安排腳本初始化順序
+- start		第一次"激活"，update之前觸發
+- update	每一帧都渲染物體的行為
+- lateUpdate	update 會在所有動畫之前執行，如果我們要使用 (動畫、粒子、物理等等)更新後才調用操作，就需要用到 lateUpdate
+- onEnable	當物件從enabled變為 true/false，就會使 onEnable 調用。若該物件第一次創建 enable 就為 true，則會在 onLoad 和 start 之間調用
+- onDestroy	當使用了destroy()，就會調用 onDestroy 回調
+- onDisable	當物件 enable 從 ture->false時，就會調用
+
+
+keyCode
+
+
+https://docs.cocos.com/creator/manual/zh/scripting/internal-events.html  (重要)事件監聽
+https://docs.cocos.com/creator/manual/zh/scripting/events.html  輸入事件監聽
+
+https://blog.csdn.net/foupwang/article/details/80474072 滑鼠座標處理
+
+取得 mouse Screen 
+```
+start () 
+{
+	this.addEventListeners();
+}
+
+private addEventListeners()
+{
+	this.node.on(cc.Node.EventType.MOUSE_DOWN , this.onMOuseDown , this);
+}
+// update (dt) {}
+
+private onMOuseDown(event){
+	let mouseType = event.getButton();
+	if(mouseType === cc.Event.EventMouse.BUTTON_LEFT)
+	{
+	    console.log("input mouseDown");
+	}
+}
+```
+
+
+Move Action
+
+
+var actionBy = cc.moveTo(5 , 100 , 100).easing(cc.easeBackOut());
+this.node.runAction(actionBy);
+* (cc.moveTo 用来移动节点到某个位置；cc.rotateBy 用来旋转节点一定的角度；cc.scaleTo 用来缩放节点)
+	cc.delayTime(5)		//延遲時間
+
+	sequence => cc.sequence(cc.moveBy(0.5, 200, 0), cc.moveBy(0.5, -200, 0));	批次執行
+	spawn => cc.spawn(cc.moveBy(0.5, 0, 50), cc.scaleTo(0.5, 0.8, 1.4)); 		同步執行
+	repeat => cc.repeat(
+		     cc.sequence(
+			 cc.moveBy(2, 200, 0),
+			 cc.moveBy(2, -200, 0)
+		     ), 5);			//重複執行
+	repeatForever => cc.repeatForever 	//永遠重複動作
+	speed => cc.speed(
+			 cc.spawn(
+			     cc.moveBy(2, 0, 50),
+			     cc.scaleTo(2, 0.8, 1.4)
+			 ), 0.5);		//可以改變移動速度  : (1)是正常速度 (0.5)兩倍速 (2)0.5倍數
 
 
 
@@ -137,9 +199,6 @@ export class Game extends cc.Component {
 2. AtlasSprite - 效能查看
 
 
-
-02_ui_04_progressbar 回頭看
-06_layout Layout_ResizeContainer_Normal
 video player 只能 android ? 用法 ?
 webview     也只能android ? 用法 ?
 03_gameplay  code 了解
