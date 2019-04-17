@@ -174,7 +174,7 @@ private onMOuseDown(event){
 
 Move Action
 
-
+```
 var actionBy = cc.moveTo(5 , 100 , 100).easing(cc.easeBackOut());
 this.node.runAction(actionBy);
 * (cc.moveTo 用来移动节点到某个位置；cc.rotateBy 用来旋转节点一定的角度；cc.scaleTo 用来缩放节点)
@@ -194,7 +194,7 @@ this.node.runAction(actionBy);
 			     cc.scaleTo(2, 0.8, 1.4)
 			 ), 0.5);		//可以改變移動速度  : (1)是正常速度 (0.5)兩倍速 (2)0.5倍數
 
-
+```
 
 問題 :
 
