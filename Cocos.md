@@ -85,6 +85,7 @@ Cocos Code
 
 屬系申明
 
+```
 const LEVEL = cc.Enum({EASY:1,HARD:2});
 
 @ccclass
@@ -126,10 +127,11 @@ export class Game extends cc.Component {
     })
     enumVa = LEVEL.EASY;
 }
-
+```
 
 Cocos2D Life Time
 
+```
 - onLoad	腳本初始化階段，在start之前，可用於安排腳本初始化順序
 - start		第一次"激活"，update之前觸發
 - update	每一帧都渲染物體的行為
@@ -137,7 +139,7 @@ Cocos2D Life Time
 - onEnable	當物件從enabled變為 true/false，就會使 onEnable 調用。若該物件第一次創建 enable 就為 true，則會在 onLoad 和 start 之間調用
 - onDestroy	當使用了destroy()，就會調用 onDestroy 回調
 - onDisable	當物件 enable 從 ture->false時，就會調用
-
+```
 
 keyCode
 
