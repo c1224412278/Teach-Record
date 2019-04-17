@@ -210,7 +210,7 @@ webview     也只能android ? 用法 ?
 switch 了解
 
 get; set;
-
+Class 物件導向
 
 * 目前理解到 05_scripting
 
