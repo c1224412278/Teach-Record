@@ -208,9 +208,9 @@ webview     也只能android ? 用法 ?
 05_scripting  code 了解
 
 switch 了解
-
 get; set;
-Class 物件導向
+
+陣列 : https://blog.csdn.net/wangshunli123/article/details/62881622
 
 * 目前理解到 05_scripting
 
