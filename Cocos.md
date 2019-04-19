@@ -137,6 +137,9 @@ Array
 
 
 Interface
+
+* 介面使用
+
 ```
 interface LabelledValue
 {
@@ -161,6 +164,28 @@ export default class a extends cc.Component
     }
 }
 ```
+* key / value 使用
+```
+參考網址 : https://oomusou.io/typescript/interface/
+
+interface CloudDictionary
+{
+    [key:string]: number;
+}
+
+@ccclass
+export default class a extends cc.Component
+{
+    start()
+    {
+        let clouds:CloudDictionary = {};
+        clouds['aws'] = 0;
+        clouds['azure'] = 1;
+        clouds['gcp'] = 2;
+    }
+}
+```
+
 
 
 Cocos2D Life Time
