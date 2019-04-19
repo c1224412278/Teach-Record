@@ -129,6 +129,40 @@ export class Game extends cc.Component {
 }
 ```
 
+Array 
+
+```
+參考網址 :　https://blog.csdn.net/wangshunli123/article/details/62881622
+```
+
+
+Interface
+```
+interface LabelledValue
+{
+    label:string;
+}
+
+@ccclass
+export default class a extends cc.Component
+{
+    @property(cc.Object)
+    private o:object = null;
+
+    start()
+    {
+        let myObj = {size:10 , label:'size 10 object'};
+        this.printLabel(myObj);
+    }
+
+    private printLabel(labelledObj:LabelledValue)
+    {
+        console.log(labelledObj.label);
+    }
+}
+```
+
+
 Cocos2D Life Time
 
 ```
@@ -196,21 +230,6 @@ this.node.runAction(actionBy);
 
 ```
 
-問題 :
-
-2. AtlasSprite - 效能查看
-
-
-video player 只能 android ? 用法 ?
-webview     也只能android ? 用法 ?
-03_gameplay  code 了解
-04_audio  code 了解
-05_scripting  code 了解
 
 switch 了解
 get; set;
-
-陣列 : https://blog.csdn.net/wangshunli123/article/details/62881622
-
-* 目前理解到 05_scripting
-
