@@ -718,3 +718,13 @@ export default
     }
 }
 ```
+
+###
+transition - (Vue動畫效果)
+###
+
+```
+參考網址 : http://blog.tonycube.com/2017/06/vuejs-14-transition-animation.html
+
+
+```
