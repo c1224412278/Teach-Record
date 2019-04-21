@@ -726,5 +726,13 @@ transition - (Vue動畫效果)
 ```
 參考網址 : http://blog.tonycube.com/2017/06/vuejs-14-transition-animation.html
 
+name="xxx" 屬性，它會用來配對 CSS 中以它為開頭的特殊 class 名稱，例如 v-enter 會配對 xxx-enter，也就是說，v 這個前置字會被換成這個 name 的值。
+
+v-enter：元素一開始的狀態。在元素被新增時觸發，在下一個影格立即移除。
+v-enter-active：元素被新增時的狀態。在元素被新增前加入，然後在整個動畫中使用它，最後在動畫結時被移除。
+v-enter-to：元素新增狀態的結束。在元素被新增後觸發，在 v-enter-active 動畫結束後被移除。這是 v2.1.8 新增的狀態，原有的 v-enter 被它取代。
+v-leave：元素被刪除前的初始狀態。在刪除時立即觸發，在下一個影格立即移除。
+v-leave-active：元素被刪除時的狀態。在元素被移除前加入，然後在整個動畫中使用它，最後在動畫結束時被移除。
+v-leave-to：元素刪除狀態的結束。在元素被刪除後觸發，在 v-leave-active 動畫結束後移除。這是 v2.1.8 新增的狀態，原有的 v-leave 被它取代。
 
 ```
