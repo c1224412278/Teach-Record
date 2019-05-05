@@ -89,51 +89,6 @@ export default {
 ```
 ###
 
-### export / import
-
-```
-* furniture.vue
-    
-    <template>
-    </template>
-
-    <script>
-    function desk(a,b)
-    {
-      return a + b;
-    }
-
-    let bed = "queen size";
-    export {desk,bed}
-
-    export default {
-
-    }
-    </script>
-    
-    
-* HelloWorld.vue
-
-    <script>
-    import Vue from 'vue'; 
-    import {desk,bed} from './furniture.vue';
-
-    export default {
-      data(){
-        return{
-
-        }
-      },
-      mounted(){
-        console.log(bed);
-      }
-    }
-    </script>
-
-```    
-### 
-
-
 
 <h3 id="autoescape"> v_if </h3>
 
