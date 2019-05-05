@@ -26,8 +26,9 @@ import''        直接打名稱則是node_modules
 * .once：只會觸發一次
 
 ```
-* 獲取 html Tag
 
+獲取 html Tag
+```
 <template>
   <div id="app">
       <button v-on:click="greet">Greet</button>
