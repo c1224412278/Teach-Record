@@ -17,6 +17,7 @@ import''        直接打名稱則是node_modules
 
 ### 事件
 
+```
 參考文獻 : https://cythilya.github.io/2017/04/17/vue-methods-and-event-handling/
 
 * .stop：等同於event.stopPropagation()，防止事件冒泡。
@@ -27,7 +28,8 @@ import''        直接打名稱則是node_modules
 
 ```
 
-獲取 html Tag
+### 獲取 html Tag
+
 ```
 <template>
   <div id="app">
