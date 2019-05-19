@@ -51,3 +51,25 @@ Automatic Turecolor : 最高質量的色彩，是32位的色彩(256x256的纹理
 PVRCT : 貼圖尺寸須為二的冪次方之正方貼圖，適合 "IOS" 平台使用
 
 ```
+
+***
+```
+IOS下 ：
+  a.普通不透明：RGB PVRTC 4BITS
+  b.普通透明：RGBA PVRTC 4BITS
+  
+Android下 ：
+  a.普通不透明： RGB ETC 4BITS
+  b.普通透明 : 沒有最兼容的格式，一般情况是用RGBA 16bit或其他針對性的選擇 DXT5/ATC8 BITS/ETC2 8 bits。如果有技術支持，可採用RGB ETC 4BITS加一張                ALPHA 8的貼圖來實現透明效果。
+
+非正方貼圖 :
+  一般採用16位元壓縮，16位元會帶來顏色上的損失，但如果美術本來就按16bits畫的話，就不會照成損失，日本很多手游都是按16 bits來畫的。
+  a.不透明貼圖: RGB 16BITS
+  d.透明貼圖：RGBA 16BITS
+
+
+高清不壓縮貼圖 : 
+  RGBA 32BIT
+  
+```
+***
