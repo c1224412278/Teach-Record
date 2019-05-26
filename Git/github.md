@@ -34,8 +34,8 @@ git push -u origin origin             // 提交所有暫存檔的資料到 Onlin
 <h3 id="autoescape"> 刪除檔案 </h3>
 
 ```
-git rm (檔案名稱)                      // 刪除 "localtion 端" 的檔案
-git rm --cached (檔案名稱)             // 刪除 Online端的檔案
+git rm (檔案名稱)                      // 解除 "localtion端" 的檔案追蹤 (檔案會連同刪除)
+git rm --cached (檔案名稱)             // 解除 "localtion端" 的檔案追蹤 (檔案不會連同刪除)
 ```
 
 <h3 id="autoescape"> 獲取 </h3>
