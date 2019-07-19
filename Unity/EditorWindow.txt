@@ -1,4 +1,4 @@
-﻿--	EditorGUILayout 與 GUILayout 的差距 --
+--- EditorGUILayout 與 GUILayout 的差距 --
 
 GUILayout (允許使用者自行設定長寬等設定)
 EditorGUILayout (系統預設好長寬等)
@@ -15,51 +15,74 @@ using UnityEditorInternal;	//自訂排序工具
 ( https://play2gethergamenote.blogspot.com/2016/10/unity-custom-inspector_25.html )
 
 
-------------	EditorWindow	------------------------------------
+--- EditorWindow ---
 
 using UnityEditor;
 public class AlphaMaskWindow : EditorWindow  <----   這樣才能使用
 
 [MenuItem("Tools/Alpha Mask Maker")]  
-	private static void OpenWindow()  
-	{  
-		EditorWindow.GetWindow<AlphaMaskWindow> ().Show ();  
-	} 
+private static void OpenWindow()  
+{  
+	EditorWindow.GetWindow<AlphaMaskWindow>().Show ();  
+} 
 
 
-----------------------------------------------------------------------
+--- OnInspectorGUI ---
 
-* DrawDefaultInspector(); 	//會將原本的資料畫出來 (超重要)
+* base.DrawDefaultInspector(); 	//會將原本的資料畫出來 (超重要)
+* SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
+	// serializedObject.FindProperty("抓取的變數名稱" , [true / false])  => true 是否序列化
+	// 當 (ser == Array)
+		ser.arraySize => 陣列長度
+		
+	SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱" 或 "Array.size"[可抓陣列長度] );
+		// https://anchan828.github.io/editor-manual/web/serializedobject.html
+		* 注意 : ("放下一層變數名稱") 這裡的變數必須一定要 [SerializeField] 序列化
+
+	serializedObject.Update () 可以重新進行資料更新。(通常寫在第一行)
+	serializedObject.ApplyModifiedProperties () 可以對資料更動進行寫入。(通常寫最後一行)
+
+--------------------------
+--- EditorGUILayout | EditorUtility ---
+
+			     (物件)     (型態)    //(假如宣告為Object，跑出存放Object的UI欄位)
+EditorGUILayout.ObjectField (null , typeof(Object) , false);		
+
+GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
+	=> GUILayout.Width - overrides the fixedWidth of the used style
+	GUILayout.Height - overrides the fixedHeight of the used style
+	GUILayout.MaxHeight - adds an additional size-constraint
+	GUILayout.MaxWidth - adds an additional size-constraint
+	GUILayout.MinHeight - adds an additional size-constraint
+	GUILayout.MinWidth - adds an additional size-constraint
+	GUILayout.ExpandWidth - overrides stretchWidth of the used style
+	GUILayout.ExpandHeight - overrides stretchHeight of the used style
+
+
+EditorGUILayout.BeginToggleGroup	Toggle群組
+EditorGUILayout.EndToggleGroup();
+
+
+EditorStyles.miniButtonLef	欄位靠左補正空隙
+EditorStyles.miniButtonMid	欄位靠中補正空隙
+EditorStyles.miniButtonRight	欄位靠右補正空隙
+
+
 * EditorApplication.Beep();	//系統會發出聲音 (提醒)
 * EditorUtility.SetDirty(;	//儲存資料
 * EditorUtility.DisplayDialog	//出現 ( 確定要執行 *是 *否 ) 視窗
 
-* HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
+--- EditorGUI ---
 
-	獲取滑鼠位置 : Event guiEvent = Event.current;
-	獲取滑鼠射線世界座標 : HandleUtility.GUIPointToWorldRay (guiEvent.mousePosition);
-
-	if(guiEvent.type == EventType.layout)
-	{
-		HandleUtility.AddDefaultControl (GUIUtility.GetControlID(FocusType.Passive));	
-	}
-
-* 判斷需按下哪個鍵盤按鍵進行動作 : guiEvent.modifiers == 
-
-
-Event guiEvent = Event.current;			//當前事件
-Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
-
-------------	EditorGUI	--------------------------------------
 
 繪製欄位	EditorGUI.PropertyField
 
-@ . GUILayout.BeginArea 自定義位置
+@ GUILayout.BeginArea 自定義位置
 * 新增區域 	GUILayout.BeginArea (Rect);
 		GUILayout.EndArea ();
 
 
-@ . GUILayout.BeginHorizontal 自動布局
+@ GUILayout.BeginHorizontal 自動布局
 * 設為一個群組
 
 	* GUILayout.BeginHorizontal();	or	GUILayout.BeginHorizontal("box");
@@ -82,22 +105,16 @@ Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
 
 * GUILayout.BeginScrollView 使用滾動群組
 	//http://www.ceeger.com/Script/GUILayout/GUILayout.BeginScrollView.html
-
+	
 	Vector2 scrollPosition = GUILayout.BeginScrollView(this.scrollPosition); 顯示滾動的位置
 	GUILayout.EndScrollView();
 
-
-
-EditorGUI.MultiFloatField (
+* EditorGUI.MultiFloatField (
 	new Rect(30 , 100 , 200 , EditorGUIUtility.singleLineHeight) , new GUIContent("Label") , contexts , numbers);
 	//宣告Vector3欄位   X[] , Y[] , Z[]
 
 
-
-if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWidth 是否禁止水平擴張
-
-
-
+* if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWidth 是否禁止水平擴張
 
 * 子物件 繪製
 	EditorGUILayout.LabelField ("Parent");
@@ -106,47 +123,28 @@ if (GUILayout.Button("+" , GUILayout.ExpandWidth(false)))	// GUILayout.ExpandWid
 	EditorGUI.indentLevel--;
 	EditorGUILayout.LabelField ("Parent");
 
-------------	EditorGUILayout		--------------------------------------
+
+--- SceneGUI ---
+
+* HandleUtility (用途 : 3D 場景與 2D - GUI 之間的轉換過程。)
+
+	獲取滑鼠位置 : Event guiEvent = Event.current;
+	獲取滑鼠射線世界座標 : HandleUtility.GUIPointToWorldRay (guiEvent.mousePosition);
+
+	if(guiEvent.type == EventType.layout)
+	{
+		HandleUtility.AddDefaultControl (GUIUtility.GetControlID(FocusType.Passive));	
+	}
+
+* 判斷需按下哪個鍵盤按鍵進行動作 : guiEvent.modifiers == 
 
 
-			     (物件)     (型態)		//(假如宣告為Object，跑出存放Object的UI欄位)
-EditorGUILayout.ObjectField (null , typeof(Object) , false);		
-
-GUILayoutOption[] options = new []{GUILayout.Width(128) , GUILayout.Height(128)};	//改變欄位寬、高
-	=> GUILayout.Width - overrides the fixedWidth of the used style
-	GUILayout.Height - overrides the fixedHeight of the used style
-	GUILayout.MaxHeight - adds an additional size-constraint
-	GUILayout.MaxWidth - adds an additional size-constraint
-	GUILayout.MinHeight - adds an additional size-constraint
-	GUILayout.MinWidth - adds an additional size-constraint
-	GUILayout.ExpandWidth - overrides stretchWidth of the used style
-	GUILayout.ExpandHeight - overrides stretchHeight of the used style
+Event guiEvent = Event.current;			//當前事件
+Rect.Contains(guiEvent.mousePosition)		//可判斷 鼠標 是否在目標身上
 
 
 
-EditorGUILayout.BeginToggleGroup	Toggle群組
-EditorGUILayout.EndToggleGroup();
-
-
-EditorStyles.miniButtonLef	欄位靠左補正空隙
-EditorStyles.miniButtonMid	欄位靠中補正空隙
-EditorStyles.miniButtonRight	欄位靠右補正空隙
-
-
-SerializedProperty ser = serializedObject.FindProperty("抓取的變數名稱");
-// serializedObject.FindProperty("抓取的變數名稱" , [true / false])  => true 是否序列化
-// 當 (ser == Array)
-	ser.arraySize => 陣列長度
-
-
-SerializedProperty nameID = npc.FindPropertyRelative("放下一層變數名稱" 或 "Array.size"[可抓陣列長度] );
-	*// https://anchan828.github.io/editor-manual/web/serializedobject.html
-	*** 注意 : ("放下一層變數名稱") 這裡的變數必須一定要 [SerializeField] 序列化
-
-serializedObject.Update () 可以重新進行資料更新。(通常寫在第一行)
-serializedObject.ApplyModifiedProperties () 可以對資料更動進行寫入。(通常寫最後一行)
-
-
+--------------------------------------------------------------------------------------
 ----------------------------------     經典範例      -------------------------------------------------- 
 
 Ex :
