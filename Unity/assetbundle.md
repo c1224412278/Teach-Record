@@ -15,8 +15,12 @@ AssetBundle 使用介紹
         BuildAssetBundleOptions.ChunkBasedCompression - 
 
 
-
-
+<h3 id="autoescape"> 本地端下載 </h3>
+        string path = Application.dataPath + "/StreamingAssets/sfassetbundle/test.assetbundle";
+        AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromMemory(File.ReadAllBytes(path)); //读取文件1请求
+        GameObject sprite1 = myLoadedAssetBundle.LoadAsset(myLoadedAssetBundle.name , typeof(GameObject));
+        
+     
 ***
 參考網址 = 
 
