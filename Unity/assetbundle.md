@@ -1,6 +1,14 @@
 AssetBundle 使用介紹
 ===========================
 
+功能 | LZMA  | LZ4 |
+--- | :---: | :---: |
+壓縮率（節省儲存空間  | 好  | 差 |
+壓縮速度  | 慢  | 快 |
+解壓縮速度  | 慢 | 快 |
+壓縮記憶體需求  | 多  | 普 |
+解壓縮記憶體需求  | 多  | 普 |
+
 <h3 id="autoescape"> 基本打包 </h3>
 
         static void BuildAllAssetsBundles()
@@ -9,16 +17,6 @@ AssetBundle 使用介紹
                 if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);                                                  
                 BuildPipeline.BuildAssetBundles("ChinarAssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows); 
         }
-
-
-        <br />| 功能 | LZMA  | LZ4 |
-        | --- | --- | --- |
-        | 壓縮率（節省儲存空間  | 好  | 差 |
-        | 壓縮速度  | 慢  | 快 |
-        | 解壓縮速度  | 慢 | 快 |
-        | 壓縮記憶體需求  | 多  | 普 |
-        | 解壓縮記憶體需求  | 多  | 普 |
-    
     
         BuildAssetBundleOptions.None - 使用 LZMA 格式來進行壓縮
         BuildAssetBundleOptions.UncompressedAssetBundle  -  不進行壓縮
