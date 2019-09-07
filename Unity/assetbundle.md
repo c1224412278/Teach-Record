@@ -11,12 +11,12 @@ AssetBundle 使用介紹
         }
 
         
-        	            Gzip LZMA LZ4
-        壓縮率（節省儲存空間   普   好   差
-        壓縮速度              普   慢   快
-        解壓縮速度            普 慢 快
-        壓縮記憶體需求          少 多 普
-        解壓縮記憶體需求       少 多 普
+        	                  Gzip LZMA LZ4
+        壓縮率（節省儲存空間         普   好   差
+        壓縮速度                    普   慢   快
+        解壓縮速度                  普   慢   快
+        壓縮記憶體需求               少   多   普
+        解壓縮記憶體需求             少   多   普
 
         BuildAssetBundleOptions.None - 使用 LZMA 格式來進行壓縮
         BuildAssetBundleOptions.UncompressedAssetBundle  -  不進行壓縮
