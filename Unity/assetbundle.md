@@ -4,7 +4,7 @@ AssetBundle 使用介紹
 ###
 assetbundle 基本打包
 ###
-***
+###
 static void BuildAllAssetsBundles()
 {
         string folder = "bundleFloder";                                                                               
@@ -15,7 +15,7 @@ static void BuildAllAssetsBundles()
 BuildAssetBundleOptions.None - 
 BuildAssetBundleOptions.UncompressedAssetBundle  - 
 BuildAssetBundleOptions.ChunkBasedCompression - 
-***
+###
 
 
 
