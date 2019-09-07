@@ -1,10 +1,8 @@
 AssetBundle 使用介紹
 ===========================
 
-###
-assetbundle 基本打包
-###
-###
+<h3 id="autoescape"> 基本打包 </h3>
+
 static void BuildAllAssetsBundles()
 {
         string folder = "bundleFloder";                                                                               
@@ -15,7 +13,7 @@ static void BuildAllAssetsBundles()
 BuildAssetBundleOptions.None - 
 BuildAssetBundleOptions.UncompressedAssetBundle  - 
 BuildAssetBundleOptions.ChunkBasedCompression - 
-###
+
 
 
 
