@@ -3,16 +3,16 @@ AssetBundle 使用介紹
 
 <h3 id="autoescape"> 基本打包 </h3>
 
-static void BuildAllAssetsBundles()
-{
-        string folder = "bundleFloder";                                                                               
-        if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);                                                  
-        BuildPipeline.BuildAssetBundles("ChinarAssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows); 
-}
+        static void BuildAllAssetsBundles()
+        {
+                string folder = "bundleFloder";                                                                               
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);                                                  
+                BuildPipeline.BuildAssetBundles("ChinarAssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows); 
+        }
 
-BuildAssetBundleOptions.None - 
-BuildAssetBundleOptions.UncompressedAssetBundle  - 
-BuildAssetBundleOptions.ChunkBasedCompression - 
+        BuildAssetBundleOptions.None - 
+        BuildAssetBundleOptions.UncompressedAssetBundle  - 
+        BuildAssetBundleOptions.ChunkBasedCompression - 
 
 
 
