@@ -65,6 +65,7 @@ AssetBundle 使用介紹
      while (!Caching.ready) {
         yield return null;
      }
+     //cache儲存路徑 =  C:\Users\name\AppData\LocalLow\Unity\Caches
 
      UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(path , hash , crc);
      UnityWebRequestAsyncOperation op = request.SendWebRequest();
