@@ -11,8 +11,6 @@ webRequest.downloadHandler.text 文件內容
 
 
 ```
-
-```
 Get
 ------------
 private IEnumerator DoRequest()
