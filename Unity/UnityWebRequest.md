@@ -93,6 +93,34 @@ else{
 	Debug.Log(webRequest.downloadHandler.text);
 }
 
+
+
+--- PHP ---
+
+if ($_FILES["file"]["error"] > 0)
+{
+	echo "Error: " . $_FILES["file"]["error"] . "<br />";
+}
+else
+{
+	echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+	echo "Type: " . $_FILES["file"]["type"] . "<br />";
+	echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+	echo "Stored in: " . $_FILES["file"]["tmp_name"];
+
+	if (file_exists("upload/" . $_FILES["file"]["name"]))
+	{
+		echo $_FILES["file"]["name"] . " 文件已经存在。 ";
+	}
+	else
+	{
+		// 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
+		move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+		echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
+	}
+}
+
+
 ```
 
 
