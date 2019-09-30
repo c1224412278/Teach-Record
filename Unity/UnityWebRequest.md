@@ -1,18 +1,20 @@
 UnityWebRequest
 ==============================
 
-***
+
 ```
+log檢查API
+
 webRequest.responseCode 當前連線狀態
 webRequest.downloadHandler.text 文件內容
 ```
-***
 
-***
+
+```
+
 ```
 Get
 ------------
-
 private IEnumerator DoRequest()
 {
 	var request = UnityWebRequest.Get("http://twsiyuan.com");
@@ -27,11 +29,11 @@ private IEnumerator DoRequest()
         var html = request.downloadHandler.text;		// print 出 html碼
         Debug.Log(html);
 }
+```
 
-
+```
 POST
 ---------------
-
 UnityWebRequest webRequest = UnityWebRequest.Post("http://127.0.0.1/test.php");
 yield return webRequest.SendWebRequest();
 
@@ -43,8 +45,9 @@ else{
 	Debug.Log(webRequest.responseCode);
 	Debug.Log(webRequest.downloadHandler.text);
 }
+```
 
-
+```
 圖片載入
 -------------
 var request = UnityWebRequestTexture.GetTexture("http://twsiyuan.com/images/profile.jpg");
@@ -60,8 +63,9 @@ if (!request.isNetworkError)
 	// TODO: Sprite Rendering
 	image.sprite = sprite;
 }
+```
 
-
+```
 音效載入
 --------------
 var request = UnityWebRequest.GetAudioClip("http://example.com", AudioType.MPEG);
@@ -69,12 +73,12 @@ yield return request.Send();
 
 * var audioClip = DownloadHandlerAudioClip.GetContent(request);		// 可使用 DownloadHandlerAudioClip 做銜接
 * var request = UnityWebRequestTexture.GetTexture("http://twsiyuan.com/images/profile.jpg");	// UnityWebRequestTexture
+```
 
 
-
-
+```
 WWWForm / POST
-
+---------
 WWWForm form = new WWWForm();
 form.AddBinaryData("file" , texture2D.EncodeToPNG() , "test.jpg");
 		
@@ -92,7 +96,7 @@ else{
 }
 
 ```
-***
+
 
 
 參考文獻
