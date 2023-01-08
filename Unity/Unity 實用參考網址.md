@@ -37,72 +37,9 @@ http://www.cnblogs.com/tonge/p/3899981.html                         // 一般光
 https://nuysoft.gitbooks.io/unity-manual/content/Manual/StandardShaderMaterialParameterNormalMap.html?fbclid=IwAR2X6y6RYWauiQX4CrxLnlBP-3HlOJAtwGK1glLBR4le2EWwL0IWeefU-UY
 
 
-<h3 id="autoescape"> BakeMesh </h3>
-
-```
-public GameObject CloneObject ; 
-public Material DefaultMaterial ;
-
-private List<int> Triangles = new List<int>() ; 
-private void Update()
-{
-	if(Input.GetKeyDown(KeyCode.S))
-	{
-		SaveMesh (); 
-	}
-}
-private void SaveMesh()
-{
-	SkinnedMeshRenderer[] skinnedMeshRenderer = this.GetComponentsInChildren<SkinnedMeshRenderer>();
-	CombineInstance[] combine = new CombineInstance[skinnedMeshRenderer.Length] ;
-
-	for(int skinnMeshNum = 0 ; skinnMeshNum < skinnedMeshRenderer.Length ; skinnMeshNum ++)
-	{
-		Triangles.Clear (); 
-		Mesh mesh = new Mesh (); 
-		skinnedMeshRenderer [skinnMeshNum].BakeMesh (mesh);
-		for(int subNum = 0 ; subNum < mesh.subMeshCount ; subNum ++)
-		{
-			Triangles.AddRange (mesh.GetTriangles(subNum)); 
-		}
-		mesh.SetTriangles (Triangles.ToArray() , 0);
-		mesh.subMeshCount = 1; 
-		combine [skinnMeshNum].mesh = mesh; 
-	}
-	Mesh Commesh = new Mesh (); 
-	Commesh.CombineMeshes (combine , true , false);
-	CloneObj (Commesh); 
-}
-private void CloneObj(Mesh CloneMesh)
-{
-	MeshFilter meshFilter = CloneObject.AddComponent<MeshFilter>();
-	MeshRenderer meshRenderer = CloneObject.AddComponent<MeshRenderer>();
-	meshFilter.mesh = CloneMesh; 
-	meshRenderer.material = DefaultMaterial; 
-}
-
-```
-
-
 <h3 id="autoescape"> Mesh 詳細介紹 </h3>
 
 https://blog.csdn.net/ecidevilin/column/info/12888
-
-
-<h3 id="autoescape"> NGUI 配合畫面調整比例 </h3>
-
-http://blog.csdn.net/k46023/article/details/52837142
-
-
-<h3 id="autoescape"> Photon 網路連線實用網址 </h3>
-
-https://www.urablog.xyz/entry/2016/09/19/232345		- [RPC] OnPhotonSerializeView 實作
-
-http://starlove.hatenablog.com/entry/2017/10/23/043508	- Photon Resources 設定
-
-http://www.digiart.com.tw/files/photon/PhotonCloud04.pdf	- Photon 完整介紹pdf
-
-http://www.digiart.com.tw/files/photon/PhotonCloud04.pdf?fbclid=IwAR1vT8WT2w2UHusmxplRK088ShB37yNC9WJd0t72EnlWXgi8gLLlVsW86qo
 
 
 <h3 id="autoescape"> Prefab 尋找預製物件 (Editor功能套件) </h3>
@@ -157,24 +94,9 @@ https://kendevlog.wordpress.com/2018/01/18/unity%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A
 https://docs.unity3d.com/ScriptReference/Tilemaps.TileBase.RefreshTile.html?fbclid=IwAR2Q73CaWWeZZ1cRDEQlXNpg6FZ5q_lJRjGkwoChYcgsmYPLC7D836ZrwX0
 
 
-<h3 id="autoescape"> UniRx </h3>
-
-https://kuailey.github.io/DungeonsGame/2016/11/06/UniRx-%E5%AD%A6%E4%B9%A0/?fbclid=IwAR2SUR3a-kU84cGcZvPaVe9SiY_7HdRj71U5gEPsYdcUl6doyaoLN6zmcEc
-
-
-<h3 id="autoescape"> Unity Editor 日本擴張入門 </h3>
-
-https://anchan828.github.io/editor-…/…/scriptableobject.html
-
-
 <h3 id="autoescape"> Unity Event System </h3>
 
 http://k79k06k02k.com/blog/440/unity/unity-ugui-%E5%8E%9F%E7%90%86%E7%AF%87%E5%9B%9B%EF%BC%9Aevent-system-manager-%E4%BA%8B%E4%BB%B6%E8%88%87%E8%A7%B8%E7%99%BC?fbclid=IwAR3P4dewdsQ17mC3rTjKvXL5cNzEFMOcODGYRaHv4ygRERTz5lgR8rnWKJg
-
-
-<h3 id="autoescape"> Unity 生命週期 </h3>
-
-http://www.cnblogs.com/MrZivChu/p/unityLifeCycle.html
 
 <h3 id="autoescape"> Unity 優化小技巧 </h3>
 
