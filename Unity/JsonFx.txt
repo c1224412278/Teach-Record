@@ -1,9 +1,0 @@
-﻿public void UpdateRankingPanel(string RankingStr)
-	{
-		Dictionary<String , object>[] RankInfo = JsonReader.Deserialize<Dictionary<String , object>[]> (RankingStr); 
-		foreach (Dictionary<string,object> Info in RankInfo) 
-		{
-			int Score = (int)Info["score"]; 
-			Debug.Log (Score); 
-		}
-	}
