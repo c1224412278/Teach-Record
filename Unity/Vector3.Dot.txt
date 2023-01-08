@@ -1,9 +1,0 @@
-﻿public static float Dot(Vector3 lhs, Vector3 rhs);
-
-******* Vector3.Dot 需要增加 Normalize 後，得到的數值才會在 -1 ~ 1 之間
-
-判斷( 目標一 )與( 目標二 )的面對方向
-
-兩個方向相對則會 返回 1 
-
-否則 0 
